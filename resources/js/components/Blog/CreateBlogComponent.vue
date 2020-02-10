@@ -87,7 +87,7 @@
                     let formData = new FormData();
 
                     formData.append('title', this.title);
-                    formData.append('content', this.content);
+                    formData.append('post', this.content);
                     formData.append('author', this.author);
                     /*  for (var i = 0; i < this.file.length; i++) {
                           let file = this.file[i];
@@ -95,7 +95,7 @@
                       }*/
 
                     $.each(this.file, function (k, v) {
-                        formData.append('image[k]', v);
+                        formData.append('image[' + k + ']', v);
                     });
 
 
@@ -107,10 +107,14 @@
                             headers: {
                                 'Content-Type': 'multipart/form-data'
                             }
-                        }).then(function () {
+                        }).then(response => {
                         console.log('success');
+                        alert(response.data.msg);
+                        this.title = " ";
+                        this.content = " ";
+                        this.author = " ";
+                        this.file = "";
                     })
-
                 }
             },
             validate() {

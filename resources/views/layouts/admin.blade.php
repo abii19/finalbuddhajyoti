@@ -219,21 +219,16 @@
                             <li class="nav-item">
                                 <a href="" class="nav-link">
                                     <i class="fas fa-list-ul ml-2"></i>
-                                    <p class="ml-4">Daily Saving report</p>
+                                    <p class="ml-4">View Blog</p>
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a href="" class="nav-link">
+                                <a href="{{route('blog')}}" class="nav-link">
                                     <i class="fas fa-list-ul ml-2"></i>
                                     <p class="ml-4">Daily Saving report</p>
                                 </a>
                             </li>
-                            <li class="nav-item">
-                                <a href="" class="nav-link">
-                                    <i class="fas fa-list-ul ml-2"></i>
-                                    <p class="ml-4">Daily Saving report</p>
-                                </a>
-                            </li>
+
                             <li class="nav-item">
                                 <a href="#" class="nav-link">
                                     <i class="fas fa-check"></i>
@@ -248,14 +243,14 @@
                             <i class="nav-icon fas fa-users"></i>
                             <p>
                                 <i class="fas fa-angle-left right"></i>
-                                HELLO
+                                Notice
                             </p>
                         </a>
                         <ul class="nav nav-treeview">
                             <li class="nav-item">
                                 <a href="" class="nav-link">
-                                    <i class="fas fa-money-bill"></i>
-                                    YYY
+                                    <i class="fas fa-money-bill ml-2"></i>
+                                    <p class="ml-3">Add Notice</p>
                                 </a>
                             </li>
                             <li class="nav-item">

@@ -23,6 +23,9 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
+Route::get('/blog', 'Blog\ViewBlogController@index')->name('blog');
+Route::get('/blog/{$id}', 'Blog\ViewBlogController@singleBlog')->name('singleBlog');
+
 
 Route::group(['middleware' => 'auth'], function () {
     Route::resource('Index', 'Admin\IndexController')->only(['index', 'store']);

@@ -12,9 +12,15 @@ class Blog extends Model
         'post',
         'author',
         'status',
-        'approve'
+        'approve',
+        'single_blog_pic'
     ];
 
+
+    public function blogImage()
+    {
+        return $this->hasMany(BlogImage::class);
+    }
 
     //
 }

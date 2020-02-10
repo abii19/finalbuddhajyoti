@@ -1,11 +1,11 @@
 <?php
 
-namespace App\Http\Controllers\Post;
+namespace App\Http\Controllers\Notice;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
-class PostController extends Controller
+class AddNoticeController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -35,12 +35,6 @@ class PostController extends Controller
      */
     public function store(Request $request)
     {
-        $request->validate([
-           'post_name'=>'required',
-        ]);
-
-
-
         //
     }
 
