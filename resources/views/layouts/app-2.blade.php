@@ -62,7 +62,7 @@
             </div>
         </div>
         <div class="header">
-            <nav class="navbar navbar-expand-lg navbar-light fixed-top mt-5">
+            <nav class="navbar navbar-expand-lg fixed-top mt-5">
                 <div class="container">
                     <a class="navbar-brand" href="#">
                         <img src="{{asset("images/logo.png")}}" alt=""> Buddha Jyoti

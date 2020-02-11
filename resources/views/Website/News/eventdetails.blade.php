@@ -36,6 +36,11 @@
                         <li>Adipiscing Elit</li>
                     </ul>
                 </div>
+                <div class="row">
+                    <p class="my-3 mx-5">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam viverra euismod odio, gravida
+                        pellentesque urna varius vitae. Sed dui lorem, adipiscing in adipiscing et, interdum nec metus.
+                        Mauris ultricies, justo eu convallis placerat, felis enim.</p>
+                </div>
 
             </div>
             <!-- /.row -->
@@ -44,30 +49,40 @@
             <h3 class="my-4">Recent Events</h3>
 
             <div class="row">
-
                 <div class="col-md-3 col-sm-6 mb-4">
                     <a href="#">
                         <img class="img-fluid" src="{{asset("images/milestones_background.jpg")}}" alt="">
                     </a>
+                    <div class="text-center pt-2 pb-2 bg-white">
+                        <h4>Event Title</h4>
+                    </div>
                 </div>
 
                 <div class="col-md-3 col-sm-6 mb-4">
                     <a href="#">
                         <img class="img-fluid" src="{{asset("images/milestones_background.jpg")}}" alt="">
                     </a>
+                    <div class="text-center pt-2 pb-2 bg-white">
+                        <h4>Event Title</h4>
+                    </div>
                 </div>
 
                 <div class="col-md-3 col-sm-6 mb-4">
                     <a href="#">
                         <img class="img-fluid" src="{{asset("images/milestones_background.jpg")}}" alt="">
                     </a>
-                    <
+                    <div class="text-center pt-2 pb-2 bg-white">
+                        <h4>Event Title</h4>
+                    </div>
                 </div>
 
                 <div class="col-md-3 col-sm-6 mb-4">
                     <a href="#">
                         <img class="img-fluid" src="{{asset("images/milestones_background.jpg")}}" alt="">
                     </a>
+                    <div class="text-center pt-2 pb-2 bg-white">
+                        <h4>Event Title</h4>
+                    </div>
                 </div>
 
             </div>

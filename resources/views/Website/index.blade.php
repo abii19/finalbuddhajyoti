@@ -21,7 +21,6 @@
             margin: 20px 30px 0 30px;
 
         }
-
         .swiper-pagination-bullet {
             width: 12px;
             height: 12px;
@@ -62,7 +61,7 @@
                 </div>
             </div>
             <div class="header">
-                <nav class="navbar navbar-expand-lg navbar-light fixed-top mt-5">
+                <nav class="navbar navbar-expand-lg fixed-top mt-5">
                     <div class="container">
                         <a class="navbar-brand" href="#">
                             <img src="images/logo.png" alt=""> Buddha Jyoti
