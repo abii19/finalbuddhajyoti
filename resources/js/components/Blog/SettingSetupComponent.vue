@@ -1,54 +1,61 @@
 <template>
+    <div class="col-md-5">
+        <div class="card">
+            <div class="card-header">
+                Add Teacher
+            </div>
 
-    <div class="row">
-        <div class="col-md-6">
-            <div class="card">
-                <div class="card-header">
-                    Add Teacher
-                </div>
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div v-if="successMessage" class="alert alert-success alert-dismissible fade show" role="alert">
+                            <strong></strong>{{success}}
+                            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                    </div>
 
-                <div class="card-body">
+                    <div class="col-md-8 row">
+                        <label class="ml-3">Full Name:</label>
+                        <input type="text" v-model="name" class="form-control form-control-sm ml-3">
+                        <span v-if="nameError" class="text-danger">{{nameError}}</span>
+                    </div>
+
+                    <div class="col-md-12 mt-3">
+                        <label>Saying</label>
+                        <textarea name="" id="" v-model="saying" class="col-md-12" rows="7"></textarea>
+                        <span v-if="sayingError" class="text-danger">{{sayingError}}</span>
+
+                    </div>
+
                     <div class="row">
-                        <div class="col-md-8 row">
-                            <label class="ml-3">Full Name:</label>
-                            <input type="text" v-model="name" class="form-control form-control-sm ml-3">
+                        <div class="col-md-6 mt-2">
+                            <label class="ml-3">Education Degres</label>
+                            <input type="text" v-model="degree" class=" ml-3 form-control form-control-sm">
+                            <span v-if="degreeError" class="text-danger">{{degreeError}}</span>
 
+                            <button class="btn btn-success btn-sm ml-3 mt-3" @click="saveTeacher">Success</button>
                         </div>
-
-                        <div class="col-md-12 mt-3">
-                            <label>Saying</label>
-                            <textarea name="" id="" class="col-md-12" rows="7"></textarea>
-                        </div>
-
-                        <div class="row">
-                            <div class="col-md-6 mt-2">
-                                <label class="ml-3">Education Degres</label>
-                                <input type="text" v-model="degree" class=" ml-3 form-control form-control-sm">
-                            </div>
-                            <div class="col-md-6">
-                                <label>Upload</label>
-                                <input type="file" @change="selectPhoto" accept="image/*"
-                                       class="ml-3 form-control form-control-sm">
-
-                                <span v-if="imageSelected">
+                        <div class="col-md-6">
+                            <label>Upload</label>
+                            <input type="file" ref="file" @change="selectPhoto" accept="image/*"
+                                   class="ml-3 form-control form-control-sm">
+                            <span v-if="degree" class="text-danger">{{imageError}}</span>
+                            <span v-if="imageSelected">
                                         <img :src="imageSelected"
                                              alt=""
                                              class="img-thumbnail "
                                         ></span>
-                            </div>
-
                         </div>
 
+
                     </div>
+
                 </div>
             </div>
-
-
         </div>
 
-        <div class="col-md-6">
-
-        </div>
 
     </div>
 
@@ -62,15 +69,19 @@
         data: function () {
             return {
                 imageSelected: "",
-                name: ''
-
+                name: '',
+                nameError: '',
+                saying: '',
+                sayingError: '',
+                degree: '',
+                degreeError: '',
+                imageError: '',
+                successMessage: false,
+                success: ''
             }
-
-
         },
 
         methods: {
-
             selectPhoto: function (event) {
                 // Reference to the DOM input element
                 var input = event.target;
@@ -83,14 +94,87 @@
                         // Note: arrow function used here, so that "this.imageSelected" refers to the imageData of Vue component
                         // Read image as base64 and set to imageData
                         this.imageSelected = e.target.result;
-                    }
+                    };
                     // Start the reader job - read file as a data url (base64 format)
                     reader.readAsDataURL(input.files[0]);
                 }
+            },
+
+            saveTeacher: function () {
+                if (this.validate()) {
+
+                    console.log(this.$refs.file.files[0]);
+
+                    let formData = new FormData();
+
+                    formData.append('teacher_name', this.name);
+                    formData.append('saying', this.saying);
+                    formData.append('education_degree', this.degree);
+                    formData.append('photo', this.$refs.file.files[0]);
+
+                    axios.post('/api/saveTeacher', formData, {
+                        headers: {
+                            'Content-Type': 'multipart/form-data'
+                        },
+                    }).then(response => {
+                        if (response.data.err) {
+                            alert(response.data.err + ' Please upload image less than 2048 mb ');
+                        }
+
+                        if (response.data.success) {
+                            this.name = ' ';
+                            this.degree = ' ';
+                            this.saying = ' ';
+                            this.imageSelected = ' ';
+                            this.successMessage = true;
+                            this.success = response.data.success;
+
+
+                        }
+
+
+                    }).catch(err => {
+                        alert(err.data.message);
+                    })
+
+                }
+
+
+            },
+
+            validate: function () {
+                if (!this.name) {
+                    this.nameError = 'Name Field Cannot be Empty *';
+                    return false;
+                } else {
+                    this.nameError = ' ';
+                }
+
+                if (!this.saying) {
+                    this.sayingError = 'Saying Field Cannot be Empty *';
+                    return false;
+                } else {
+                    this.sayingError = ' ';
+                }
+
+                if (!this.degree) {
+                    this.degreeError = 'Degree Field Cannot be Empty *';
+                    return false;
+                } else {
+                    this.degreeError = '';
+                }
+                if (!this.imageSelected) {
+                    this.imageError = 'Image Field Cannot be Empty';
+                    return false;
+                } else {
+                    this.imageError = ' ';
+                }
+                return true;
+
             }
+
+
         }
-
-
     }
 </script>
 

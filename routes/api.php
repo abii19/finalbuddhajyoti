@@ -17,5 +17,15 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
 
+Route::post('/saveTeacher', 'Admin\TeacherController@saveTeacher');
+Route::resource('addBlog', 'Blog\AddBlogController')->only(['store', 'edit']);
 
-Route::resource('addBlog', 'Blog\AddBlogController')->only('store');
+
+/*API ROUTE FOR TEACHERS MODEL*/
+Route::get('/viewTeacher', 'Admin\TeacherController@viewAjaxTeacher');
+Route::get('/fetchSingleTeacher/{id}', 'Admin\TeacherController@fetchSingleTeacher');
+Route::post('/updateteacherPhoto', 'Admin\TeacherController@updateTeacherPhoto');
+Route::post('/updateteacherForm', 'Admin\TeacherEditController@updateTeacherForm');
+
+
+

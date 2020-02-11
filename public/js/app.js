@@ -2122,12 +2122,27 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: "SettingSetupComponent",
   data: function data() {
     return {
       imageSelected: "",
-      name: ''
+      name: '',
+      nameError: '',
+      saying: '',
+      sayingError: '',
+      degree: '',
+      degreeError: '',
+      imageError: '',
+      successMessage: false,
+      success: ''
     };
   },
   methods: {
@@ -2150,6 +2165,327 @@ __webpack_require__.r(__webpack_exports__);
 
         reader.readAsDataURL(input.files[0]);
       }
+    },
+    saveTeacher: function saveTeacher() {
+      var _this2 = this;
+
+      if (this.validate()) {
+        console.log(this.$refs.file.files[0]);
+        var formData = new FormData();
+        formData.append('teacher_name', this.name);
+        formData.append('saying', this.saying);
+        formData.append('education_degree', this.degree);
+        formData.append('photo', this.$refs.file.files[0]);
+        axios.post('/api/saveTeacher', formData, {
+          headers: {
+            'Content-Type': 'multipart/form-data'
+          }
+        }).then(function (response) {
+          if (response.data.err) {
+            alert(response.data.err + ' Please upload image less than 2048 mb ');
+          }
+
+          if (response.data.success) {
+            _this2.name = ' ';
+            _this2.degree = ' ';
+            _this2.saying = ' ';
+            _this2.imageSelected = ' ';
+            _this2.successMessage = true;
+            _this2.success = response.data.success;
+          }
+        })["catch"](function (err) {
+          alert(err.data.message);
+        });
+      }
+    },
+    validate: function validate() {
+      if (!this.name) {
+        this.nameError = 'Name Field Cannot be Empty *';
+        return false;
+      } else {
+        this.nameError = ' ';
+      }
+
+      if (!this.saying) {
+        this.sayingError = 'Saying Field Cannot be Empty *';
+        return false;
+      } else {
+        this.sayingError = ' ';
+      }
+
+      if (!this.degree) {
+        this.degreeError = 'Degree Field Cannot be Empty *';
+        return false;
+      } else {
+        this.degreeError = '';
+      }
+
+      if (!this.imageSelected) {
+        this.imageError = 'Image Field Cannot be Empty';
+        return false;
+      } else {
+        this.imageError = ' ';
+      }
+
+      return true;
+    }
+  }
+});
+
+/***/ }),
+
+/***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/Blog/ViewTeacherComponent.vue?vue&type=script&lang=js&":
+/*!************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/Blog/ViewTeacherComponent.vue?vue&type=script&lang=js& ***!
+  \************************************************************************************************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+/* harmony default export */ __webpack_exports__["default"] = ({
+  name: "ViewTeacherComponent",
+  data: function data() {
+    return {
+      obj: {},
+      teachers: [],
+      editName: '',
+      nameError: '',
+      saying: '',
+      sayingError: '',
+      degree: '',
+      degreeError: '',
+      imageError: '',
+      successMessage: false,
+      imageSelected: '',
+      disableBtn: true
+    };
+  },
+  props: {},
+  mounted: function mounted() {
+    var _this = this;
+
+    axios.get('api/viewTeacher', {}).then(function (response) {
+      if (response.data.msg) {
+        _this.teachers = response.data.teacher;
+      }
+    });
+  },
+  methods: {
+    openEdit: function openEdit(key, id) {
+      var _this2 = this;
+
+      /*$.each(this.teachers, function (k, v) {
+          if (id == v.id) {
+              this.obj.name = v.teacher_name;
+              this.obj.saying = v.saying;
+              this.obj.degree = v.education_degree;
+          }
+      });*/
+      axios.get('/api/fetchSingleTeacher/' + id).then(function (response) {
+        if (response.data.msg) {
+          _this2.obj = response.data.teacher; //  console.log(this.obj.id);
+        }
+      });
+    },
+    selectPhoto: function selectPhoto(e) {
+      var _this3 = this;
+
+      // Reference to the DOM input element
+      this.obj.photo = '';
+      var input = event.target; // Ensure that you have a file before attempting to read it
+
+      if (input.files && input.files[0]) {
+        // create a new FileReader to read this image and convert to base64 format
+        var reader = new FileReader(); // Define a callback function to run, when FileReader finishes its job
+
+        reader.onload = function (e) {
+          // Note: arrow function used here, so that "this.imageSelected" refers to the imageData of Vue component
+          // Read image as base64 and set to imageData
+          _this3.imageSelected = e.target.result;
+        }; // Start the reader job - read file as a data url (base64 format)
+
+
+        reader.readAsDataURL(input.files[0]);
+      }
+
+      this.saveAjaxPhoto();
+    },
+    saveAjaxPhoto: function saveAjaxPhoto() {
+      var _this4 = this;
+
+      this.disableBtn = false;
+      console.log(this.obj.id);
+      console.log(this.$refs.file.files[0]);
+      var formData = new FormData();
+      formData.append('id', this.obj.id);
+      formData.append('photo', this.$refs.file.files[0]);
+      axios.post('/api/updateteacherPhoto', formData, {
+        headers: {
+          'Content-Type': 'multipart/form-data'
+        }
+      }).then(function (response) {
+        _this4.disableBtn = true;
+
+        if (response.data.success) {
+          alert(response.data.success);
+        }
+
+        if (response.data.err) {
+          alert(response.data.err);
+        }
+      });
+    },
+    updateTeacherForm: function updateTeacherForm() {
+      alert(this.obj.name);
+      axios.post('/api/updateteacherForm', {
+        id: this.obj.id,
+        teacher_name: this.obj.teacher_name,
+        education_degree: this.obj.education_degree,
+        saying: this.obj.saying
+      }).then(function (response) {
+        alert(response.data.msg);
+      });
     }
   }
 });
@@ -46937,97 +47273,169 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", { staticClass: "row" }, [
-    _c("div", { staticClass: "col-md-6" }, [
-      _c("div", { staticClass: "card" }, [
-        _c("div", { staticClass: "card-header" }, [
-          _vm._v("\n                Add Teacher\n            ")
-        ]),
-        _vm._v(" "),
-        _c("div", { staticClass: "card-body" }, [
+  return _c("div", { staticClass: "col-md-5" }, [
+    _c("div", { staticClass: "card" }, [
+      _c("div", { staticClass: "card-header" }, [
+        _vm._v("\n            Add Teacher\n        ")
+      ]),
+      _vm._v(" "),
+      _c("div", { staticClass: "card-body" }, [
+        _c("div", { staticClass: "row" }, [
+          _c("div", { staticClass: "col-md-12" }, [
+            _vm.successMessage
+              ? _c(
+                  "div",
+                  {
+                    staticClass:
+                      "alert alert-success alert-dismissible fade show",
+                    attrs: { role: "alert" }
+                  },
+                  [
+                    _c("strong"),
+                    _vm._v(_vm._s(_vm.success) + "\n                        "),
+                    _vm._m(0)
+                  ]
+                )
+              : _vm._e()
+          ]),
+          _vm._v(" "),
+          _c("div", { staticClass: "col-md-8 row" }, [
+            _c("label", { staticClass: "ml-3" }, [_vm._v("Full Name:")]),
+            _vm._v(" "),
+            _c("input", {
+              directives: [
+                {
+                  name: "model",
+                  rawName: "v-model",
+                  value: _vm.name,
+                  expression: "name"
+                }
+              ],
+              staticClass: "form-control form-control-sm ml-3",
+              attrs: { type: "text" },
+              domProps: { value: _vm.name },
+              on: {
+                input: function($event) {
+                  if ($event.target.composing) {
+                    return
+                  }
+                  _vm.name = $event.target.value
+                }
+              }
+            }),
+            _vm._v(" "),
+            _vm.nameError
+              ? _c("span", { staticClass: "text-danger" }, [
+                  _vm._v(_vm._s(_vm.nameError))
+                ])
+              : _vm._e()
+          ]),
+          _vm._v(" "),
+          _c("div", { staticClass: "col-md-12 mt-3" }, [
+            _c("label", [_vm._v("Saying")]),
+            _vm._v(" "),
+            _c("textarea", {
+              directives: [
+                {
+                  name: "model",
+                  rawName: "v-model",
+                  value: _vm.saying,
+                  expression: "saying"
+                }
+              ],
+              staticClass: "col-md-12",
+              attrs: { name: "", id: "", rows: "7" },
+              domProps: { value: _vm.saying },
+              on: {
+                input: function($event) {
+                  if ($event.target.composing) {
+                    return
+                  }
+                  _vm.saying = $event.target.value
+                }
+              }
+            }),
+            _vm._v(" "),
+            _vm.sayingError
+              ? _c("span", { staticClass: "text-danger" }, [
+                  _vm._v(_vm._s(_vm.sayingError))
+                ])
+              : _vm._e()
+          ]),
+          _vm._v(" "),
           _c("div", { staticClass: "row" }, [
-            _c("div", { staticClass: "col-md-8 row" }, [
-              _c("label", { staticClass: "ml-3" }, [_vm._v("Full Name:")]),
+            _c("div", { staticClass: "col-md-6 mt-2" }, [
+              _c("label", { staticClass: "ml-3" }, [
+                _vm._v("Education Degres")
+              ]),
               _vm._v(" "),
               _c("input", {
                 directives: [
                   {
                     name: "model",
                     rawName: "v-model",
-                    value: _vm.name,
-                    expression: "name"
+                    value: _vm.degree,
+                    expression: "degree"
                   }
                 ],
-                staticClass: "form-control form-control-sm ml-3",
+                staticClass: " ml-3 form-control form-control-sm",
                 attrs: { type: "text" },
-                domProps: { value: _vm.name },
+                domProps: { value: _vm.degree },
                 on: {
                   input: function($event) {
                     if ($event.target.composing) {
                       return
                     }
-                    _vm.name = $event.target.value
+                    _vm.degree = $event.target.value
                   }
                 }
-              })
+              }),
+              _vm._v(" "),
+              _vm.degreeError
+                ? _c("span", { staticClass: "text-danger" }, [
+                    _vm._v(_vm._s(_vm.degreeError))
+                  ])
+                : _vm._e(),
+              _vm._v(" "),
+              _c(
+                "button",
+                {
+                  staticClass: "btn btn-success btn-sm ml-3 mt-3",
+                  on: { click: _vm.saveTeacher }
+                },
+                [_vm._v("Success")]
+              )
             ]),
             _vm._v(" "),
-            _vm._m(0),
-            _vm._v(" "),
-            _c("div", { staticClass: "row" }, [
-              _c("div", { staticClass: "col-md-6 mt-2" }, [
-                _c("label", { staticClass: "ml-3" }, [
-                  _vm._v("Education Degres")
-                ]),
-                _vm._v(" "),
-                _c("input", {
-                  directives: [
-                    {
-                      name: "model",
-                      rawName: "v-model",
-                      value: _vm.degree,
-                      expression: "degree"
-                    }
-                  ],
-                  staticClass: " ml-3 form-control form-control-sm",
-                  attrs: { type: "text" },
-                  domProps: { value: _vm.degree },
-                  on: {
-                    input: function($event) {
-                      if ($event.target.composing) {
-                        return
-                      }
-                      _vm.degree = $event.target.value
-                    }
-                  }
-                })
-              ]),
+            _c("div", { staticClass: "col-md-6" }, [
+              _c("label", [_vm._v("Upload")]),
               _vm._v(" "),
-              _c("div", { staticClass: "col-md-6" }, [
-                _c("label", [_vm._v("Upload")]),
-                _vm._v(" "),
-                _c("input", {
-                  staticClass: "ml-3 form-control form-control-sm",
-                  attrs: { type: "file", accept: "image/*" },
-                  on: { change: _vm.selectPhoto }
-                }),
-                _vm._v(" "),
-                _vm.imageSelected
-                  ? _c("span", [
-                      _c("img", {
-                        staticClass: "img-thumbnail ",
-                        attrs: { src: _vm.imageSelected, alt: "" }
-                      })
-                    ])
-                  : _vm._e()
-              ])
+              _c("input", {
+                ref: "file",
+                staticClass: "ml-3 form-control form-control-sm",
+                attrs: { type: "file", accept: "image/*" },
+                on: { change: _vm.selectPhoto }
+              }),
+              _vm._v(" "),
+              _vm.degree
+                ? _c("span", { staticClass: "text-danger" }, [
+                    _vm._v(_vm._s(_vm.imageError))
+                  ])
+                : _vm._e(),
+              _vm._v(" "),
+              _vm.imageSelected
+                ? _c("span", [
+                    _c("img", {
+                      staticClass: "img-thumbnail ",
+                      attrs: { src: _vm.imageSelected, alt: "" }
+                    })
+                  ])
+                : _vm._e()
             ])
           ])
         ])
       ])
-    ]),
-    _vm._v(" "),
-    _c("div", { staticClass: "col-md-6" })
+    ])
   ])
 }
 var staticRenderFns = [
@@ -47035,13 +47443,408 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "col-md-12 mt-3" }, [
-      _c("label", [_vm._v("Saying")]),
+    return _c(
+      "button",
+      {
+        staticClass: "close",
+        attrs: {
+          type: "button",
+          "data-dismiss": "alert",
+          "aria-label": "Close"
+        }
+      },
+      [_c("span", { attrs: { "aria-hidden": "true" } }, [_vm._v("×")])]
+    )
+  }
+]
+render._withStripped = true
+
+
+
+/***/ }),
+
+/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/Blog/ViewTeacherComponent.vue?vue&type=template&id=2eb273dc&scoped=true&":
+/*!****************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/Blog/ViewTeacherComponent.vue?vue&type=template&id=2eb273dc&scoped=true& ***!
+  \****************************************************************************************************************************************************************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "render", function() { return render; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return staticRenderFns; });
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c("div", { staticClass: "col-md-7" }, [
+    _c("table", { staticClass: "table table-striped" }, [
+      _vm._m(0),
       _vm._v(" "),
-      _c("textarea", {
-        staticClass: "col-md-12",
-        attrs: { name: "", id: "", rows: "7" }
-      })
+      _c(
+        "tbody",
+        _vm._l(_vm.teachers, function(teacher, key) {
+          return _c("tr", [
+            _c("td", [_vm._v(_vm._s(++key))]),
+            _vm._v(" "),
+            _c("td", [_vm._v(_vm._s(teacher.teacher_name))]),
+            _vm._v(" "),
+            _c("td", [_vm._v(_vm._s(teacher.education_degree))]),
+            _vm._v(" "),
+            _c("td", [
+              _vm._v(_vm._s(teacher.saying.substring(0, 15)) + ".....")
+            ]),
+            _vm._v(" "),
+            _c("td", [
+              _c("img", {
+                staticClass: "img-thumbnail w-50 h-15",
+                attrs: { src: teacher.photo, alt: "" }
+              })
+            ]),
+            _vm._v(" "),
+            _c("td", [
+              _c("div", { staticClass: "dropdown" }, [
+                _c(
+                  "button",
+                  {
+                    staticClass: "btn btn-light btn-sm dropdown-toggle",
+                    attrs: {
+                      type: "button",
+                      id: "dropdownMenuButton",
+                      "data-toggle": "dropdown",
+                      "aria-haspopup": "true",
+                      "aria-expanded": "false"
+                    }
+                  },
+                  [
+                    _vm._v(
+                      "\n                        Action\n                    "
+                    )
+                  ]
+                ),
+                _vm._v(" "),
+                _c(
+                  "div",
+                  {
+                    staticClass: "dropdown-menu",
+                    attrs: { "aria-labelledby": "dropdownMenuButton" }
+                  },
+                  [
+                    _c(
+                      "button",
+                      {
+                        staticClass: "dropdown-item",
+                        attrs: {
+                          "data-target": ".bd-example-modal-lg",
+                          "data-toggle": "modal"
+                        },
+                        on: {
+                          click: function($event) {
+                            return _vm.openEdit(key, teacher.id)
+                          }
+                        }
+                      },
+                      [
+                        _c("i", { staticClass: "fas fa-edit text-warning" }),
+                        _vm._v(
+                          "\n                             Edit\n                        "
+                        )
+                      ]
+                    ),
+                    _vm._v(" "),
+                    _vm._m(1, true)
+                  ]
+                )
+              ])
+            ])
+          ])
+        }),
+        0
+      ),
+      _vm._v(" "),
+      _c(
+        "div",
+        {
+          staticClass: "modal fade bd-example-modal-lg",
+          attrs: {
+            tabindex: "-1",
+            role: "dialog",
+            "aria-labelledby": "myLargeModalLabel",
+            "aria-hidden": "true"
+          }
+        },
+        [
+          _c("div", { staticClass: "modal-dialog modal-lg" }, [
+            _c("div", { staticClass: "modal-content" }, [
+              _vm._m(2),
+              _vm._v(" "),
+              _c("div", { staticClass: "modal-body" }, [
+                _c("div", { staticClass: "row" }, [
+                  _c("div", { staticClass: "col-md-12" }, [
+                    _vm.successMessage
+                      ? _c(
+                          "div",
+                          {
+                            staticClass:
+                              "alert alert-success alert-dismissible fade show",
+                            attrs: { role: "alert" }
+                          },
+                          [_vm._m(3)]
+                        )
+                      : _vm._e()
+                  ]),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "col-md-12 row" }, [
+                    _c("div", { staticClass: "col-md-6" }, [
+                      _c("label", { staticClass: "ml-3" }, [
+                        _vm._v("Full Name:")
+                      ]),
+                      _vm._v(" "),
+                      _c("input", {
+                        directives: [
+                          {
+                            name: "model",
+                            rawName: "v-model",
+                            value: _vm.obj.teacher_name,
+                            expression: "obj.teacher_name"
+                          }
+                        ],
+                        staticClass: "form-control form-control-sm ml-3",
+                        attrs: { type: "text" },
+                        domProps: { value: _vm.obj.teacher_name },
+                        on: {
+                          input: function($event) {
+                            if ($event.target.composing) {
+                              return
+                            }
+                            _vm.$set(
+                              _vm.obj,
+                              "teacher_name",
+                              $event.target.value
+                            )
+                          }
+                        }
+                      }),
+                      _vm._v(" "),
+                      _vm.nameError
+                        ? _c("span", { staticClass: "text-danger" }, [
+                            _vm._v(_vm._s(_vm.nameError))
+                          ])
+                        : _vm._e()
+                    ]),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "col-md-6" }, [
+                      _vm._m(4),
+                      _vm._v(" "),
+                      _c("div", { staticClass: "row justify-content-center" }, [
+                        _vm.imageSelected
+                          ? _c("img", {
+                              staticClass: "img-thumbnail w-50 text-center",
+                              attrs: { src: _vm.imageSelected, alt: "" }
+                            })
+                          : _vm._e(),
+                        _vm._v(" "),
+                        !_vm.imageSelected
+                          ? _c("img", {
+                              staticClass: "img-thumbnail w-50 text-center",
+                              attrs: { src: _vm.obj.photo, alt: "" }
+                            })
+                          : _vm._e()
+                      ])
+                    ])
+                  ]),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "col-md-12 mt-3" }, [
+                    _c("label", [_vm._v("Saying")]),
+                    _vm._v(" "),
+                    _c("textarea", {
+                      directives: [
+                        {
+                          name: "model",
+                          rawName: "v-model",
+                          value: _vm.obj.saying,
+                          expression: "obj.saying"
+                        }
+                      ],
+                      staticClass: "col-md-12",
+                      attrs: { name: "", id: "", rows: "7" },
+                      domProps: { value: _vm.obj.saying },
+                      on: {
+                        input: function($event) {
+                          if ($event.target.composing) {
+                            return
+                          }
+                          _vm.$set(_vm.obj, "saying", $event.target.value)
+                        }
+                      }
+                    }),
+                    _vm._v(" "),
+                    _vm.sayingError
+                      ? _c("span", { staticClass: "text-danger" }, [
+                          _vm._v(_vm._s(_vm.sayingError))
+                        ])
+                      : _vm._e()
+                  ]),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "row" }, [
+                    _c("div", { staticClass: "col-md-6 mt-2" }, [
+                      _c("label", { staticClass: "ml-3" }, [
+                        _vm._v("Education Degres")
+                      ]),
+                      _vm._v(" "),
+                      _c("input", {
+                        directives: [
+                          {
+                            name: "model",
+                            rawName: "v-model",
+                            value: _vm.obj.education_degree,
+                            expression: "obj.education_degree"
+                          }
+                        ],
+                        staticClass: " ml-3 form-control form-control-sm",
+                        attrs: { type: "text" },
+                        domProps: { value: _vm.obj.education_degree },
+                        on: {
+                          input: function($event) {
+                            if ($event.target.composing) {
+                              return
+                            }
+                            _vm.$set(
+                              _vm.obj,
+                              "education_degree",
+                              $event.target.value
+                            )
+                          }
+                        }
+                      }),
+                      _vm._v(" "),
+                      _vm.degreeError
+                        ? _c("span", { staticClass: "text-danger" }, [
+                            _vm._v(_vm._s(_vm.degreeError))
+                          ])
+                        : _vm._e(),
+                      _vm._v(" "),
+                      _c(
+                        "button",
+                        {
+                          staticClass: "btn btn-success btn-sm ml-3 mt-3",
+                          attrs: { disabled: !_vm.disableBtn },
+                          on: { click: _vm.updateTeacherForm }
+                        },
+                        [
+                          _vm._v(
+                            "Success\n                                    "
+                          )
+                        ]
+                      )
+                    ]),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "col-md-6" }, [
+                      _c("label", [_vm._v("Upload")]),
+                      _vm._v(" "),
+                      _c("input", {
+                        ref: "file",
+                        staticClass: "ml-3 form-control form-control-sm",
+                        attrs: { type: "file", accept: "image/*" },
+                        on: { change: _vm.selectPhoto }
+                      }),
+                      _vm._v(" "),
+                      _vm.degree
+                        ? _c("span", { staticClass: "text-danger" }, [
+                            _vm._v(_vm._s(_vm.imageError))
+                          ])
+                        : _vm._e()
+                    ])
+                  ])
+                ])
+              ])
+            ])
+          ])
+        ]
+      )
+    ])
+  ])
+}
+var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("thead", [
+      _c("tr", [
+        _c("th", [_vm._v("SN:")]),
+        _vm._v(" "),
+        _c("th", [_vm._v("Name:")]),
+        _vm._v(" "),
+        _c("th", [_vm._v("Degree:")]),
+        _vm._v(" "),
+        _c("th", [_vm._v("Saying:")]),
+        _vm._v(" "),
+        _c("th", [_vm._v("photo:")]),
+        _vm._v(" "),
+        _c("th", [_vm._v("Action")])
+      ])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c(
+      "button",
+      { staticClass: "dropdown-item", attrs: { type: "button", href: "#" } },
+      [
+        _c("i", { staticClass: "fas fa-download" }),
+        _vm._v(" Delete\n                        ")
+      ]
+    )
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "modal-header bg-info" }, [
+      _vm._v(
+        "\n                        Edit Teacher\n                        "
+      ),
+      _c(
+        "button",
+        {
+          staticClass: "close text-danger",
+          attrs: {
+            type: "button",
+            "data-dismiss": "modal",
+            "aria-label": "Close"
+          }
+        },
+        [_c("span", { attrs: { "aria-hidden": "true" } }, [_vm._v("×")])]
+      )
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c(
+      "button",
+      {
+        staticClass: "close",
+        attrs: {
+          type: "button",
+          "data-dismiss": "alert",
+          "aria-label": "Close"
+        }
+      },
+      [_c("span", { attrs: { "aria-hidden": "true" } }, [_vm._v("×")])]
+    )
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", [
+      _c("label", { staticClass: "col-md-3 offset-2" }, [_vm._v("Image")])
     ])
   }
 ]
@@ -59283,6 +60086,7 @@ window.Vue = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.common.
 Vue.component('example-component', __webpack_require__(/*! ./components/ExampleComponent.vue */ "./resources/js/components/ExampleComponent.vue")["default"]);
 Vue.component('create-blog', __webpack_require__(/*! ./components/Blog/CreateBlogComponent.vue */ "./resources/js/components/Blog/CreateBlogComponent.vue")["default"]);
 Vue.component('setting-setup', __webpack_require__(/*! ./components/Blog/SettingSetupComponent.vue */ "./resources/js/components/Blog/SettingSetupComponent.vue")["default"]);
+Vue.component('view-teacher', __webpack_require__(/*! ./components/Blog/ViewTeacherComponent.vue */ "./resources/js/components/Blog/ViewTeacherComponent.vue")["default"]);
 /**
  * Next, we will create a fresh Vue application instance and attach it to
  * the page. Then, you may begin adding components to this application
@@ -59476,6 +60280,75 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_SettingSetupComponent_vue_vue_type_template_id_5d8eb064_scoped_true___WEBPACK_IMPORTED_MODULE_0__["render"]; });
 
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_SettingSetupComponent_vue_vue_type_template_id_5d8eb064_scoped_true___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
+
+
+
+/***/ }),
+
+/***/ "./resources/js/components/Blog/ViewTeacherComponent.vue":
+/*!***************************************************************!*\
+  !*** ./resources/js/components/Blog/ViewTeacherComponent.vue ***!
+  \***************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _ViewTeacherComponent_vue_vue_type_template_id_2eb273dc_scoped_true___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./ViewTeacherComponent.vue?vue&type=template&id=2eb273dc&scoped=true& */ "./resources/js/components/Blog/ViewTeacherComponent.vue?vue&type=template&id=2eb273dc&scoped=true&");
+/* harmony import */ var _ViewTeacherComponent_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./ViewTeacherComponent.vue?vue&type=script&lang=js& */ "./resources/js/components/Blog/ViewTeacherComponent.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport *//* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+
+
+
+
+
+/* normalize component */
+
+var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__["default"])(
+  _ViewTeacherComponent_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
+  _ViewTeacherComponent_vue_vue_type_template_id_2eb273dc_scoped_true___WEBPACK_IMPORTED_MODULE_0__["render"],
+  _ViewTeacherComponent_vue_vue_type_template_id_2eb273dc_scoped_true___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
+  false,
+  null,
+  "2eb273dc",
+  null
+  
+)
+
+/* hot reload */
+if (false) { var api; }
+component.options.__file = "resources/js/components/Blog/ViewTeacherComponent.vue"
+/* harmony default export */ __webpack_exports__["default"] = (component.exports);
+
+/***/ }),
+
+/***/ "./resources/js/components/Blog/ViewTeacherComponent.vue?vue&type=script&lang=js&":
+/*!****************************************************************************************!*\
+  !*** ./resources/js/components/Blog/ViewTeacherComponent.vue?vue&type=script&lang=js& ***!
+  \****************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_ViewTeacherComponent_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../node_modules/babel-loader/lib??ref--4-0!../../../../node_modules/vue-loader/lib??vue-loader-options!./ViewTeacherComponent.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/Blog/ViewTeacherComponent.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport */ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_ViewTeacherComponent_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
+
+/***/ }),
+
+/***/ "./resources/js/components/Blog/ViewTeacherComponent.vue?vue&type=template&id=2eb273dc&scoped=true&":
+/*!**********************************************************************************************************!*\
+  !*** ./resources/js/components/Blog/ViewTeacherComponent.vue?vue&type=template&id=2eb273dc&scoped=true& ***!
+  \**********************************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_ViewTeacherComponent_vue_vue_type_template_id_2eb273dc_scoped_true___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../../node_modules/vue-loader/lib??vue-loader-options!./ViewTeacherComponent.vue?vue&type=template&id=2eb273dc&scoped=true& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/Blog/ViewTeacherComponent.vue?vue&type=template&id=2eb273dc&scoped=true&");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_ViewTeacherComponent_vue_vue_type_template_id_2eb273dc_scoped_true___WEBPACK_IMPORTED_MODULE_0__["render"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_ViewTeacherComponent_vue_vue_type_template_id_2eb273dc_scoped_true___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
 
 
 
