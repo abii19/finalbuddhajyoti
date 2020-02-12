@@ -21,6 +21,7 @@
             margin: 20px 30px 0 30px;
 
         }
+
         .swiper-pagination-bullet {
             width: 12px;
             height: 12px;
@@ -32,8 +33,8 @@
             height: 15px;
             background-color: #fff;
         }
-
         /* Swiper Ends*/
+
     </style>
 @endsection
 
@@ -78,7 +79,12 @@
                                     <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link" href="#">About Us</a>
+                                    <a class="nav-link">About Us</a>
+                                    <ul class="sub-menu animate">
+                                        <li><a href="/aboutus">About Us</a></li>
+                                        <li><a href="/aboutus/history">History</a></li>
+                                        <li><a href="/aboutus/ourteam">Our Team</a></li>
+                                    </ul>
                                 </li>
                                 <li class="nav-item">
                                     <a class="nav-link">Courses</a>
@@ -104,6 +110,7 @@
                                     <ul class="sub-menu animate">
                                         <li><a href="/news/event">Event and Notices</a></li>
                                         <li><a href="/news/blog">Blogs</a></li>
+                                        <li><a href="/news/notice">Notices</a></li>
                                     </ul>
                                 </li>
                                 <li class="nav-item">
@@ -267,77 +274,90 @@
                     </div>
                 </div>
             </div>
+
+            {{-----------------}}
+            <div class="container">
+            </div>
+            {{-----------------}}
+
+
         </section>
         {{--Awards Section--}}
         <section class="award-desk">
             <div class="container">
+                <div class="row featured-service">
+                    <div class="featured_box">
+                        <div class="row">
+                            <div class="col-lg-4 mb-30 mb-sm-60 mb-xs-60">
+                                <div class="featured-service-item pb-2 text-center">
+                                    <span class="featured-service-icon"><img src="http://theembazaar.com/demo/goldey/memozin/assets/images/icon1.png" alt=""></span>
+                                    <h3>Course Facilities</h3>
+                                    <p class="mb-0">
+                                        Artbees is humbled and proud to be showcased in many criti allyacclaimed blogs and online magazines.
+                                    </p>
+                                </div>
+                            </div>
+
+                            <div class="col-lg-4 mb-30 mb-sm-60 mb-xs-60">
+                                <div class="featured-service-item pb-2 text-center">
+                                    <span class="featured-service-icon"><img src="http://theembazaar.com/demo/goldey/memozin/assets/images/icon2.png" alt=""></span>
+                                    <h3>Modern Library</h3>
+                                    <p class="mb-0">
+                                        Artbees is humbled and proud to be showcased in many criti allyacclaimed blogs and online magazines.
+                                    </p>
+                                </div>
+                            </div>
+
+                            <div class="col-lg-4 mb-30">
+                                <div class="featured-service-item pb-2 text-center">
+                                    <span class="featured-service-icon"><img src="http://theembazaar.com/demo/goldey/memozin/assets/images/icon3.png" alt=""></span>
+                                    <h3>Industrial Leader</h3>
+                                    <p class="mb-0">
+                                        Artbees is humbled and proud to be showcased in many criti allyacclaimed blogs and online magazines.
+                                    </p>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
                 <div class="row">
-                    <div class="col-md-3 text-center">
-                        <div class="card">
-                            <div class="card-body">
-                                <div class="col-md-12">
-                                    <div class="text-center">
-                                        <div class="text-warning">
-                                            <i class="fas fa-trophy fa-4x" id="award-icon"></i>
-                                        </div>
-                                    </div>
-                                    <div class="">Award</div>
-                                </div>
-                            </div>
-                            <div class="bg-light"><h1>45</h1></div>
+                    <div class="col-lg-3 col-md-6 mt-60 mt-xs-30 mt-sm-30">
+                        <div class="about_point">
+                            <i class="fas fa-users icon_conunt"></i>
+                            <h3>Students</h3>
+                            <span class="counter" data-count="67">0</span>
+
                         </div>
                     </div>
-                    <div class="col-md-3 text-center">
-                        <div class="card">
-                            <div class="card-body">
-                                <div class="col-md-12">
-                                    <div class="text-center">
-                                        <div class="text-warning">
-                                            <i class="fas fa-users fa-4x" id="award-icon"></i>
-                                        </div>
-                                    </div>
-                                    <div class="">Students</div>
-                                </div>
-                            </div>
-                            <div class="bg-light">
-                                <h1>400</h1>
-                            </div>
+
+                    <div class="col-lg-3 col-md-6 mt-60 mt-xs-30 mt-sm-30">
+                        <div class="about_point">
+                            <i class="fas fa-trophy icon_conunt"></i>
+                            <h3>Awards</h3>
+                            <span class="counter" data-count="3562">0</span>
+
                         </div>
                     </div>
-                    <div class="col-md-3 text-center">
-                        <div class="card">
-                            <div class="card-body">
-                                <div class="col-md-12">
-                                    <div class="text-center">
-                                        <div class="text-warning">
-                                            <i class="fas fa-user-md fa-4x" id="award-icon"></i>
-                                        </div>
-                                    </div>
-                                    <div class="">Teachers</div>
-                                </div>
-                            </div>
-                            <div class="bg-light">
-                                <h1>45</h1>
-                            </div>
+
+                    <div class="col-lg-3 col-md-6 mt-60 mt-xs-30 mt-sm-30">
+                        <div class="about_point">
+                            <i class="fas fa-user-md icon_conunt"></i>
+                            <h3>Teachers</h3>
+                            <span class="counter" data-count="1054">0</span>
+
                         </div>
                     </div>
-                    <div class="col-md-3 text-center">
-                        <div class="card">
-                            <div class="card-body">
-                                <div class="col-md-12">
-                                    <div class="text-center">
-                                        <div class="text-warning">
-                                            <i class="fas fa-trophy fa-4x" id="award-icon"></i>
-                                        </div>
-                                    </div>
-                                    <div class="">Award</div>
-                                </div>
-                            </div>
-                            <div class="bg-light">
-                                <h1>45</h1>
-                            </div>
+
+                    <div class="col-lg-3 col-md-6 mt-60 mt-xs-30 mt-sm-30">
+                        <div class="about_point">
+                            <i class="fas fa-check-circle icon_conunt"></i>
+                            <h3>Successors</h3>
+                            <span class="counter" data-count="1904">0</span>
+
                         </div>
                     </div>
+
                 </div>
             </div>
         </section>
@@ -345,11 +365,11 @@
         <section class="testonomial-desk">
             <div class="container">
                 <h1>Testonomials</h1>
-                <p class="text-center text-white">Sayings of Differnt Peoples</p>
+                <p class="text-center text-white" style="font-size: 22px;">Sayings of Different Peoples</p>
                 <div class="row">
                     <!-- Swiper -->
                     <div class="swiper-container">
-                        <div class="swiper-wrapper">
+                        <div class="swiper-wrapper mb-4">
                             <div class="col-md-4 text-center swiper-slide">
                                 <div class="profile">
                                     <img src="images/teacher_1.jpg" class="testonomial-user">
@@ -359,7 +379,7 @@
                                         enim expedita, fuga in molestias nihil nobis nulla numquam omnis quibusdam
                                         reiciendis saepe suscipit veritatis vero vitae! Quis.
                                     </blockquote>
-                                    <h3> Testonomilar Name <span> Post at ..... </span></h3>
+                                    <h3> Testimonials Name <span> Post at ..... </span></h3>
                                 </div>
                             </div>
                             <div class="col-md-4 text-center swiper-slide">
@@ -424,9 +444,9 @@
                             </div>
                         </div>
                         <!-- Add Pagination -->
-                        <div class="swiper-pagination"></div>
-
+                        <div class="swiper-pagination" style="margin-top: -20px;"></div>
                     </div>
+
                 </div>
             </div>
         </section>
@@ -975,7 +995,7 @@
                 stretch: 0,
                 depth: 120,
                 modifier: 3,
-                slideShadows: true,
+                slideShadows: false,
             },
             pagination: {
                 el: '.swiper-pagination',

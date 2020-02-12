@@ -76,5 +76,18 @@ Route::get('/news/blog', function () {
 Route::get('/news/eventdetail', function () {
     return view('website.news.eventdetails');
 });
+Route::get('/news/notice', function () {
+    return view('website.news.notices');
+});
+/*About Us*/
+Route::get('/aboutus', function () {
+    return view('website.AboutUs.aboutus');
+});
+Route::get('/aboutus/history', function () {
+    return view('website.AboutUS.history');
+});
+Route::get('/aboutus/ourteam', function () {
+    return view('website.AboutUS.ourteam');
+});
 
 

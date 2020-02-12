@@ -79,7 +79,12 @@
                                 <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="#">About Us</a>
+                                <a class="nav-link" href="">About Us</a>
+                                <ul class="sub-menu animate">
+                                    <li><a href="/aboutus">About Us</a></li>
+                                    <li><a href="/aboutus/history">History</a></li>
+                                    <li><a href="/aboutus/ourteam">Our Team</a></li>
+                                </ul>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link">Courses</a>
@@ -105,6 +110,7 @@
                                 <ul class="sub-menu animate">
                                     <li><a href="/news/event">Event and Notices</a></li>
                                     <li><a href="/news/blog">Blogs</a></li>
+                                    <li><a href="/news/notice">Notices</a></li>
                                 </ul>
                             </li>
                             <li class="nav-item">

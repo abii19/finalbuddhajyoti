@@ -1,5 +1,18 @@
 @extends('layouts.app-2')
 
-@section('content')
+@section('style')
 
+@endsection
+@section('content')
+    <div class="">
+        <div class="container">
+
+        </div>
+    </div>
+@endsection
+
+@section('scripts')
+    <script>
+
+    </script>
 @endsection
