@@ -139,7 +139,7 @@ ul.sub-menu {
 
 /*Submenu Ends*/
 
-/*.navbar-light*/ .navbar-brand {
+.navbar-brand {
     color: #ffffff;
     font-size: 30px;
     text-transform: uppercase;
@@ -156,10 +156,10 @@ ul.sub-menu {
     color: #ffcd13 !important;
 }
 
-@media only screen and (max-width: 767px) {
-    .navbar-nav.ml-auto {
+@media only screen and (max-width:992px) {
+    /*.navbar-nav.ml-auto {
         background: rgba(26, 25, 30, 0.18);
-    }
+    }*/
 
     .navbar-toggler {
         margin-top: 10px;
@@ -168,14 +168,17 @@ ul.sub-menu {
         line-height: 0.3;
         background: #ffffff;
     }
-
-    .navbar-toggler:hover {
-        box-shadow: inset 0 0 30px rgba(0, 164, 164, 0.3);
+    .navbar-toggler .navbar-toggler-icon{
+        color: #0a1011;
     }
+
+/*    .navbar-toggler:hover {
+        box-shadow: inset 0 0 30px rgba(0, 164, 164, 0.3);
+    }*/
 
     .carousel-item {
         height: 90vh;
-        min-height: 300px;
+        min-height: 278px;
         background: no-repeat center center scroll;
         -webkit-background-size: cover;
         background-size: cover;
@@ -210,6 +213,19 @@ ul.sub-menu {
         display: inline-block;
         color: #ffffff;
         margin-top: 15px;
+    }
+    .carousel-indicators {
+        position: absolute;
+        right: 0;
+        bottom: 15%;
+        left: 0;
+        z-index: 15;
+        display: flex;
+        justify-content: center;
+        padding-left: 0;
+        margin-right: 15%;
+        margin-left: 15%;
+        list-style: none;
     }
 }
 

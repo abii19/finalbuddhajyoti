@@ -1,10 +1,26 @@
 /*----------------------*/
 /*Teachers Desk*/
 .teacher-desk {
-    background: #f8611a;
+    background: linear-gradient(to left, #8942a8, #ba382f);
     padding-top: 50px;
     padding-bottom: 50px;
     /*margin: 50px 0 50px 0;*/
+}
+.teacher-desk h1 {
+    text-align: center;
+    font-weight: bold;
+    text-transform: uppercase;
+    padding-bottom: 10px;
+    color: #ff9800;
+}
+
+.teacher-desk h1::after {
+    content: '';
+    background: #ff9800;
+    display: block;
+    height: 3px;
+    width: 170px;
+    margin: 10px auto 5px;
 }
 #teacher-container{
     cursor: pointer;
