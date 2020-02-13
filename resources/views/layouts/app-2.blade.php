@@ -41,6 +41,27 @@
     <link rel="stylesheet" href="https://unpkg.com/swiper/css/swiper.css">
     <script src="https://unpkg.com/swiper/js/swiper.js"></script>
 
+    <style>
+        nav {
+            background: teal;
+            margin-top: 39px;
+        }
+
+        .header-top {
+            padding-bottom: 40px;
+            transition: .3s;
+        }
+
+        #navbar {
+            transition: 0s;
+        }
+
+        .sticky {
+            position: fixed;
+            margin-top: 0;
+            width: 100%;
+        }
+    </style>
     @yield('style')
 </head>
 <body>
@@ -62,7 +83,7 @@
             </div>
         </div>
         <div class="header">
-            <nav class="navbar navbar-expand-lg fixed-top mt-5">
+            <nav class="navbar navbar-expand-lg fixed-top" id="navbar">
                 <div class="container">
                     <a class="navbar-brand" href="#">
                         <img src="{{asset("images/logo.png")}}" alt=""> Buddha Jyoti
@@ -70,7 +91,8 @@
                     <button class="navbar-toggler" type="button" data-toggle="collapse"
                             data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
                             aria-expanded="false" aria-label="Toggle navigation">
-                        <span class="navbar-toggler-icon"></span>
+                        {{--<span class="navbar-toggler-icon"></span>--}}
+                        <i class="fas fa-sliders-h"></i>
                     </button>
 
                     <div class="collapse navbar-collapse" id="navbarSupportedContent">
@@ -87,11 +109,7 @@
                                 </ul>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link">Courses</a>
-                                <ul class="sub-menu animate">
-                                    <li><a href="#">Extra Courses</a></li>
-                                    <li><a href="#">Regular Courses</a></li>
-                                </ul>
+                                <a class="nav-link" href="#">Courses</a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link" href="/teachers">Teachers</a>
@@ -108,7 +126,7 @@
                             <li class="nav-item">
                                 <a class="nav-link">News</a>
                                 <ul class="sub-menu animate">
-                                    <li><a href="/news/event">Event and Notices</a></li>
+                                    <li><a href="/news/event">Events</a></li>
                                     <li><a href="/news/blog">Blogs</a></li>
                                     <li><a href="/news/notice">Notices</a></li>
                                 </ul>
@@ -151,5 +169,21 @@
 </div>
 
 </body>
+<script>
+    window.onscroll = function () {
+        myFunction()
+    };
+
+    var navbar = document.getElementById("navbar");
+    var sticky = navbar.offsetTop;
+
+    function myFunction() {
+        if (window.pageYOffset >= sticky) {
+            navbar.classList.add("sticky")
+        } else {
+            navbar.classList.remove("sticky");
+        }
+    }
+</script>
 @yield('scripts')
 </html>

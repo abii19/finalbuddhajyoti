@@ -166,10 +166,10 @@ ul.sub-menu {
         padding: 5px 5px;
         font-size: 18px;
         line-height: 0.3;
-        background: #ffffff;
+        border: #f8f8f8 1px solid;
     }
-    .navbar-toggler .navbar-toggler-icon{
-        color: #0a1011;
+    .fa-sliders-h {
+        color: white !important;
     }
 
 /*    .navbar-toggler:hover {

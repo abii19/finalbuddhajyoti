@@ -6,6 +6,7 @@
 
 @section('style')
     <style>
+
         nav {
             background: teal;
             margin-top: 39px;
@@ -57,7 +58,7 @@
         /* Swiper Ends*/
 
         .message-desk {
-            background: linear-gradient(to left, #8942a8, #ba382f);
+            /*background: linear-gradient(to left, #8942a8, #ba382f);*/
         }
 
         .message-desk {
@@ -66,9 +67,12 @@
         }
 
         .why-us-part {
-            color: white;
+            color: #000000;
         }
-
+        .gallary{
+            top: 70px;
+            z-index: -1;
+        }
         .diamond-grid ul li {
             list-style: none;
             position: absolute;
@@ -114,12 +118,12 @@
             transform: rotate(360deg);
         }
 
-        .message-part-small {
-            display: none;
-        }
-
         /*Media Query*/
-
+        @media only screen and (min-width: 767px) and (max-width: 991px) {
+            .mt-20 {
+                margin-top: 20px;
+            }
+        }
 
         @media only screen and (max-width: 767px) {
             .header-top #hide-top {
@@ -139,22 +143,31 @@
                 box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
                 transform: translateY(0px);
             }
-            .message-part-large .message-box-chairman{
+
+            .message-part-large .message-box-chairman {
                 height: 750px;
             }
-            .message-part-large .message-box-principal{
+
+            .message-part-large .message-box-principal {
                 margin-top: 30px;
             }
-            .message-part-large .why-us-part{
+
+            .gallary{
+               top: 0;
+            }
+            .message-part-large .why-us-part {
                 margin-top: 220px;
             }
-            .featured-service{
+
+            .featured-service {
                 margin-top: 50px;
             }
-            .mb-sm-20{
+
+            .mb-sm-20 {
                 margin-bottom: 20px;
             }
-            .swiper-wrapper{
+
+            .swiper-wrapper {
                 margin-bottom: 85px !important;
             }
         }
@@ -194,7 +207,8 @@
                         <button class="navbar-toggler" type="button" data-toggle="collapse"
                                 data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
                                 aria-expanded="false" aria-label="Toggle navigation">
-                            <span class="navbar-toggler-icon"></span>
+                            {{--<span class="navbar-toggler-icon"></span>--}}
+                            <i class="fas fa-sliders-h"></i>
                         </button>
 
                         <div class="collapse navbar-collapse" id="navbarSupportedContent">
@@ -211,11 +225,11 @@
                                     </ul>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link">Courses</a>
-                                    <ul class="sub-menu animate">
+                                    <a class="nav-link" href="#">Courses</a>
+                                    {{--<ul class="sub-menu animate">
                                         <li><a href="#">Extra Courses</a></li>
                                         <li><a href="#">Regular Courses</a></li>
-                                    </ul>
+                                    </ul>--}}
                                 </li>
                                 <li class="nav-item">
                                     <a class="nav-link" href="/teachers">Teachers</a>
@@ -232,7 +246,7 @@
                                 <li class="nav-item">
                                     <a class="nav-link">News</a>
                                     <ul class="sub-menu animate">
-                                        <li><a href="/news/event">Event and Notices</a></li>
+                                        <li><a href="/news/event">Events</a></li>
                                         <li><a href="/news/blog">Blogs</a></li>
                                         <li><a href="/news/notice">Notices</a></li>
                                     </ul>
@@ -502,7 +516,7 @@
                         </div>
                     </div>
 
-                    <div class="col-lg-3 col-md-6 mt-60 mt-xs-30 mt-sm-30 mb-sm-20">
+                    <div class="col-lg-3 col-md-6 mt-60 mt-xs-30 mt-sm-30 mb-sm-20 mt-20">
                         <div class="about_point">
                             <i class="fas fa-user-md icon_conunt"></i>
                             <h3>Teachers</h3>
@@ -511,7 +525,7 @@
                         </div>
                     </div>
 
-                    <div class="col-lg-3 col-md-6 mt-60 mt-xs-30 mt-sm-30">
+                    <div class="col-lg-3 col-md-6 mt-60 mt-xs-30 mt-sm-30 mt-20">
                         <div class="about_point">
                             <i class="fas fa-check-circle icon_conunt"></i>
                             <h3>Successors</h3>
@@ -626,7 +640,7 @@
                                     <div class="card-body">
                                         <div class="row">
                                             <div class="col-md-4">
-                                                <img src="images/teacher_1.jpg" class="img-fluid-event" alt="">
+                                                <img src="{{asset("images/teacher_1.jpg")}}" class="img-fluid-event" alt="">
                                             </div>
                                             <div class="col-md-8">
                                                 <div class="row">
@@ -641,13 +655,12 @@
                                                 <p class="limited-text">Lorem ipsum dolor sit amet, consectetur
                                                     adipisicing
                                                     elit. Aliquid animi
-                                                    laudantium quaerat qui quisquam repudiandae. Ab accusamus
-                                                    adipisci
+                                                    laudantium quaerat qui quisquam repudiandae. Ab accusamus adipisci
                                                     animi, asperiores doloribus eaque et, explicabo facere libero
                                                     numquam
                                                     quaerat reiciendis totam.</p>
-                                                <button class="btn btn-outline-dark btn-event">
-                                                    View Details
+                                                <button class="btn btn-dark btn-event">
+                                                    <a href="/news/eventdetail">View Details</a>
                                                 </button>
                                             </div>
                                         </div>
@@ -660,7 +673,7 @@
                                     <div class="card-body">
                                         <div class="row">
                                             <div class="col-md-4">
-                                                <img src="images/teacher_1.jpg" class="img-fluid-event" alt="">
+                                                <img src="{{asset("images/teacher_1.jpg")}}" class="img-fluid-event" alt="">
                                             </div>
                                             <div class="col-md-8">
                                                 <div class="row">
@@ -675,13 +688,12 @@
                                                 <p class="limited-text">Lorem ipsum dolor sit amet, consectetur
                                                     adipisicing
                                                     elit. Aliquid animi
-                                                    laudantium quaerat qui quisquam repudiandae. Ab accusamus
-                                                    adipisci
+                                                    laudantium quaerat qui quisquam repudiandae. Ab accusamus adipisci
                                                     animi, asperiores doloribus eaque et, explicabo facere libero
                                                     numquam
                                                     quaerat reiciendis totam.</p>
-                                                <button class="btn btn-outline-dark btn-event">
-                                                    View Details
+                                                <button class="btn btn-dark btn-event">
+                                                    <a href="/news/eventdetail">View Details</a>
                                                 </button>
                                             </div>
                                         </div>
@@ -694,7 +706,7 @@
                                     <div class="card-body">
                                         <div class="row">
                                             <div class="col-md-4">
-                                                <img src="images/teacher_1.jpg" class="img-fluid-event" alt="">
+                                                <img src="{{asset("images/teacher_1.jpg")}}" class="img-fluid-event" alt="">
                                             </div>
                                             <div class="col-md-8">
                                                 <div class="row">
@@ -709,13 +721,12 @@
                                                 <p class="limited-text">Lorem ipsum dolor sit amet, consectetur
                                                     adipisicing
                                                     elit. Aliquid animi
-                                                    laudantium quaerat qui quisquam repudiandae. Ab accusamus
-                                                    adipisci
+                                                    laudantium quaerat qui quisquam repudiandae. Ab accusamus adipisci
                                                     animi, asperiores doloribus eaque et, explicabo facere libero
                                                     numquam
                                                     quaerat reiciendis totam.</p>
-                                                <button class="btn btn-outline-dark btn-event">
-                                                    View Details
+                                                <button class="btn btn-dark btn-event">
+                                                    <a href="/news/eventdetail">View Details</a>
                                                 </button>
                                             </div>
                                         </div>
@@ -731,8 +742,8 @@
                         </div>
                         <div class="col-md-12">
                             <div class="upcoming-event">
-                                <div class="card">
-                                    <div class="card-body">
+                                <div class="">
+                                    <div class="">
                                         <div class="row">
                                             <div class="col-md-4 upcoming-event-date">
                                                 <p>10<br/>Feb</p>
@@ -750,13 +761,12 @@
                                                 <h3>Upcoming Events Title</h3>
                                                 <p class="limited-text">Lorem ipsum dolor sit amet, consectetur
                                                     adipisicing elit. Aliquid animi
-                                                    laudantium quaerat qui quisquam repudiandae. Ab accusamus
-                                                    adipisci
+                                                    laudantium quaerat qui quisquam repudiandae. Ab accusamus adipisci
                                                     animi, asperiores doloribus eaque et, explicabo facere libero
                                                     numquam
                                                     quaerat reiciendis totam.</p>
-                                                <button class="btn btn-outline-dark btn-event">
-                                                    View Details
+                                                <button class="btn btn-dark btn-event">
+                                                    <a href="/news/eventdetail">View Details</a>
                                                 </button>
                                             </div>
                                         </div>
@@ -764,8 +774,8 @@
                                 </div>
                             </div>
                             <div class="upcoming-event">
-                                <div class="card">
-                                    <div class="card-body">
+                                <div class="">
+                                    <div class="">
                                         <div class="row">
                                             <div class="col-md-4 upcoming-event-date">
                                                 <p>10<br/>Feb</p>
@@ -783,13 +793,12 @@
                                                 <h3>Upcoming Events Title</h3>
                                                 <p class="limited-text">Lorem ipsum dolor sit amet, consectetur
                                                     adipisicing elit. Aliquid animi
-                                                    laudantium quaerat qui quisquam repudiandae. Ab accusamus
-                                                    adipisci
+                                                    laudantium quaerat qui quisquam repudiandae. Ab accusamus adipisci
                                                     animi, asperiores doloribus eaque et, explicabo facere libero
                                                     numquam
                                                     quaerat reiciendis totam.</p>
-                                                <button class="btn btn-outline-dark btn-event">
-                                                    View Details
+                                                <button class="btn btn-dark btn-event">
+                                                    <a href="/news/eventdetail">View Details</a>
                                                 </button>
                                             </div>
                                         </div>
@@ -797,8 +806,8 @@
                                 </div>
                             </div>
                             <div class="upcoming-event">
-                                <div class="card">
-                                    <div class="card-body">
+                                <div class="">
+                                    <div class="">
                                         <div class="row">
                                             <div class="col-md-4 upcoming-event-date">
                                                 <p>10<br/>Feb</p>
@@ -816,13 +825,12 @@
                                                 <h3>Upcoming Events Title</h3>
                                                 <p class="limited-text">Lorem ipsum dolor sit amet, consectetur
                                                     adipisicing elit. Aliquid animi
-                                                    laudantium quaerat qui quisquam repudiandae. Ab accusamus
-                                                    adipisci
+                                                    laudantium quaerat qui quisquam repudiandae. Ab accusamus adipisci
                                                     animi, asperiores doloribus eaque et, explicabo facere libero
                                                     numquam
                                                     quaerat reiciendis totam.</p>
-                                                <button class="btn btn-outline-dark btn-event">
-                                                    View Details
+                                                <button class="btn btn-dark btn-event">
+                                                    <a href="/news/eventdetail">View Details</a>
                                                 </button>
                                             </div>
                                         </div>
