@@ -21,8 +21,15 @@ window.Vue = require('vue');
 
 Vue.component('example-component', require('./components/ExampleComponent.vue').default);
 Vue.component('create-blog', require('./components/Blog/CreateBlogComponent.vue').default);
+Vue.component('notice-event', require('./components/Notice-Event/CreateNoticeEventComponent.vue').default);
 Vue.component('setting-setup', require('./components/Blog/SettingSetupComponent.vue').default);
 Vue.component('view-teacher', require('./components/Blog/ViewTeacherComponent.vue').default);
+Vue.component('view-all-blog', require('./components/Blog/EditBlogComponent.vue').default);
+Vue.component('create-testemonial', require('./components/Testemonial/CreateFrontTestemonial.vue').default);
+
+//Website
+Vue.component('upcoming-events', require('./components/Website/UpcomingEvents.vue').default);
+
 
 /**
  * Next, we will create a fresh Vue application instance and attach it to

@@ -36,7 +36,6 @@ class TeacherController extends Controller
             mkdir(public_path('/teacher_images'), 0777);
         }
 
-
         /*      CHECK FOR ANY ERRORS AND RETURN USING JSON*/
         try {
             $baseName = Str::random(20);
@@ -55,6 +54,8 @@ class TeacherController extends Controller
             'saying' => $request->saying,
             'user_id' => Auth::user()->id,
             'photo' => '/teacher_images/' . $originalName,
+            'teacher_posts' => $request->teacher_posts,
+            'years_active' => $request->years_active,
         ]);
 
         return response()->json([
@@ -69,7 +70,7 @@ class TeacherController extends Controller
 
 
         $teacher = DB::table('teachers')
-            ->select('id', 'teacher_name', 'saying', 'education_degree', 'photo')
+            ->select('id', 'teacher_name', 'saying', 'education_degree', 'years_active', 'teacher_posts', 'photo')
             ->where('id', $id)
             ->first();
 

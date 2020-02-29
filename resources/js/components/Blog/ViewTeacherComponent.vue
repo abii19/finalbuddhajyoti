@@ -88,6 +88,22 @@
                                         </div>
 
                                     </div>
+                                    <div class="col-md-6 mt-2">
+                                        <label> Select Post:</label>
+                                        <select v-model="post_name" class="form-control form-control-sm">
+                                            <option :selected="obj.teacher_posts">{{obj.teacher_posts}}</option>
+                                            <option v-for="(posts, key) in posts">{{posts.post_name}}</option>
+                                        </select>
+                                        <span v-if="post_nameError" class="text-danger">{{post_nameError}}</span>
+                                    </div>
+
+                                    <div class="col-md-4 mt-2">
+                                        <label> Year's Active: </label>
+                                        <input type="number" v-model="obj.years_active"
+                                               class="form-control form-control-sm ml-3">
+                                        <span v-if="yearsActiveError" class="text-danger">{{yearsActiveError}}</span>
+                                    </div>
+
 
                                 </div>
 
@@ -156,6 +172,8 @@
                 successMessage: false,
                 imageSelected: '',
                 disableBtn: true,
+                post_name: '',
+                post_nameError: '',
             }
         },
         props: {},
@@ -164,8 +182,11 @@
                 if (response.data.msg) {
                     this.teachers = response.data.teacher;
                 }
+            });
 
-            })
+            axios.get('/api/fetchPosts', {}).then(response => {
+                this.posts = response.data.post;
+            });
         },
         methods: {
             openEdit(key, id) {
@@ -179,9 +200,10 @@
                 axios.get('/api/fetchSingleTeacher/' + id
                 ).then(response => {
                     if (response.data.msg) {
-
                         this.obj = response.data.teacher;
                         //  console.log(this.obj.id);
+                        this.post_name = this.obj.teacher_posts
+
                     }
                 });
 
@@ -235,12 +257,14 @@
             },
 
             updateTeacherForm: function () {
-                alert(this.obj.name);
+                alert(this.post_name);
                 axios.post('/api/updateteacherForm', {
                     id: this.obj.id,
                     teacher_name: this.obj.teacher_name,
                     education_degree: this.obj.education_degree,
                     saying: this.obj.saying,
+                    teacher_posts: this.post_name,
+                    years_active: this.obj.years_active,
                 }).then(response => {
                     alert(response.data.msg);
                 });

@@ -16,42 +16,48 @@
                         </div>
                     </div>
 
-                    <div class="col-md-8 row">
+                    <div class="col-md-7 row">
                         <label class="ml-3">Full Name:</label>
                         <input type="text" v-model="name" class="form-control form-control-sm ml-3">
                         <span v-if="nameError" class="text-danger">{{nameError}}</span>
                     </div>
-                    <div class="col-md-4">
-                        <label> Year's Active: </label>
-                        <input type="number" v-model="yearsActive" class="form-control form-control-sm ml-3">
-                        <span v-if="yearsActiveError" class="text-danger">{{yearsActiveError}}</span>
-                    </div>
 
-                    <div class="col-md-12 mt-2">
-                        <label> Select Post:</label>
-                        <select v-model="post_name" class="form-control form-control-sm">
-                            <option :selected="post_name">Select</option>
-                            <option v-for="(posts, key) in posts">{{posts.post_name}}</option>
-                        </select>
-                        <span v-if="post_nameError" class="text-danger">{{post_nameError}}</span>
-                    </div>
+                    <div class="col-md-5">
+                        <div class="col-md-12">
+                            <label>Select</label>
 
+                            <select class="form-control form-control-sm" v-model="selectGST">
+                                <option :selected="Select">Select</option>
+                                <option value="Gurdain">Gurdain</option>
+                                <option value="Student">Student</option>
+                                <option value="Teacher">Teacher</option>
+                            </select>
+                        </div>
+
+                    </div>
 
                     <div class="col-md-12 mt-3">
                         <label>Saying</label>
-                        <textarea name="" id="" v-model="saying" class="col-md-12" rows="7"></textarea>
                         <span v-if="sayingError" class="text-danger">{{sayingError}}</span>
+                    </div>
+                    <div class=" col-md-12 row">
+                        <div class="col-md-6">
+                            <label>Features</label>
+                            <input type="text" class="form-control form-control-sm" v-model="description">
+                        </div>
 
                     </div>
+
 
                     <div class="row">
                         <div class="col-md-6 mt-2">
                             <label class="ml-3">Education Degres</label>
                             <input type="text" v-model="degree" class=" ml-3 form-control form-control-sm">
                             <span v-if="degreeError" class="text-danger">{{degreeError}}</span>
-
                             <button class="btn btn-success btn-sm ml-3 mt-3" @click="saveTeacher">Success</button>
                         </div>
+
+
                         <div class="col-md-6">
                             <label>Upload</label>
                             <input type="file" ref="file" @change="selectPhoto" accept="image/*"
@@ -127,7 +133,6 @@
                     reader.readAsDataURL(input.files[0]);
                 }
             },
-
             saveTeacher: function () {
                 if (this.validate()) {
 

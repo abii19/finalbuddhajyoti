@@ -112,7 +112,7 @@
                                 <a class="nav-link" href="#">Courses</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="/teachers">Teachers</a>
+                                <a class="nav-link" href="{{route('teacher.index')}}">Teachers</a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link">Facilities</a>

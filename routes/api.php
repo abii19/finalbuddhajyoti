@@ -21,6 +21,9 @@ Route::post('/saveTeacher', 'Admin\TeacherController@saveTeacher');
 Route::resource('addBlog', 'Blog\AddBlogController')->only(['store', 'edit']);
 
 
+Route::get('/fetchPosts', 'Admin\Post\PostController@fetchPosts');
+
+
 /*API ROUTE FOR TEACHERS MODEL*/
 Route::get('/viewTeacher', 'Admin\TeacherController@viewAjaxTeacher');
 Route::get('/fetchSingleTeacher/{id}', 'Admin\TeacherController@fetchSingleTeacher');
@@ -28,4 +31,17 @@ Route::post('/updateteacherPhoto', 'Admin\TeacherController@updateTeacherPhoto')
 Route::post('/updateteacherForm', 'Admin\TeacherEditController@updateTeacherForm');
 
 
+//BLOGS
+Route::get('/view/Blog', 'Admin\AdminAjaxBlogController@viewAllBlog')->name('viewBlog');
+Route::post('view/singleBlog', 'Admin\AdminAjaxBlogController@viewSingleBlog');
+Route::post('/blog/image/delete', 'Admin\BlogEditController@deleteBlogImages');
+Route::post('/updateSingleBlogPic', 'Admin\BlogEditController@updateSingleBlogPic');
+
+
+//EVENTS-NOTICES
+Route::resource('Notice', 'Admin\Notice\NoticeCOntroller')->only(['store']);
+
+
+//Website
+Route::get('/upcoming/events', 'Event\EventController@fetchEvents');
 

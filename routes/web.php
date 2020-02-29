@@ -12,22 +12,22 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
-});
-
-Route::get('/', function () {
     return view('website.index');
 });
 
+
 Auth::routes();
-
-Route::get('/home', 'HomeController@index')->name('home');
-
-Route::get('/blog', 'Blog\ViewBlogController@index')->name('blog');
-Route::get('/blog/{$id}', 'Blog\ViewBlogController@singleBlog')->name('singleBlog');
 
 
 Route::group(['middleware' => 'auth'], function () {
+
+
+    /*    LOGOUT*/
+    Route::get('logout', function () {
+        Auth::logout();
+        return view('auth.login');
+    });
+
     Route::resource('Index', 'Admin\IndexController')->only(['index', 'store']);
 
 
@@ -37,17 +37,29 @@ Route::group(['middleware' => 'auth'], function () {
     /*BLOG*/
     Route::resource('Blog', 'Blog\BlogController')->only(['index', 'store']);
     Route::resource('addBlog', 'Blog\AddBlogController')->only(['index', 'store']);
+    Route::get('/view/Blog', 'Admin\AdminBlogController@viewAllBlog')->name('viewBlog');
 
-    Route::get('logout', function () {
-        Auth::logout();
-        return view('auth.login');
-    });
+    /*  NOTICE*/
+    Route::resource('Notice', 'Admin\Notice\NoticeController')->only(['index']);
 
+    /*                TESTEMONIAL                                */
+
+
+    Route::resource('Testemonial', 'Admin\Testemonial\TestemonialController')->only(['index']);
 
 });
-Route::get('/teachers', function () {
-   return view('website.teachers');
-});
+
+Route::get('/home', 'HomeController@index')->name('home');
+
+
+/*                          NEWS EVENTS BLOGS                          */
+Route::get('/news/blog', 'Blog\ViewBlogController@index')->name('blog');
+Route::get('/blog/{$id}', 'Blog\ViewBlogController@singleBlog')->name('singleBlog');
+Route::get('/event/{id}', 'Event\EventController@showSingleEvent')->name('editEvent');
+
+
+
+
 
 /*--Facilities--*/
 Route::get('/facilities', function () {
@@ -70,12 +82,11 @@ Route::get('/facilities/extracurriculum', function () {
 Route::get('/news/event', function () {
     return view('website.news.event');
 });
-Route::get('/news/blog', function () {
-    return view('website.news.blog');
-});
 Route::get('/news/eventdetail', function () {
     return view('website.news.eventdetails');
 });
+
+
 Route::get('/news/notice', function () {
     return view('website.news.notices');
 });
@@ -91,3 +102,6 @@ Route::get('/aboutus/ourteam', function () {
 });
 
 
+/*               TEACHERS                    */
+
+Route::resource('teacher', 'Teacher\TeacherController');

@@ -1,15 +1,15 @@
 <?php
 
-namespace App\Http\Controllers\Blog;
+namespace App\Http\Controllers\Admin\Notice;
 
 use App\Http\Controllers\Controller;
-use App\Model\Blog;
 use App\Model\BlogImage;
+use App\Model\Event;
+use App\Model\EventNoticeImage;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Str;
 
-class AddBlogController extends Controller
+class NoticeController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -18,7 +18,8 @@ class AddBlogController extends Controller
      */
     public function index()
     {
-        return view('admin.Blog.addBlog');
+        return view('admin.Notice.addNotice');
+
         //
     }
 
@@ -40,58 +41,57 @@ class AddBlogController extends Controller
      */
     public function store(Request $request)
     {
-
-
         $validate = $request->validate([
             'title' => 'required',
             'post' => 'required',
-            'author' => 'required',
+            'date' => 'required',
         ]);
+
+        /*Sort it Later
+
+        if (!is_dir(public_path('/events-notices'))) {
+                    mkdir(public_path('/events-notices'), 0777);
+                }*/
+        /*
+                $baseName = Str::random(20);
+                $originalName = $baseName . '.' . $request->image[0]->getClientOriginalExtension();
+                $request->image[0]->move(public_path('/events-notices/singlePic'), $originalName);*/
 
         if ($validate) {
-            /*    IF VALIDATED CREATE A NEW BLOG*/
-            $blog = Blog::create([
+            $event = Event::create([
                 'title' => $request->title,
                 'post' => $request->post,
-                'author' => $request->author,
-                'status' => 0,
-                'approve' => 1,
-                'single_blog_pic' => 'def',
+                'date' => $request->date,
+                'status' => 1,
+                'is_notice' => $request->is_notice,
+                'photo' => '/events-notices/singlePic/',
             ]);
         }
 
-
-        /*CHECK IF DIRECTORY EXISTS OR CREATE A NEW ONE AND GIVE PERMISSION TO READ WRITE*/
-
-        if (!is_dir(public_path('/uploads'))) {
-            mkdir(public_path('/uploads'), 0777);
+        if (!is_dir(public_path('/eventsImages'))) {
+            mkdir(public_path('/eventsImages'), 0777);
         }
 
-
-        /*CREATEE OR SAVE BLOG'S MULTIPLE IMAGES*/
         foreach ($request->image as $image) {
-            $baseName = Str::random(20);
-            $originalName = $baseName . '.' . $image->getClientOriginalExtension();
-            $image->move(public_path('/uploads'), $originalName);
-
-            $blogImage = BlogImage::create([
-                'blog_id' => $blog->id,
-                'blog_photo' => '/uploads/' . $originalName,
+            $imageName = Str::random(20);
+            $originalImageName = $imageName . '.' . $image->getClientOriginalExtension();
+            $image->move(public_path('/eventsImages'), $originalImageName);
+            $blogImage = EventNoticeImage::create([
+                'event_id' => $event->id,
+                'event_notice_photo' => '/eventsImages/' . $originalImageName,
             ]);
         }
 
-
-        /*      NEED TO CHANGE LATEER*/
-        Blog::find($blog->id)->update([
-            'single_blog_pic' => $blogImage->blog_photo,
-        ]);
-
+        if ($blogImage) {
+            $event->photo = $blogImage->event_notice_photo;
+            $event->save();
+        }
 
         return response()->json([
             'msg' => 'Succesfull Added Blog'
         ]);
 
-
+        //
     }
 
     /**
@@ -111,9 +111,8 @@ class AddBlogController extends Controller
      * @param int $id
      * @return \Illuminate\Http\Response
      */
-    public function edit(Blog $blog)
+    public function edit($id)
     {
-        dd($blog);
         //
     }
 

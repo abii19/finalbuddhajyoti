@@ -3,8 +3,9 @@
 
 @section('content')
     <div class="container-fluid mt-2">
-        <div id="app">
-            <view-all-blog></view-all-blog>
+        <div class="row" id="app">
+            <notice-event></notice-event>
+
         </div>
     </div>
 

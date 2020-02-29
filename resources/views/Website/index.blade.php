@@ -6,27 +6,6 @@
 
 @section('style')
     <style>
-
-        nav {
-            background: teal;
-            margin-top: 39px;
-        }
-
-        .header-top {
-            padding-bottom: 40px;
-            transition: .3s;
-        }
-
-        #navbar {
-            transition: 0s;
-        }
-
-        .sticky {
-            position: fixed;
-            margin-top: 0;
-            width: 100%;
-        }
-
         /*Swiper*/
         .swiper-container {
             width: 100%;
@@ -57,138 +36,21 @@
 
         /* Swiper Ends*/
 
-        .message-desk {
-            /*background: linear-gradient(to left, #8942a8, #ba382f);*/
-        }
-
-        .message-desk {
-            width: 100%;
-            height: auto;
-        }
-
-        .why-us-part {
-            color: #000000;
-        }
-        .gallary{
-            top: 70px;
-            z-index: -1;
-        }
-        .diamond-grid ul li {
-            list-style: none;
-            position: absolute;
-            width: 160px;
-            height: 160px;
-            background: #000;
-            margin: 0;
-            transform: rotate(45deg);
-            transition: .5s;
-            overflow: hidden;
-        }
-
-        .diamond-grid ul li.item1 {
-            top: 0;
-            left: 0;
-        }
-
-        .diamond-grid ul li.item2 {
-            bottom: 51%;
-            left: 17%;
-        }
-
-        .diamond-grid ul li.item3 {
-            top: 0;
-            left: 34%;
-        }
-
-        .diamond-grid ul li.item4 {
-            bottom: 51%;
-            left: 51%;
-        }
-
-        .diamond-grid ul li.item5 {
-            top: 0;
-            left: 68%;
-        }
-
-        .bg img {
-            width: 160px;
-            height: 160px;
-            background-size: cover;
-            -webkit-transform: rotate(360deg);
-            transform: rotate(360deg);
-        }
-
-        /*Media Query*/
-        @media only screen and (min-width: 767px) and (max-width: 991px) {
-            .mt-20 {
-                margin-top: 20px;
-            }
-        }
-
-        @media only screen and (max-width: 767px) {
-            .header-top #hide-top {
-                display: none;
-            }
-
-            .message-box-content {
-                padding: 10px 20px 10px 10px;
-                background: #ffffff;
-                margin-top: -7px;
-            }
-
-            .message-box {
-                box-sizing: border-box;
-                border-radius: 10px;
-                color: #262626;
-                box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
-                transform: translateY(0px);
-            }
-
-            .message-part-large .message-box-chairman {
-                height: 750px;
-            }
-
-            .message-part-large .message-box-principal {
-                margin-top: 30px;
-            }
-
-            .gallary{
-               top: 0;
-            }
-            .message-part-large .why-us-part {
-                margin-top: 220px;
-            }
-
-            .featured-service {
-                margin-top: 50px;
-            }
-
-            .mb-sm-20 {
-                margin-bottom: 20px;
-            }
-
-            .swiper-wrapper {
-                margin-bottom: 85px !important;
-            }
-        }
-
-
     </style>
 @endsection
 
 @section('content')
     <!--Container Starts-->
     <div class="container-fluid">
-
         <!--Header-->
 
         <section class="header">
             <div class="container">
                 <div class="header-top d-flex align-items-center">
-                    <div class="p-2" id="hide-top">
+                    <div class="p-2">
                         <i class="fas fa-envelope"></i> <span>Email</span> <a href="#"> buddhajyoti@gmail.com</a>
                     </div>
-                    <div class="p-2" id="hide-top">
+                    <div class="p-2">
                         <i class="fas fa-map-marker-alt"></i> Blvd Libertad, 34 m05200 Arévalo
                     </div>
                     <div class="p-2 ml-auto"><span>Connect with us:</span> <a href="#"><i
@@ -199,7 +61,7 @@
                 </div>
             </div>
             <div class="header">
-                <nav class="navbar navbar-expand-lg fixed-top" id="navbar">
+                <nav class="navbar navbar-expand-lg bg-gradient-dark fixed-top">
                     <div class="container">
                         <a class="navbar-brand" href="#">
                             <img src="images/logo.png" alt=""> Buddha Jyoti
@@ -207,8 +69,7 @@
                         <button class="navbar-toggler" type="button" data-toggle="collapse"
                                 data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
                                 aria-expanded="false" aria-label="Toggle navigation">
-                            {{--<span class="navbar-toggler-icon"></span>--}}
-                            <i class="fas fa-sliders-h"></i>
+                            <span class="navbar-toggler-icon"></span>
                         </button>
 
                         <div class="collapse navbar-collapse" id="navbarSupportedContent">
@@ -225,14 +86,14 @@
                                     </ul>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link" href="#">Courses</a>
-                                    {{--<ul class="sub-menu animate">
+                                    <a class="nav-link">Courses</a>
+                                    <ul class="sub-menu animate">
                                         <li><a href="#">Extra Courses</a></li>
                                         <li><a href="#">Regular Courses</a></li>
-                                    </ul>--}}
+                                    </ul>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link" href="/teachers">Teachers</a>
+                                    <a class="nav-link" href="{{route('teacher.index')}}">Teachers</a>
                                 </li>
                                 <li class="nav-item">
                                     <a class="nav-link">Facilities</a>
@@ -246,7 +107,7 @@
                                 <li class="nav-item">
                                     <a class="nav-link">News</a>
                                     <ul class="sub-menu animate">
-                                        <li><a href="/news/event">Events</a></li>
+                                        <li><a href="/news/event">Event and Notices</a></li>
                                         <li><a href="/news/blog">Blogs</a></li>
                                         <li><a href="/news/notice">Notices</a></li>
                                     </ul>
@@ -267,8 +128,7 @@
                     <div class="carousel-inner">
                         <div class="carousel-item active">
                             <img src="images/milestones_background.jpg"
-                                 class="img-fluid-carousel d-block w-100 fadeInLeft" style="animate-delay: 1s"
-                                 alt="">
+                                 class="img-fluid-carousel d-block w-100 fadeInLeft" style="animate-delay: 1s" alt="">
                             <div class="carousel-caption d-none d-sm-block d-md-block">
                                 <h5 class="animated fadeInDown" style="animation-delay: 1s">School Details</h5>
                                 <p class="animated fadeIn" style="animation-delay: 2s">Lorem ipsum dolor sit amet,
@@ -278,8 +138,7 @@
                         </div>
                         <div class="carousel-item">
                             <img src="images/milestones_background.jpg"
-                                 class="img-fluid-carousel d-block w-100 fadeInLeft" style="animate-delay: 2s"
-                                 alt="">
+                                 class="img-fluid-carousel d-block w-100 fadeInLeft" style="animate-delay: 2s" alt="">
                             <div class="carousel-caption d-none d-sm-block d-md-block">
                                 <h5 class="animated fadeInUp" style="animation-delay: 1s">School Details</h5>
                                 <p class="animated fadeIn" style="animation-delay: 2s">Lorem ipsum dolor sit amet,
@@ -289,8 +148,7 @@
                         </div>
                         <div class="carousel-item">
                             <img src="images/milestones_background.jpg"
-                                 class="img-fluid-carousel d-block w-100 fadeInLeft" style="animate-delay: 2s"
-                                 alt="">
+                                 class="img-fluid-carousel d-block w-100 fadeInLeft" style="animate-delay: 2s" alt="">
                             <div class="carousel-caption d-none d-sm-block d-md-block">
                                 <h5 class="animated bounceIn" style="animation-delay: 1s">School Details</h5>
                                 <p class="animated fadeIn" style="animation-delay: 2s">Lorem ipsum dolor sit amet,
@@ -299,13 +157,11 @@
                             </div>
                         </div>
                     </div>
-                    <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button"
-                       data-slide="prev">
+                    <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
                         <span class="carousel-control-prev-icon" aria-hidden="true"></span>
                         <span class="sr-only">Previous</span>
                     </a>
-                    <a class="carousel-control-next" href="#carouselExampleIndicators" role="button"
-                       data-slide="next">
+                    <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
                         <span class="carousel-control-next-icon" aria-hidden="true"></span>
                         <span class="sr-only">Next</span>
                     </a>
@@ -316,134 +172,113 @@
         <section class="message-desk">
             <div class="container">
                 {{--Message Part--}}
-                <div class="message-part-large">
-                    <div class="row">
-                        <div class="col-sm-12 col-md-5 message-box-chairman">
-                            <div class="message-box">
-                                <div class="message-box-name">
-                                    <h3 class="">Message From The Chairman</h3>
-                                </div>
-                                <div class="message-box-content">
-                                    <div>
-                                        <img src="images/yugalPic.jpg" class="message-box-img" alt=""/>
-                                    </div>
-                                    <p class="text-justify m-0 p-0"><span>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Asperiores cum debitis deleniti deserunt dolores ducimus ea error ex id ipsa laborum magnam, magni maxime quis repellendus. Aliquam esse facere vel.</span><span>Aperiam atque aut cupiditate deleniti distinctio dolorem eos facilis impedit labore libero magnam nisi nulla quos veniam, voluptatum! Consequatur consequuntur delectus est eveniet libero nam obcaecati porro quibusdam reiciendis ut.</span><span>Aspernatur cumque, doloremque eaque illum in mollitia necessitatibus non optio ratione saepe. Accusantium alias asperiores dicta distinctio, dolorem eos eveniet illo illum ipsam laboriosam maxime natus numquam perferendis repellendus vero?</span><span>A adipisci aspernatur commodi culpa cupiditate diae ratione, rem rerum sed tempora tempore tenetur totam veritatis voluptatem? Culpa, non, provident?</span><span>Animi culpa dicta dolorem et ex exercitationem explicabo facere fuga hic inventore ipsam ipsum, itaque iusto, laudantium libero magnam natus nesciunt nisi perferendis quibusdam repellat tempore velit voluptatum? Incidunt, voluptatibus.</span>
-                                    </p>
-                                </div>
+                <div class="row">
+                    <div class="col-sm-12 col-md-5">
+                        <div class="message-box">
+                            <div class="message-box-name">
+                                <h3 class="">Message From The Chairman</h3>
                             </div>
-                        </div>
-                        <div class="col-sm-12  col-md-7 gallary">
-                            <div class="diamond-grid">
-                                <ul>
-                                    <li class="item1">
-                                        <div class="bg">
-                                            <img src="{{asset("images/teacher_1.jpg")}}"/>
-                                        </div>
-                                    </li>
-                                    <li class="item2">
-                                        <div class="bg">
-                                            <img src="{{asset("images/teacher_2.jpg")}}"/>
-                                        </div>
-                                    </li>
-                                    <li class="item3">
-                                        <div class="bg">
-                                            <img src="{{asset("images/teacher_3.jpg")}}"/>
-                                        </div>
-                                    </li>
-                                    <li class="item4">
-                                        <div class="bg">
-                                            <img src="{{asset("images/teacher_4.jpg")}}"/>
-                                        </div>
-                                    </li>
-                                    <li class="item5">
-                                        <div class="bg">
-                                            <img src="{{asset("images/teacher_5.jpg")}}"/>
-                                        </div>
-                                    </li>
-                                </ul>
+                            <div class="message-box-content">
+                                <div>
+                                    <img src="images/yugalPic.jpg" class="message-box-img" alt=""/>
+                                </div>
+                                <p class="text-justify m-0 p-0"><span>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Asperiores cum debitis deleniti deserunt dolores ducimus ea error ex id ipsa laborum magnam, magni maxime quis repellendus. Aliquam esse facere vel.</span><span>Aperiam atque aut cupiditate deleniti distinctio dolorem eos facilis impedit labore libero magnam nisi nulla quos veniam, voluptatum! Consequatur consequuntur delectus est eveniet libero nam obcaecati porro quibusdam reiciendis ut.</span><span>Aspernatur cumque, doloremque eaque illum in mollitia necessitatibus non optio ratione saepe. Accusantium alias asperiores dicta distinctio, dolorem eos eveniet illo illum ipsam laboriosam maxime natus numquam perferendis repellendus vero?</span><span>A adipisci aspernatur commodi culpa cupiditate diae ratione, rem rerum sed tempora tempore tenetur totam veritatis voluptatem? Culpa, non, provident?</span><span>Animi culpa dicta dolorem et ex exercitationem explicabo facere fuga hic inventore ipsam ipsum, itaque iusto, laudantium libero magnam natus nesciunt nisi perferendis quibusdam repellat tempore velit voluptatum? Incidunt, voluptatibus.</span>
+                                </p>
                             </div>
                         </div>
                     </div>
-                    <div class="row">
-                        <div class="col-md-7 col-sm-12  why-us-part">
-                            <div class="section_title1">
-                                <h2>Why <span>Buddha Jyoti ?</span></h2>
-                            </div>
-                            <div class="row text-justify mb-2">
-                                <p class="">
-                                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab consectetur doloremque
-                                    magnam
-                                    nemo odio quod sapiente ut! Ab, dignissimos eligendi in itaque magni minima nesciunt
-                                    quaerat
-                                    quidem sunt, vel, vitae!
-                                </p>
-                            </div>
-                            <div class="row ml-1">
-                                <div class="col-md-6">
-                                    <div class="row">
-                                        <div class="col-md-4 col-sm-4">
-                                            <i class="fas fa-school fa-4x"></i>
-                                        </div>
-                                        <div class="col-md-8 col-sm-8">
-                                            <h5>Strong Foundation</h5>
-                                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
-                                        </div>
+                    <div class="col-md-7 col-sm-12  why-us-part">
+                        <div class="section_title1">
+                            <h2>Why <span>Buddha Jyoti ?</span></h2>
+                        </div>
+                        <div class="row text-justify mb-2">
+                            <p class="">
+                                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab consectetur doloremque
+                                magnam
+                                nemo odio quod sapiente ut! Ab, dignissimos eligendi in itaque magni minima nesciunt
+                                quaerat
+                                quidem sunt, vel, vitae!
+                            </p>
+                        </div>
+                        <div class="row ml-1">
+                            <div class="col-md-6">
+                                <div class="row">
+                                    <div class="col-md-4 col-sm-4">
+                                        <i class="fas fa-school fa-4x"></i>
                                     </div>
-                                </div>
-                                <div class="col-md-6">
-                                    <div class="row">
-                                        <div class="col-md-4 col-sm-4">
-                                            <i class="fab fa-creative-commons-remix fa-4x"></i>
-                                        </div>
-                                        <div class="col-md-8 col-sm-8">
-                                            <h5>Hi-Tech Techniques and Teachers</h5>
-                                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
-                                        </div>
+                                    <div class="col-md-8 col-sm-8">
+                                        <h5>Strong Foundation</h5>
+                                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
                                     </div>
                                 </div>
                             </div>
-                            <div class="row ml-1 mt-1">
-                                <div class="col-md-6">
-                                    <div class="row">
-                                        <div class="col-md-4 col-sm-4">
-                                            <i class="fas fa-book-reader fa-4x"></i>
-                                        </div>
-                                        <div class="col-md-8 col-sm-8">
-                                            <h5>Record Keeping Toppers</h5>
-                                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
-                                        </div>
+                            <div class="col-md-6">
+                                <div class="row">
+                                    <div class="col-md-4 col-sm-4">
+                                        <i class="fab fa-creative-commons-remix fa-4x"></i>
                                     </div>
-                                </div>
-                                <div class="col-md-6">
-                                    <div class="row">
-                                        <div class="col-md-4 col-sm-4">
-                                            <i class="fas fa-seedling fa-4x"></i>
-                                        </div>
-                                        <div class="col-md-8 col-sm-8">
-                                            <h5>Healthy and Natural Enviornment</h5>
-                                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
-                                        </div>
+                                    <div class="col-md-8 col-sm-8">
+                                        <h5>Hi-Tech Techniques and Teachers</h5>
+                                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                        <div class="col-sm-12 col-md-5 message-box-principal">
-                            <div class="message-box">
-                                <div class="message-box-name">
-                                    <h3 class="">Message From The Principal</h3>
-                                </div>
-                                <div class="message-box-content">
-                                    <div>
-                                        <img src="images/yugalPic.jpg" class="message-box-img" alt=""/>
+                        <div class="row ml-1 mt-1">
+                            <div class="col-md-6">
+                                <div class="row">
+                                    <div class="col-md-4 col-sm-4">
+                                        <i class="fas fa-book-reader fa-4x"></i>
                                     </div>
-                                    <p class="text-justify m-0 p-0"><span>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Asperiores cum debitis deleniti deserunt dolores ducimus ea error ex id ipsa laborum magnam, magni maxime quis repellendus. Aliquam esse facere vel.</span><span>Aperiam atque aut cupiditate deleniti distinctio dolorem eos facilis impedit labore libero magnam nisi nulla quos veniam, voluptatum! Consequatur consequuntur delectus est eveniet libero nam obcaecati porro quibusdam reiciendis ut.</span><span>Aspernatur cumque, doloremque eaque illum in mollitia necessitatibus non optio ratione saepe. Accusantium alias asperiores dicta distinctio, dolorem eos eveniet illo illum ipsam laboriosam maxime natus numquam perferendis repellendus vero?</span><span>A adipisci aspernatur commodi culpa cupiditate diae ratione, rem rerum sed tempora tempore tenetur totam veritatis voluptatem? Culpa, non, provident?</span><span>Animi culpa dicta dolorem et ex exercitationem explicabo facere fuga hic inventore ipsam ipsum, itaque iusto, laudantium libero magnam natus nesciunt nisi perferendis quibusdam repellat tempore velit voluptatum? Incidunt, voluptatibus.</span>
-                                    </p>
+                                    <div class="col-md-8 col-sm-8">
+                                        <h5>Record Keeping Toppers</h5>
+                                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="row">
+                                    <div class="col-md-4 col-sm-4">
+                                        <i class="fas fa-seedling fa-4x"></i>
+                                    </div>
+                                    <div class="col-md-8 col-sm-8">
+                                        <h5>Healthy and Natural Enviornment</h5>
+                                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
+                <div class="row">
+                    <div class="col-sm-12  col-md-5">
+
+                    </div>
+                    <div class="col-md-2">
+
+                    </div>
+                    <div class="col-sm-12 col-md-5">
+                        <div class="message-box">
+                            <div class="message-box-name">
+                                <h3 class="">Message From The Principal</h3>
+                            </div>
+                            <div class="message-box-content">
+                                <div>
+                                    <img src="images/yugalPic.jpg" class="message-box-img" alt=""/>
+                                </div>
+                                <p class="text-justify m-0 p-0"><span>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Asperiores cum debitis deleniti deserunt dolores ducimus ea error ex id ipsa laborum magnam, magni maxime quis repellendus. Aliquam esse facere vel.</span><span>Aperiam atque aut cupiditate deleniti distinctio dolorem eos facilis impedit labore libero magnam nisi nulla quos veniam, voluptatum! Consequatur consequuntur delectus est eveniet libero nam obcaecati porro quibusdam reiciendis ut.</span><span>Aspernatur cumque, doloremque eaque illum in mollitia necessitatibus non optio ratione saepe. Accusantium alias asperiores dicta distinctio, dolorem eos eveniet illo illum ipsam laboriosam maxime natus numquam perferendis repellendus vero?</span><span>A adipisci aspernatur commodi culpa cupiditate diae ratione, rem rerum sed tempora tempore tenetur totam veritatis voluptatem? Culpa, non, provident?</span><span>Animi culpa dicta dolorem et ex exercitationem explicabo facere fuga hic inventore ipsam ipsum, itaque iusto, laudantium libero magnam natus nesciunt nisi perferendis quibusdam repellat tempore velit voluptatum? Incidunt, voluptatibus.</span>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
+
+            {{-----------------}}
+            <div class="container">
+            </div>
+            {{-----------------}}
+
 
         </section>
         {{--Awards Section--}}
@@ -459,8 +294,7 @@
                                             alt=""></span>
                                     <h3>Course Facilities</h3>
                                     <p class="mb-0">
-                                        Artbees is humbled and proud to be showcased in many criti allyacclaimed
-                                        blogs
+                                        Artbees is humbled and proud to be showcased in many criti allyacclaimed blogs
                                         and online magazines.
                                     </p>
                                 </div>
@@ -473,8 +307,7 @@
                                             alt=""></span>
                                     <h3>Modern Library</h3>
                                     <p class="mb-0">
-                                        Artbees is humbled and proud to be showcased in many criti allyacclaimed
-                                        blogs
+                                        Artbees is humbled and proud to be showcased in many criti allyacclaimed blogs
                                         and online magazines.
                                     </p>
                                 </div>
@@ -487,8 +320,7 @@
                                             alt=""></span>
                                     <h3>Industrial Leader</h3>
                                     <p class="mb-0">
-                                        Artbees is humbled and proud to be showcased in many criti allyacclaimed
-                                        blogs
+                                        Artbees is humbled and proud to be showcased in many criti allyacclaimed blogs
                                         and online magazines.
                                     </p>
                                 </div>
@@ -498,7 +330,7 @@
                     </div>
                 </div>
                 <div class="row">
-                    <div class="col-lg-3 col-md-6 mt-60 mt-xs-30 mt-sm-30 mb-sm-20">
+                    <div class="col-lg-3 col-md-6 mt-60 mt-xs-30 mt-sm-30">
                         <div class="about_point">
                             <i class="fas fa-users icon_conunt"></i>
                             <h3>Students</h3>
@@ -507,7 +339,7 @@
                         </div>
                     </div>
 
-                    <div class="col-lg-3 col-md-6 mt-60 mt-xs-30 mt-sm-30 mb-sm-20">
+                    <div class="col-lg-3 col-md-6 mt-60 mt-xs-30 mt-sm-30">
                         <div class="about_point">
                             <i class="fas fa-trophy icon_conunt"></i>
                             <h3>Awards</h3>
@@ -516,7 +348,7 @@
                         </div>
                     </div>
 
-                    <div class="col-lg-3 col-md-6 mt-60 mt-xs-30 mt-sm-30 mb-sm-20 mt-20">
+                    <div class="col-lg-3 col-md-6 mt-60 mt-xs-30 mt-sm-30">
                         <div class="about_point">
                             <i class="fas fa-user-md icon_conunt"></i>
                             <h3>Teachers</h3>
@@ -525,7 +357,7 @@
                         </div>
                     </div>
 
-                    <div class="col-lg-3 col-md-6 mt-60 mt-xs-30 mt-sm-30 mt-20">
+                    <div class="col-lg-3 col-md-6 mt-60 mt-xs-30 mt-sm-30">
                         <div class="about_point">
                             <i class="fas fa-check-circle icon_conunt"></i>
                             <h3>Successors</h3>
@@ -640,7 +472,7 @@
                                     <div class="card-body">
                                         <div class="row">
                                             <div class="col-md-4">
-                                                <img src="{{asset("images/teacher_1.jpg")}}" class="img-fluid-event" alt="">
+                                                <img src="images/teacher_1.jpg" class="img-fluid-event" alt="">
                                             </div>
                                             <div class="col-md-8">
                                                 <div class="row">
@@ -659,8 +491,8 @@
                                                     animi, asperiores doloribus eaque et, explicabo facere libero
                                                     numquam
                                                     quaerat reiciendis totam.</p>
-                                                <button class="btn btn-dark btn-event">
-                                                    <a href="/news/eventdetail">View Details</a>
+                                                <button class="btn btn-outline-dark btn-event">
+                                                    View Details
                                                 </button>
                                             </div>
                                         </div>
@@ -673,7 +505,7 @@
                                     <div class="card-body">
                                         <div class="row">
                                             <div class="col-md-4">
-                                                <img src="{{asset("images/teacher_1.jpg")}}" class="img-fluid-event" alt="">
+                                                <img src="images/teacher_1.jpg" class="img-fluid-event" alt="">
                                             </div>
                                             <div class="col-md-8">
                                                 <div class="row">
@@ -692,8 +524,8 @@
                                                     animi, asperiores doloribus eaque et, explicabo facere libero
                                                     numquam
                                                     quaerat reiciendis totam.</p>
-                                                <button class="btn btn-dark btn-event">
-                                                    <a href="/news/eventdetail">View Details</a>
+                                                <button class="btn btn-outline-dark btn-event">
+                                                    View Details
                                                 </button>
                                             </div>
                                         </div>
@@ -706,7 +538,7 @@
                                     <div class="card-body">
                                         <div class="row">
                                             <div class="col-md-4">
-                                                <img src="{{asset("images/teacher_1.jpg")}}" class="img-fluid-event" alt="">
+                                                <img src="images/teacher_1.jpg" class="img-fluid-event" alt="">
                                             </div>
                                             <div class="col-md-8">
                                                 <div class="row">
@@ -725,8 +557,8 @@
                                                     animi, asperiores doloribus eaque et, explicabo facere libero
                                                     numquam
                                                     quaerat reiciendis totam.</p>
-                                                <button class="btn btn-dark btn-event">
-                                                    <a href="/news/eventdetail">View Details</a>
+                                                <button class="btn btn-outline-dark btn-event">
+                                                    View Details
                                                 </button>
                                             </div>
                                         </div>
@@ -740,114 +572,19 @@
                         <div class="section_title text-center mb-2">
                             <h2>Upcoming Events</h2>
                         </div>
-                        <div class="col-md-12">
-                            <div class="upcoming-event">
-                                <div class="">
-                                    <div class="">
-                                        <div class="row">
-                                            <div class="col-md-4 upcoming-event-date">
-                                                <p>10<br/>Feb</p>
 
-                                            </div>
-                                            <div class="col-md-8">
-                                                <div class="row">
-                                                    <p class="col-md-6 col-sm-12">
-                                                        <i class="fas fa-calendar-alt"></i><span> Event Date</span>
-                                                    </p>
-                                                    <p class="col-md-6 col-sm-12">
-                                                        <i class="fas fas fa-map-marker-alt"></i><span> Event Location</span>
-                                                    </p>
-                                                </div>
-                                                <h3>Upcoming Events Title</h3>
-                                                <p class="limited-text">Lorem ipsum dolor sit amet, consectetur
-                                                    adipisicing elit. Aliquid animi
-                                                    laudantium quaerat qui quisquam repudiandae. Ab accusamus adipisci
-                                                    animi, asperiores doloribus eaque et, explicabo facere libero
-                                                    numquam
-                                                    quaerat reiciendis totam.</p>
-                                                <button class="btn btn-dark btn-event">
-                                                    <a href="/news/eventdetail">View Details</a>
-                                                </button>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="upcoming-event">
-                                <div class="">
-                                    <div class="">
-                                        <div class="row">
-                                            <div class="col-md-4 upcoming-event-date">
-                                                <p>10<br/>Feb</p>
-
-                                            </div>
-                                            <div class="col-md-8">
-                                                <div class="row">
-                                                    <p class="col-md-6 col-sm-12">
-                                                        <i class="fas fa-calendar-alt"></i><span> Event Date</span>
-                                                    </p>
-                                                    <p class="col-md-6 col-sm-12">
-                                                        <i class="fas fas fa-map-marker-alt"></i><span> Event Location</span>
-                                                    </p>
-                                                </div>
-                                                <h3>Upcoming Events Title</h3>
-                                                <p class="limited-text">Lorem ipsum dolor sit amet, consectetur
-                                                    adipisicing elit. Aliquid animi
-                                                    laudantium quaerat qui quisquam repudiandae. Ab accusamus adipisci
-                                                    animi, asperiores doloribus eaque et, explicabo facere libero
-                                                    numquam
-                                                    quaerat reiciendis totam.</p>
-                                                <button class="btn btn-dark btn-event">
-                                                    <a href="/news/eventdetail">View Details</a>
-                                                </button>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="upcoming-event">
-                                <div class="">
-                                    <div class="">
-                                        <div class="row">
-                                            <div class="col-md-4 upcoming-event-date">
-                                                <p>10<br/>Feb</p>
-
-                                            </div>
-                                            <div class="col-md-8">
-                                                <div class="row">
-                                                    <p class="col-md-6 col-sm-12">
-                                                        <i class="fas fa-calendar-alt"></i><span> Event Date</span>
-                                                    </p>
-                                                    <p class="col-md-6 col-sm-12">
-                                                        <i class="fas fas fa-map-marker-alt"></i><span> Event Location</span>
-                                                    </p>
-                                                </div>
-                                                <h3>Upcoming Events Title</h3>
-                                                <p class="limited-text">Lorem ipsum dolor sit amet, consectetur
-                                                    adipisicing elit. Aliquid animi
-                                                    laudantium quaerat qui quisquam repudiandae. Ab accusamus adipisci
-                                                    animi, asperiores doloribus eaque et, explicabo facere libero
-                                                    numquam
-                                                    quaerat reiciendis totam.</p>
-                                                <button class="btn btn-dark btn-event">
-                                                    <a href="/news/eventdetail">View Details</a>
-                                                </button>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
+                        <div id="app">
+                            <upcoming-events></upcoming-events>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
         {{--Teachers Desk--}}
-        <section class="teacher-desk">
+        <section class="teacher-desk bg-gradient-dark">
             <div class="container">
-                <h1>Teachers</h1>
                 <div class="row">
-                    <div class="col-md-3 text-center mb-3" id="teacher-container">
+                    <div class="col-md-3 text-center" id="teacher-container">
                         <div class="teacher-front">
                             <div class="teacher-top"></div>
                             <div class="teacher">
@@ -878,7 +615,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-md-3 text-center mb-3" id="teacher-container">
+                    <div class="col-md-3 text-center" id="teacher-container">
                         <div class="teacher-front">
                             <div class="teacher-top"></div>
                             <div class="teacher">
@@ -909,7 +646,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-md-3 text-center mb-3" id="teacher-container">
+                    <div class="col-md-3 text-center" id="teacher-container">
                         <div class="teacher-front">
                             <div class="teacher-top"></div>
                             <div class="teacher">
@@ -940,131 +677,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-md-3 text-center mb-3" id="teacher-container">
-                        <div class="teacher-front">
-                            <div class="teacher-top"></div>
-                            <div class="teacher">
-                                <img src="images/teacher_2.jpg" class="teacher-img">
-                                <p>
-                                    Lorem ipsum dolor sit amet, consectetur adipisicing
-                                </p>
-                                <h3> Teacher Name</h3>
-                                <h5> Post ..... </h5>
-                            </div>
-                        </div>
-                        <div class="teacher-back">
-                            <div class="teacher-top2">
-                                <p>
-                                    Lorem ipsum dolor sit amet, consectetur adipisicing
-                                </p>
-                            </div>
-                            <div class="teacher">
-                                <h3> Teacher Description</h3>
-                                <h5> Post ..... </h5>
-                                <p>Icons</p>
-                            </div>
-                            <div class="teacher-back-fotter2">
-                                <b>
-                                    Years Active <br/>
-                                    5
-                                </b>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-3 text-center mb-3" id="teacher-container">
-                        <div class="teacher-front">
-                            <div class="teacher-top"></div>
-                            <div class="teacher">
-                                <img src="images/teacher_2.jpg" class="teacher-img">
-                                <p>
-                                    Lorem ipsum dolor sit amet, consectetur adipisicing
-                                </p>
-                                <h3> Teacher Name</h3>
-                                <h5> Post ..... </h5>
-                            </div>
-                        </div>
-                        <div class="teacher-back">
-                            <div class="teacher-top2">
-                                <p>
-                                    Lorem ipsum dolor sit amet, consectetur adipisicing
-                                </p>
-                            </div>
-                            <div class="teacher">
-                                <h3> Teacher Description</h3>
-                                <h5> Post ..... </h5>
-                                <p>Icons</p>
-                            </div>
-                            <div class="teacher-back-fotter2">
-                                <b>
-                                    Years Active <br/>
-                                    5
-                                </b>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-3 text-center mb-3" id="teacher-container">
-                        <div class="teacher-front">
-                            <div class="teacher-top"></div>
-                            <div class="teacher">
-                                <img src="images/teacher_2.jpg" class="teacher-img">
-                                <p>
-                                    Lorem ipsum dolor sit amet, consectetur adipisicing
-                                </p>
-                                <h3> Teacher Name</h3>
-                                <h5> Post ..... </h5>
-                            </div>
-                        </div>
-                        <div class="teacher-back">
-                            <div class="teacher-top2">
-                                <p>
-                                    Lorem ipsum dolor sit amet, consectetur adipisicing
-                                </p>
-                            </div>
-                            <div class="teacher">
-                                <h3> Teacher Description</h3>
-                                <h5> Post ..... </h5>
-                                <p>Icons</p>
-                            </div>
-                            <div class="teacher-back-fotter2">
-                                <b>
-                                    Years Active <br/>
-                                    5
-                                </b>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-3 text-center mb-3" id="teacher-container">
-                        <div class="teacher-front">
-                            <div class="teacher-top"></div>
-                            <div class="teacher">
-                                <img src="images/teacher_2.jpg" class="teacher-img">
-                                <p>
-                                    Lorem ipsum dolor sit amet, consectetur adipisicing
-                                </p>
-                                <h3> Teacher Name</h3>
-                                <h5> Post ..... </h5>
-                            </div>
-                        </div>
-                        <div class="teacher-back">
-                            <div class="teacher-top2">
-                                <p>
-                                    Lorem ipsum dolor sit amet, consectetur adipisicing
-                                </p>
-                            </div>
-                            <div class="teacher">
-                                <h3> Teacher Description</h3>
-                                <h5> Post ..... </h5>
-                                <p>Icons</p>
-                            </div>
-                            <div class="teacher-back-fotter2">
-                                <b>
-                                    Years Active <br/>
-                                    5
-                                </b>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-3 text-center mb-3" id="teacher-container">
+                    <div class="col-md-3 text-center" id="teacher-container">
                         <div class="teacher-front">
                             <div class="teacher-top"></div>
                             <div class="teacher">
@@ -1151,8 +764,7 @@
                                     </div>
                                 </div>
 
-                                <p class="footer_about_text text-white">In aliquam, augue a gravida rutrum, ante
-                                    nisl
+                                <p class="footer_about_text text-white">In aliquam, augue a gravida rutrum, ante nisl
                                     fermentum
                                     nulla,
                                     vitae tempor nisl ligula vel nunc. Proin quis mi malesuada, finibus tortor
@@ -1256,26 +868,30 @@
     </div>
     <!--Container Ends-->
 
+
 @endsection
 
 @section('scripts')
     <script>
         /*Navber*/
-        window.onscroll = function () {
-            myFunction()
-        };
+        /*(function ($) {
+            var previousScroll = 20;
+            // scroll functions
+            $(window).scroll(function (e) {
 
-        var navbar = document.getElementById("navbar");
-        var sticky = navbar.offsetTop;
+                // add/remove class to navbar when scrolling to hide/show
+                var scroll = $(window).scrollTop();
+                if (scroll >= previousScroll) {
+                    $('.navbar').addClass("navbar-hide");
 
-        function myFunction() {
-            if (window.pageYOffset >= sticky) {
-                navbar.classList.add("sticky")
-            } else {
-                navbar.classList.remove("sticky");
-            }
-        }
+                } else if (scroll < previousScroll) {
+                    $('.navbar').removeClass("navbar-hide");
+                }
+                previousScroll = scroll;
 
+            });
+
+        })(jQuery);*/
         /*----*/
         /*Swiper*/
         var swiper = new Swiper('.swiper-container', {

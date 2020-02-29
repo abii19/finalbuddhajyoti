@@ -171,34 +171,23 @@
                     data-accordion="false">
                     <!-- Add icons to the links using the .nav-icon class
                          with font-awesome or any other icon font library -->
-                    <li class="nav-item has-treeview menu-open">
+                    <li class="nav-item has-treeview">
                         <a href="#" class="nav-link">
                             <i class="nav-icon fas fa-tachometer-alt"></i>
                             <p>
-                                Dashboard
+                                Testemonial
                                 <i class="right fas fa-angle-left"></i>
                             </p>
                         </a>
-                        {{--<ul class="nav nav-treeview">
+
+                        <ul class="nav nav-treeview">
                             <li class="nav-item">
-                                <a href="./index.html" class="nav-link">
-                                    <i class="far fa-circle nav-icon"></i>
-                                    <p>Dashboard v1</p>
+                                <a href="{{route('Testemonial.index')}}" class="nav-link">
+                                    <i class="fas fa-plus-circle ml-2"></i>
+                                    <p class="ml-3"> Create Testemonial </p>
                                 </a>
                             </li>
-                            <li class="nav-item">
-                                <a href="/home" class="nav-link">
-                                    <i class="far fa-circle nav-icon"></i>
-                                    <p>Dashboard v2</p>
-                                </a>
-                            </li>
-                            <li class="nav-item">
-                                <a href="#" class="nav-link">
-                                    <i class="far fa-circle nav-icon"></i>
-                                    <p>Dashboard v3</p>
-                                </a>
-                            </li>
-                        </ul>--}}
+                        </ul>
                     </li>
 
                     <li class="nav-item has-treeview">
@@ -217,7 +206,7 @@
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a href="" class="nav-link">
+                                <a href="{{route('viewBlog')}}" class="nav-link">
                                     <i class="fas fa-list-ul ml-2"></i>
                                     <p class="ml-4">View Blog</p>
                                 </a>
@@ -248,7 +237,7 @@
                         </a>
                         <ul class="nav nav-treeview">
                             <li class="nav-item">
-                                <a href="" class="nav-link">
+                                <a href="{{route('Notice.index')}}" class="nav-link">
                                     <i class="fas fa-money-bill ml-2"></i>
                                     <p class="ml-3">Add Notice</p>
                                 </a>
