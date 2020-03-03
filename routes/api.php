@@ -18,6 +18,7 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 });
 
 Route::post('/saveTeacher', 'Admin\TeacherController@saveTeacher');
+
 Route::resource('addBlog', 'Blog\AddBlogController')->only(['store', 'edit']);
 
 
@@ -41,7 +42,19 @@ Route::post('/updateSingleBlogPic', 'Admin\BlogEditController@updateSingleBlogPi
 //EVENTS-NOTICES
 Route::resource('Notice', 'Admin\Notice\NoticeCOntroller')->only(['store']);
 
+Route::get('getRecentNewsEvents', 'Admin\NewsEvents\AjaxNewsEventsController@getNewsEvents');
+
+//TESTEMoNial
+
+Route::resource('Testemonial', 'Admin\Testemonial\TestemonialController')->only(['store']);
+
+Route::get('fetchTestemonial', 'Admin\Testemonial\FetchTestemonialController@fetchTestemonial');
+Route::get('viewTestemonial', 'Admin\Testemonial\FetchTestemonialController@viewTestemonial');
+
 
 //Website
 Route::get('/upcoming/events', 'Event\EventController@fetchEvents');
+
+
+
 

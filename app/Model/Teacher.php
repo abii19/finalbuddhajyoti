@@ -10,6 +10,8 @@ class Teacher extends Model
         'teacher_name',
         'saying',
         'user_id',
+        'years_active',
+        'teacher_posts',
         'education_degree',
         'photo',
     ];

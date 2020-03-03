@@ -1,11 +1,9 @@
 <template>
-
     <div class="col-md-6">
         <div class="card">
             <div class="card-header  bg-gradient-gray">
                 <h5 class="text-center">Add Notice/Events</h5>
             </div>
-
             <div class="card-body row">
                 <div class=" col-md-12">
                     <label> Title </label>
@@ -81,7 +79,6 @@
         mounted() {
             console.log('Success');
         },
-
         data: function () {
             return {
                 title: null,

@@ -146,7 +146,7 @@
     <!-- /.navbar -->
 
     <!-- Main Sidebar Container -->
-    <aside class="main-sidebar elevation-4 text-white" style="background-color: #0a1011">
+    <aside class="main-sidebar elevation-4 text-white" >
         <!-- Brand Logo -->
         <a href="index3.html" class="brand-link">
             <img src="" alt="" class="brand-image img-circle elevation-3"
@@ -182,7 +182,7 @@
 
                         <ul class="nav nav-treeview">
                             <li class="nav-item">
-                                <a href="{{route('Testemonial.index')}}" class="nav-link">
+                                <a href="{{route('testemonial.index')}}" class="nav-link">
                                     <i class="fas fa-plus-circle ml-2"></i>
                                     <p class="ml-3"> Create Testemonial </p>
                                 </a>
@@ -267,9 +267,9 @@
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a href="" class="nav-link">
-                                    <i class="fas fa-server"></i>
-                                    Setup Expenses Details
+                                <a href="{{route('FrontPic.index')}}" class="nav-link">
+                                    <i class="fas fa-server ml-2"></i>
+                                    <p class="ml-4"> Add Pics </p>
                                 </a>
                             </li>
                         </ul>

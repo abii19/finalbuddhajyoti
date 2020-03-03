@@ -21,7 +21,6 @@ Auth::routes();
 
 Route::group(['middleware' => 'auth'], function () {
 
-
     /*    LOGOUT*/
     Route::get('logout', function () {
         Auth::logout();
@@ -29,6 +28,11 @@ Route::group(['middleware' => 'auth'], function () {
     });
 
     Route::resource('Index', 'Admin\IndexController')->only(['index', 'store']);
+
+    /*    Index Page Photo          */
+
+    Route::resource('FrontPic', 'Admin\Setting\IndexPagePhotoController')->only(['index', 'store']);
+
 
 
     /*SETTING ROUTE*/
@@ -45,7 +49,7 @@ Route::group(['middleware' => 'auth'], function () {
     /*                TESTEMONIAL                                */
 
 
-    Route::resource('Testemonial', 'Admin\Testemonial\TestemonialController')->only(['index']);
+    Route::resource('testemonial', 'Admin\Testemonial\TestemonialController')->only(['index']);
 
 });
 
@@ -56,9 +60,6 @@ Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/news/blog', 'Blog\ViewBlogController@index')->name('blog');
 Route::get('/blog/{$id}', 'Blog\ViewBlogController@singleBlog')->name('singleBlog');
 Route::get('/event/{id}', 'Event\EventController@showSingleEvent')->name('editEvent');
-
-
-
 
 
 /*--Facilities--*/

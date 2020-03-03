@@ -140,7 +140,7 @@
                     formData.append('education_degree', this.degree);
                     formData.append('photo', this.$refs.file.files[0]);
                     formData.append('years_active', this.years_active);
-                    formData.append('post_', this.years_active);
+                    formData.append('teacher_posts', this.post_name);
 
                     axios.post('/api/saveTeacher', formData, {
                         headers: {

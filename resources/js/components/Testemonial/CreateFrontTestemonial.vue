@@ -1,91 +1,97 @@
 <template>
-    <div class="col-md-5">
-        <div class="card">
-            <div class="card-header">
-                Add Teacher
-            </div>
+    <div class="row container-fluid">
 
-            <div class="card-body">
-                <div class="row">
-                    <div class="col-md-12">
-                        <div v-if="successMessage" class="alert alert-success alert-dismissible fade show" role="alert">
-                            <strong></strong>{{success}}
-                            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                                <span aria-hidden="true">&times;</span>
-                            </button>
-                        </div>
-                    </div>
-
-                    <div class="col-md-7 row">
-                        <label class="ml-3">Full Name:</label>
-                        <input type="text" v-model="name" class="form-control form-control-sm ml-3">
-                        <span v-if="nameError" class="text-danger">{{nameError}}</span>
-                    </div>
-
-                    <div class="col-md-5">
-                        <div class="col-md-12">
-                            <label>Select</label>
-
-                            <select class="form-control form-control-sm" v-model="selectGST">
-                                <option :selected="Select">Select</option>
-                                <option value="Gurdain">Gurdain</option>
-                                <option value="Student">Student</option>
-                                <option value="Teacher">Teacher</option>
-                            </select>
-                        </div>
-
-                    </div>
-
-                    <div class="col-md-12 mt-3">
-                        <label>Saying</label>
-                        <span v-if="sayingError" class="text-danger">{{sayingError}}</span>
-                    </div>
-                    <div class=" col-md-12 row">
-                        <div class="col-md-6">
-                            <label>Features</label>
-                            <input type="text" class="form-control form-control-sm" v-model="description">
-                        </div>
-
-                    </div>
-
-
+        <div class="col-md-6 mt-2">
+            <div class="card">
+                <div class="card-header">
+                    Add Testemonial
+                </div>
+                <div class="card-body">
                     <div class="row">
-                        <div class="col-md-6 mt-2">
-                            <label class="ml-3">Education Degres</label>
-                            <input type="text" v-model="degree" class=" ml-3 form-control form-control-sm">
-                            <span v-if="degreeError" class="text-danger">{{degreeError}}</span>
-                            <button class="btn btn-success btn-sm ml-3 mt-3" @click="saveTeacher">Success</button>
+                        <div class="col-md-12">
+                            <div v-if="successMessage" class="alert alert-success alert-dismissible fade show"
+                                 role="alert">
+                                <strong></strong>{{success}}
+                                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                        </div>
+
+                        <div class="col-md-7 row">
+                            <label class="ml-3">Full Name:</label>
+                            <input type="text" v-model="name" class="form-control form-control-sm ml-3">
+                            <span v-if="nameError" class="text-danger">{{nameError}}</span>
+                        </div>
+
+                        <div class="col-md-5">
+                            <div class="col-md-12">
+                                <label>Select</label>
+                                <select class="form-control form-control-sm" v-model="selectGST">
+                                    <option :selected="Select">Select</option>
+                                    <option value="Gurdain">Gurdain</option>
+                                    <option value="Student">Student</option>
+                                    <option value="Teacher">Teacher</option>
+                                </select>
+                            </div>
+
+                        </div>
+
+                        <div class=" col-md-12 row">
+                            <div class="col-md-6">
+                                <label>Saying</label>
+                                <input type="text" class="form-control form-control-sm" v-model="saying">
+                                <span v-if="sayingError" class="text-danger">{{sayingError}}</span>
+                            </div>
+
                         </div>
 
 
-                        <div class="col-md-6">
-                            <label>Upload</label>
-                            <input type="file" ref="file" @change="selectPhoto" accept="image/*"
-                                   class="ml-3 form-control form-control-sm">
-                            <span v-if="degree" class="text-danger">{{imageError}}</span>
-                            <span v-if="imageSelected">
+                        <div class="row">
+                            <div class="col-md-6 mt-2">
+                                <label class="ml-3">Education Degres</label>
+                                <input type="text" v-model="degree" class=" ml-3 form-control form-control-sm">
+                                <span v-if="degreeError" class="text-danger">{{degreeError}}</span>
+                                <button class="btn btn-success btn-sm ml-3 mt-3" @click="saveTeacher">Success</button>
+                            </div>
+
+
+                            <div class="col-md-6">
+                                <label>Upload</label>
+                                <input type="file" ref="file" @change="selectPhoto" accept="image/*"
+                                       class="ml-3 form-control form-control-sm">
+                                <span v-if="degree" class="text-danger">{{imageError}}</span>
+                                <span v-if="imageSelected">
                                         <img :src="imageSelected"
                                              alt=""
                                              class="img-thumbnail "
                                         ></span>
+                            </div>
+
+
                         </div>
 
-
                     </div>
-
                 </div>
             </div>
+
+
         </div>
 
+        <view-testemonial></view-testemonial>
 
     </div>
-
 
 </template>
 
 <script>
+    import viewTestemonial from './ViewTestemonialComponent'
+
     export default {
         name: "SettingSetupComponent",
+        components: {
+            viewTestemonial,
+        },
 
         data: function () {
             return {
@@ -103,8 +109,8 @@
                 posts: {},
                 post_name: 'Select',
                 post_nameError: '',
-
-
+                selectGST: '',
+                Select: '',
             }
         },
         mounted() {
@@ -136,18 +142,17 @@
             saveTeacher: function () {
                 if (this.validate()) {
 
-                    console.log(this.$refs.file.files[0]);
 
+                    console.log(this.$refs.file.files[0]);
                     let formData = new FormData();
 
-                    formData.append('teacher_name', this.name);
+                    formData.append('f_name', this.name);
                     formData.append('saying', this.saying);
                     formData.append('education_degree', this.degree);
                     formData.append('photo', this.$refs.file.files[0]);
-                    formData.append('years_active', this.years_active);
-                    formData.append('post_', this.years_active);
+                    formData.append('type', this.selectGST);
 
-                    axios.post('/api/saveTeacher', formData, {
+                    axios.post('/api/Testemonial', formData, {
                         headers: {
                             'Content-Type': 'multipart/form-data'
                         },
@@ -155,25 +160,20 @@
                         if (response.data.err) {
                             alert(response.data.err + ' Please upload image less than 2048 mb ');
                         }
-
-                        if (response.data.success) {
+                        if (response.data.msg) {
                             this.name = ' ';
                             this.degree = ' ';
                             this.saying = ' ';
                             this.imageSelected = ' ';
                             this.successMessage = true;
-                            this.success = response.data.success;
-
-
+                            this.success = response.data.msg;
                         }
-
 
                     }).catch(err => {
                         alert(err.data.message);
                     })
 
                 }
-
 
             },
 
@@ -183,18 +183,6 @@
                     return false;
                 } else {
                     this.nameError = ' ';
-                }
-                if (!this.yearsActive) {
-                    this.yearsActiveError = 'Years Active Field Cannot be Empty *';
-                    return false;
-                } else {
-                    this.yearsActiveError = ' ';
-                }
-                if (!this.post_name) {
-                    this.post_nameError = 'Posts Field Cannot be Empty *';
-                    return false;
-                } else {
-                    this.post_nameError = ' ';
                 }
 
                 if (!this.saying) {

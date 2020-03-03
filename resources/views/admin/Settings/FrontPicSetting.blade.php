@@ -1,8 +1,9 @@
 @extends('layouts.admin')
 
 @section('content')
+
     <div id="app">
-        <create-testemonial></create-testemonial>
+        <add-front-pic></add-front-pic>
     </div>
 
 @stop
