@@ -15,13 +15,10 @@ class CreateBlogImagesTable extends Migration
     {
         Schema::create('blog_images', function (Blueprint $table) {
             $table->bigIncrements('id');
-
             $table->unsignedBigInteger('blog_id')->nullable();
             $table->string('blog_photo');
             $table->timestamps();
             $table->foreign('blog_id')->references('id')->on('blogs');
-
-
         });
     }
 

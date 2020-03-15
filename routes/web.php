@@ -106,3 +106,23 @@ Route::get('/aboutus/ourteam', function () {
 /*               TEACHERS                    */
 
 Route::resource('teacher', 'Teacher\TeacherController');
+
+
+/*New Views*/
+Route::get('/web', function () {
+    return view('website2.index');
+});
+Route::get('/about1', function () {
+    return view('Website2/about');
+});
+Route::get('/teachers1', function () {
+    return view('Website2/teacher');
+});
+Route::get('/info', function () {
+    return view('Website2/information');
+});
+
+
+Route::get('/test', function () {
+    return view('test');
+});
