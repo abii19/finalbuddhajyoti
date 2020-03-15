@@ -20,8 +20,8 @@
         </div>
         <event-desk></event-desk>
         <upcoming-event-desk></upcoming-event-desk>
-        <board-members></board-members>
-        {{--<founding-members></founding-members>--}}
+        {{--<board-members></board-members>--}}
+        <founding-members></founding-members>
         {{--<fotter-component></fotter-component>--}}
 
     </div>

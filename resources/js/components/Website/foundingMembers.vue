@@ -1,35 +1,101 @@
 <template>
     <div class="">
-        <div class="container">
-            <div class="card">
-                <div class="content">
-                    <h2>1</h2>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
-                    <a href="#">Read More</a>
+        <section class="founding-members">
+            <div class="container">
+                <div class="row">
+                    <div class="mb-2">
+                        <h2 class="title-top">Founding Members</h2>
+                        <hr class="bg-base-color separator-line">
+                    </div>
+                </div>
+                <div class="row d-flex justify-content-center">
+                    <div class="card">
+                        <div class="content">
+                            <h2>
+                                <img src="images/teacher_1.jpg" class="img-fluid member-img"
+                                     alt="Image of founding memmber">
+                            </h2>
+
+                            <a href="">Member Name</a>
+                            <p class="mt-2">
+                                High Post he/she has been <br/>
+                                Active Year on School
+                            </p>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="content">
+                            <h2>
+                                <img src="images/teacher_1.jpg" class="img-fluid member-img"
+                                     alt="Image of founding memmber">
+                            </h2>
+
+                            <a href="">Member Name</a>
+                            <p class="mt-2">
+                                High Post he/she has been <br/>
+                                Active Year on School
+                            </p>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="content">
+                            <h2>
+                                <img src="images/teacher_1.jpg" class="img-fluid member-img"
+                                     alt="Image of founding memmber">
+                            </h2>
+
+                            <a href="">Member Name</a>
+                            <p class="mt-2">
+                                High Post he/she has been <br/>
+                                Active Year on School
+                            </p>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="content">
+                            <h2>
+                                <img src="images/teacher_1.jpg" class="img-fluid member-img"
+                                     alt="Image of founding memmber">
+                            </h2>
+
+                            <a href="">Member Name</a>
+                            <p class="mt-2">
+                                High Post he/she has been <br/>
+                                Active Year on School
+                            </p>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="content">
+                            <h2>
+                                <img src="images/teacher_1.jpg" class="img-fluid member-img"
+                                     alt="Image of founding memmber">
+                            </h2>
+
+                            <a href="">Member Name</a>
+                            <p class="mt-2">
+                                High Post he/she has been <br/>
+                                Active Year on School
+                            </p>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="content">
+                            <h2>
+                                <img src="images/teacher_1.jpg" class="img-fluid member-img"
+                                     alt="Image of founding memmber">
+                            </h2>
+
+                            <a href="">Member Name</a>
+                            <p class="mt-2">
+                                High Post he/she has been <br/>
+                                Active Year on School
+                            </p>
+                        </div>
+                    </div>
                 </div>
             </div>
-            <div class="card">
-                <div class="content">
-                    <h2>2</h2>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
-                    <a href="#">Read More</a>
-                </div>
-            </div>
-            <div class="card">
-                <div class="content">
-                    <h2>3</h2>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
-                    <a href="#">Read More</a>
-                </div>
-            </div>
-            <!--<div class="card">
-                <div class="content">
-                    <h2>4</h2>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
-                    <a href="#">Read More</a>
-                </div>
-            </div>-->
-        </div>
+        </section>
     </div>
 
 </template>
@@ -42,37 +108,44 @@
 
 <style scoped>
     @import url('https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800&display=swap');
-    /**
-    {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
+
+    .founding-members{
+        padding: 50px 0;
+        background: #ffffff;
+    }
+
+    img {
+        top: 0;
+        position: relative;
+        box-shadow: 0 15px 20px rgba(0, 0, 0, 0.4);
+    }
+
+    .member-img {
+        width: 135px;
+        height: 135px;
+        border-radius: 50%;
+    }
+
+    .content p {
+        font-size: 15px;
         font-family: 'Poppins', sans-serif;
     }
-    body
-    {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        min-height: 100vh;
-        background: linear-gradient(0deg,#fff 50%, #2196F3);
-    }*/
-    .container
-    {
-        max-width: 1000px;
-        /*position: relative;*/
+
+    .container {
+        /*max-width: 1000px;
+        position: relative;*/
         display: flex;
         justify-content: center;
         flex-wrap: wrap;
         transition: 0.5s;
     }
-    .container:hover .card
-    {
+
+    .container:hover .card {
         filter: blur(5px);
         transform: scale(.7);
     }
-    .container .card
-    {
+
+    .container .card {
         position: relative;
         width: 250px;
         height: 300px;
@@ -81,15 +154,15 @@
         justify-content: center;
         align-items: center;
         transition: 0.5s;
-
+        margin-right: 10px;
     }
-    .container .card:hover
-    {
+
+    .container .card:hover {
         filter: blur(0px);
         transform: scale(1);
     }
-    .container .card:before
-    {
+
+    .container .card:before {
         content: '';
         position: absolute;
         width: 100%;
@@ -98,14 +171,14 @@
         z-index: 1;
         transition: 0.5s;
     }
-    .container .card:hover:before
-    {
+
+    .container .card:hover:before {
         background: #000;
         transform: scaleY(1.15);
-        box-shadow: 0 5px 15px rgba(0,0,0,.2);
+        /*box-shadow: 0 5px 15px rgba(0, 0, 0, .2);*/
     }
-    .container .card:after
-    {
+
+    .container .card:after {
         content: '';
         position: absolute;
         top: 0;
@@ -113,38 +186,35 @@
         width: 50%;
         height: 100%;
         transition: 0.5s;
-        background: rgba(255,255,255,.1);
+        background: rgba(255, 255, 255, .1);
         z-index: 1;
     }
-    .container .card:hover:after
-    {
+
+    .container .card:hover:after {
         transform: scaleY(1.15);
     }
-    .container .card:hover
-    {
+
+    .container .card:hover {
         z-index: 1;
     }
-    .container .card .content
-    {
+
+    .container .card .content {
         text-align: center;
         z-index: 2;
         padding: 0 20px;
         transition: 0.5s;
     }
-    .container .card:hover .content
-    {
+
+    .container .card:hover .content {
         color: #fff;
     }
-    .container .card .content h2
-    {
+
+    .container .card .content h2 {
         font-size: 3em;
     }
-    .container .card .content p
-    {
-        font-size: 0.9em;
-    }
-    .container .card .content a
-    {
+
+
+    .container .card .content a {
         display: inline-block;
         margin-top: 15px;
         padding: 5px 10px;
@@ -152,8 +222,8 @@
         color: #fff;
         text-decoration: none;
     }
-    .container .card:hover .content a
-    {
+
+    .container .card:hover .content a {
         background: #2196F3;
     }
 </style>

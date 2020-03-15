@@ -12,7 +12,7 @@
                 <span class="text-left" style="font-size: 10px"> {{blog.created_at}} </span>
             </div>
             <div class="col-md-12">
-                <span style="font-size: 10px"> {{blog.post}} </span>
+                <span style="font-size: 10px"> {{blog.post.substring(0, 60)}} </span>
                 <button @click="editBlog(blog.id)"
                         data-target=".bd-example-modal-lg"
                         data-toggle="modal"
