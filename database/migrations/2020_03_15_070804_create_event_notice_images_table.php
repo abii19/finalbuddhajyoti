@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class AddTeachersPostDegree extends Migration
+class CreateEventNoticeImagesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,11 +13,11 @@ class AddTeachersPostDegree extends Migration
      */
     public function up()
     {
-        Schema::table('teachers', function (Blueprint $table) {
-            //
-            $table->string('education_degree');
-            $table->string('photo');
-
+        Schema::create('event_notice_images', function (Blueprint $table) {
+            $table->bigIncrements('id');
+            $table->bigIncrements('event_id');
+            $table->string('event_notice_photo');
+            $table->timestamps();
         });
     }
 
@@ -28,8 +28,6 @@ class AddTeachersPostDegree extends Migration
      */
     public function down()
     {
-        Schema::table('teachers', function (Blueprint $table) {
-            //
-        });
+        Schema::dropIfExists('event_notice_images');
     }
 }

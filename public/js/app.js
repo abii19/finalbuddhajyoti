@@ -111018,7 +111018,7 @@ var render = function() {
             _vm._v(" "),
             _c("div", { staticClass: "col-md-12" }, [
               _c("span", { staticStyle: { "font-size": "10px" } }, [
-                _vm._v(" " + _vm._s(blog.post) + " ")
+                _vm._v(" " + _vm._s(blog.post.substring(0, 60)) + " ")
               ]),
               _vm._v(" "),
               _c(

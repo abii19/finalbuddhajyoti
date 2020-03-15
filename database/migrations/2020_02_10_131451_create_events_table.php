@@ -16,9 +16,11 @@ class CreateEventsTable extends Migration
         Schema::create('events', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('title');
-            $table->longText('content');
+            $table->longText('post');
             $table->string('date');
             $table->boolean('status');
+            $table->string('photo');
+            $table->boolean('is_notice');
             $table->timestamps();
         });
     }
