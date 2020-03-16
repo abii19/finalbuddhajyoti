@@ -31,17 +31,25 @@
                         <label> Select Post:</label>
                         <select v-model="post_name" class="form-control form-control-sm">
                             <option :selected="post_name">Select</option>
-                            <option v-for="(posts, key) in posts">{{posts.post_name}}</option>
+                            <option v-for="(posts, key) in posts" value="posts.id">{{posts.post_name}}</option>
                         </select>
                         <span v-if="post_nameError" class="text-danger">{{post_nameError}}</span>
                     </div>
 
+                    <div class="row">
 
-                    <div class="col-md-12 mt-3">
-                        <label>Saying</label>
-                        <textarea name="" id="" v-model="saying" class="col-md-12" rows="7"></textarea>
-                        <span v-if="sayingError" class="text-danger">{{sayingError}}</span>
-
+                    <div class="col-md-6 mt-3">
+                        <label>Contact Number</label>
+                        <input type="text"  v-model="phone_number" class="col-md-12" >
+                    <!--    <span v-if="sayingError" class="text-danger">{{sayingError}}</span>
+                    -->
+                    </div>
+                    <div class="col-md-6 mt-3">
+                        <label>Address</label>
+                        <input type="text"  v-model="address" class="col-md-12" >
+                    <!--    <span v-if="sayingError" class="text-danger">{{sayingError}}</span>
+                    -->
+                    </div>
                     </div>
 
                     <div class="row">
@@ -86,15 +94,17 @@
                 imageSelected: "",
                 name: '',
                 nameError: '',
-                saying: '',
+                phone_number: '',
                 sayingError: '',
                 degree: '',
+                address:'',
                 degreeError: '',
                 imageError: '',
                 successMessage: false,
                 success: '',
                 yearsActive: '',
-                posts: {},
+                yearsActiveError: '',
+                posts: [],
                 post_name: 'Select',
                 post_nameError: '',
 
@@ -136,12 +146,14 @@
                     let formData = new FormData();
 
                     formData.append('teacher_name', this.name);
-                    formData.append('saying', this.saying);
+                    formData.append('phone_number', this.phone_number);
+                    formData.append('address', this.address);
                     formData.append('education_degree', this.degree);
                     formData.append('photo', this.$refs.file.files[0]);
-                    formData.append('years_active', this.years_active);
+                    formData.append('years_active', this.yearsActive);
                     formData.append('teacher_posts', this.post_name);
 
+                    alert();
                     axios.post('/api/saveTeacher', formData, {
                         headers: {
                             'Content-Type': 'multipart/form-data'
@@ -190,13 +202,6 @@
                     return false;
                 } else {
                     this.post_nameError = ' ';
-                }
-
-                if (!this.saying) {
-                    this.sayingError = 'Saying Field Cannot be Empty *';
-                    return false;
-                } else {
-                    this.sayingError = ' ';
                 }
                 if (!this.degree) {
                     this.degreeError = 'Degree Field Cannot be Empty *';

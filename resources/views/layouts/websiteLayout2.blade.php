@@ -71,14 +71,15 @@
         }
 
         .bg-base-color {
-            background-color: #f9461d;
+            background-color: #cd2541;
             border-radius: 2px;
+
             border: none;
         }
 
         .separator-line {
             width: 30%;
-            height: 8px;
+            height: 7px;
             margin-top: 5px;
         }
 

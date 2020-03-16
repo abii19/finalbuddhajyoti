@@ -213,7 +213,7 @@
         opacity: 0.85;
     }
     .bg-base-color {
-        background-color: #ff2468 !important;
+        background-color: #cd2541 !important;
     }
     .title-top span{
         font-size:45px;

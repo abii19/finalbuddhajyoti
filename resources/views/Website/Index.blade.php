@@ -92,7 +92,7 @@
                                     </ul>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link" href="{{route('teacher.index')}}">Teachers</a>
+                                    <a class="nav-link" href="">Teachers</a>
                                 </li>
                                 <li class="nav-item">
                                     <a class="nav-link">Facilities</a>

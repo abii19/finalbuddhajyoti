@@ -132,12 +132,31 @@
                 </div>
             </div>
         </div>
+        <fotter-component></fotter-component>
     </div>
 </template>
 
 <script>
+    import fotterComponent from "../fotterComponent";
     export default {
-        name: "teachers"
+        name: "teachers",
+        component: {
+            fotterComponent
+        },
+        data:  function(){
+          return {
+            teachers:[]
+          }
+        },
+
+        mounted() {
+          axios.get('/api/fetchWebsiteTeachers', {}).then(resp=>{
+            this.teachers = resp.data.teacher;
+          })
+
+        },
+
+
     }
 </script>
 

@@ -52,7 +52,6 @@
         },
 
         mounted() {
-
             axios.get('/api/upcoming/events', {}).then(response => {
                 this.events = response.data.event;
                 console.log(this.events);

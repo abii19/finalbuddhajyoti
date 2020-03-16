@@ -55,6 +55,12 @@ Route::get('viewTestemonial', 'Admin\Testemonial\FetchTestemonialController@view
 //Website
 Route::get('/upcoming/events', 'Event\EventController@fetchEvents');
 
+Route::get('/fetchWebsiteNotices', 'Event\EventController@fetchWebsiteNotices');
+Route::get('/fetchWebsiteEvents', 'Event\EventController@fetchWebsiteEvents');
+Route::get('/fetchBlog', 'Blog\ViewBlogController@fetchBlogAjax');
+Route::get('/fetchWebsiteTeachers', 'Teacher\TeacherAjaxController@fetchTeacherAjax');
+
+Route::post('/blogDetail', 'Blog\ViewBlogController@fetchSpecificBlog');
 
 
 

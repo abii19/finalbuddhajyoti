@@ -13,8 +13,7 @@ class PostController extends Controller
     public function fetchPosts()
     {
 
-        $post = Post::select('post_name')->get();
-
+        $post = Post::all();
         return response()->json([
             'post' => $post,
         ]);

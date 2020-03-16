@@ -15,9 +15,13 @@ class CreateEventNoticeImagesTable extends Migration
     {
         Schema::create('event_notice_images', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->bigIncrements('event_id');
+            $table->unsignedBigInteger('event_id')->nullable();
             $table->string('event_notice_photo');
             $table->timestamps();
+
+            $table->foreign('event_id')->references('id')->on('events')->onDelete('set null');
+
+
         });
     }
 

@@ -11,7 +11,7 @@
 |
 */
 
-Route::get('/', function () {
+Route::get('/web', function () {
     return view('website.index');
 });
 
@@ -109,7 +109,7 @@ Route::resource('teacher', 'Teacher\TeacherController');
 
 
 /*New Views*/
-Route::get('/web', function () {
+Route::get('/', function () {
     return view('website2.index');
 });
 Route::get('/about1', function () {

@@ -105,12 +105,17 @@
             </div>
         </div>
         <!--------->
+        <fotter-component></fotter-component>
     </div>
 </template>
 
 <script>
+    import fotterComponent from "../fotterComponent";
     export default {
-        name: "history"
+        name: "history",
+        component: {
+            fotterComponent
+        }
     }
 </script>
 

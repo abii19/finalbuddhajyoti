@@ -23,9 +23,19 @@ class ViewBlogController extends Controller
 
     public function fetchBlogAjax()
     {
+        $blog = Blog::all();
+        return response()->json([
+           'blog'=> $blog
+        ]);
+    }
 
+    public function fetchSpecificBlog(Request $request){
+        $blog =  Blog::find($request->id)->with('blogImage')->get();
+        dd($blog);
 
     }
+
+
 
 
     //

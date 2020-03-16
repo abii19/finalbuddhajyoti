@@ -16,7 +16,8 @@
                         <div class="collapse navbar-collapse" id="navbarSupportedContent">
                             <ul class="navbar-nav ml-auto">
                                 <li class="nav-item active">
-                                    <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+                                    <router-link class="nav-link" :to="{ name: 'home' }">Home</router-link>
+                                    <!--<a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>-->
                                 </li>
                                 <li class="nav-item dropdown">
                                     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
@@ -24,17 +25,32 @@
                                         About
                                     </a>
                                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                        <a class="dropdown-item" href="#">About Us</a>
-                                        <a class="dropdown-item" href="#">History</a>
+                                        <router-link class="dropdown-item" :to="{ name: 'aboutus' }">About Us</router-link>
+                                        <!--<a  href="#">About Us</a>-->
+                                        <router-link class="dropdown-item" :to="{ name: 'history' }">History</router-link>
+                                        <!--<a class="dropdown-item" href="#">History</a>-->
                                         <div class="dropdown-divider"></div>
-                                        <a class="dropdown-item" href="#">Our Team</a>
+                                        <router-link class="dropdown-item" :to="{ name: 'ourteam' }">Our Team</router-link>
+                                        <!--<a class="dropdown-item" href="#">Our Team</a>-->
                                     </div>
                                 </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" href="#">Facilities</a>
+                                <li class="nav-item dropdown">
+                                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown3" role="button"
+                                       data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                        Facilities
+                                    </a>
+                                    <div class="dropdown-menu" aria-labelledby="navbarDropdown3">
+                                        <a class="dropdown-item" href="#">Computer</a>
+                                        <a class="dropdown-item" href="#">Libraries</a>
+                                        <a class="dropdown-item" href="#">Montessery Classes</a>
+                                    </div>
                                 </li>
+                                <!--<li class="nav-item">
+                                    <a class="nav-link" href="#">Facilities</a>
+                                </li>-->
                                 <li class="nav-item">
-                                    <a class="nav-link" href="#">Teachers</a>
+                                    <router-link class="nav-link" :to="{ name: 'teachers' }">Teachers</router-link>
+                                    <!--<a  href="#">Teachers</a>-->
                                 </li>
                                 <li class="nav-item dropdown">
                                     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown2" role="button"
@@ -42,10 +58,13 @@
                                         Information
                                     </a>
                                     <div class="dropdown-menu" aria-labelledby="navbarDropdown2">
-                                        <a class="dropdown-item" href="#">News and Notices</a>
-                                        <a class="dropdown-item" href="#">Upcoming Events</a>
+                                        <router-link class="dropdown-item" :to="{ name: 'notices' }">Recent News and Notices</router-link>
+                                        <!--<a class="dropdown-item" href="#">News and Notices</a>-->
+                                        <router-link class="dropdown-item" :to="{ name: 'upcomingevents' }">Upcoming Events</router-link>
+                                        <!--<a class="dropdown-item" href="#">Upcoming Events</a>-->
                                         <div class="dropdown-divider"></div>
-                                        <a class="dropdown-item" href="#">Blog</a>
+                                        <router-link class="dropdown-item" :to="{ name: 'blogs' }">Blogs</router-link>
+                                        <!--<a class="dropdown-item" href="#">Blog</a>-->
                                     </div>
                                 </li>
                                 <li class="nav-item">
@@ -105,6 +124,10 @@
             </div>
         </section>
 
+
+        <!--Router View Call for SPA-->
+        <router-view></router-view>
+
     </div>
 </template>
 
@@ -134,48 +157,57 @@
         z-index: 2;
         line-height: 38px;
     }
+
     /*-------*/
     .header {
         position: relative;
         z-index: 100000;
     }
-    @media screen and (max-width: 767px){
-        .navbar ul.navbar-nav li{
+
+    @media screen and (max-width: 767px) {
+        .navbar ul.navbar-nav li {
             margin-left: 20px;
         }
     }
-    @media screen and (min-width: 768px){
+
+    @media screen and (min-width: 768px) {
         .navbar {
             background: #09143c !important;
             height: 70px;
             transition: 0.7s;
             border-bottom: 1px solid rgba(255, 255, 255, 0.8);
         }
+
         .navbar.scrolled {
             height: 50px;
             transiction: 0.7s;
         }
     }
+
     /*Navbar*/
     .navbar {
         background: #193254 !important;
     }
-    .navbar-brand{
+
+    .navbar-brand {
         font-family: 'Bebas Neue', cursive;
         font-size: 25px;
         line-height: 25px;
         letter-spacing: 2px;
     }
+
     .navbar-dark .navbar-nav .active > .nav-link, .navbar-dark .navbar-nav .nav-link.show, .navbar-dark .navbar-nav .nav-link.active {
         background-color: rgba(255, 255, 255, 1);
         border-radius: 5px;
         color: #000;
     }
+
     .navbar-dark .navbar-nav .nav-link {
         color: rgba(255, 255, 255, .9);
         padding-right: 10px;
         padding-left: 10px;
     }
+
     .navbar-dark .navbar-nav .nav-link:hover,
     .navbar-dark .navbar-nav .nav-link:focus {
         background-color: #003366;
@@ -184,21 +216,24 @@
         /*color: rgba(255, 255, 255, 1) !important;*/
         text-decoration: none;
     }
+
     .navbar-dark .navbar-nav .nav-item.active .nav-link:hover,
     .navbar-dark .navbar-nav .nav-item.active .nav-link:focus {
-        color: rgba(0, 0, 0, .9) !important;
+        color: rgba(0, 0, 0, .8) !important;
+        background-color: rgba(255, 255, 255, 1) !important;
         text-decoration: none;
     }
 
     /*!*Carousel---*!*/
-     .carousel {
-         position: relative;
-         top: 0;
-         width: 100%;
-         background: rgba(0, 0, 0, .7);
-         overflow: hidden;
-     }
-    .img-fluid-carousel{
+    .carousel {
+        position: relative;
+        top: 0;
+        width: 100%;
+        background: rgba(0, 0, 0, .7);
+        overflow: hidden;
+    }
+
+    .img-fluid-carousel {
         height: 100%;
         width: 100%;
         background: no-repeat center center scroll;
@@ -206,7 +241,7 @@
         background-size: cover;
     }
 
-    @media screen and (min-width: 663px){
+    @media screen and (min-width: 663px) {
         .carousel {
             position: relative;
             top: 0;
@@ -216,46 +251,53 @@
             overflow: hidden;
         }
     }
-/*    @media screen and (min-width: 769px){
-        .carousel {
-            position: relative;
-            top: 0;
-            width: 100%;
-            height: 100vh;
-            background: rgba(0, 0, 0, .7);
-            overflow: hidden;
-            !*box-shadow: inset 0 15px 100px green !important;*!
-        }
-    }*/
+
+    /*    @media screen and (min-width: 769px){
+            .carousel {
+                position: relative;
+                top: 0;
+                width: 100%;
+                height: 100vh;
+                background: rgba(0, 0, 0, .7);
+                overflow: hidden;
+                !*box-shadow: inset 0 15px 100px green !important;*!
+            }
+        }*/
     /*!************!*/
 
     /*!*Dropdown On Hover*!*/
     .dropdown:hover .dropdown-menu, .btn-group:hover .dropdown-menu {
-         display: block;
+        display: block;
     }
+
     .dropdown-menu {
         margin-top: 0;
         background-color: rgba(9, 20, 60, 0.6) !important;
     }
-    .dropdown-menu a {
+
+    .dropdown-menu a, .dropdown-menu router-link {
         color: #ffffff !important;
     }
-    .dropdown-menu a:hover {
+
+    .dropdown-menu a:hover, .dropdown-menu router-link:hover {
         text-decoration: none !important;
         background-color: rgba(0, 0, 0, 0.1) !important;
     }
+
     .dropdown-toggle {
         margin-bottom: 2px;
     }
+
     .navbar .dropdown-toggle, .nav-tabs .dropdown-toggle {
         margin-bottom: 0;
     }
 
     /*!* Centered text *!*/
-    @media screen and (min-width: 991px){
-        .carousel-caption{
+    @media screen and (min-width: 991px) {
+        .carousel-caption {
             width: 700px;
         }
+
         .carousel-caption.centered {
             position: absolute;
             top: 50%;
@@ -263,10 +305,12 @@
             transform: translate(-50%, -50%);
         }
     }
-    @media screen and (min-width: 577px) and (max-width: 991px){
-        .carousel-caption{
+
+    @media screen and (min-width: 577px) and (max-width: 991px) {
+        .carousel-caption {
             width: 500px;
         }
+
         .carousel-caption.centered {
             position: absolute;
             top: 60%;
@@ -274,16 +318,19 @@
             transform: translate(-50%, -50%);
         }
     }
-    @media screen and (max-width: 576px){
-        .carousel-caption{
+
+    @media screen and (max-width: 576px) {
+        .carousel-caption {
             width: 300px;
         }
+
         .carousel-caption.centered {
             position: absolute;
             top: 50%;
             left: 50%;
             transform: translate(-50%, -50%);
         }
+
         .carousel-caption h2 {
             font-size: 28px !important;
             line-height: 32px !important;
@@ -291,9 +338,11 @@
             color: white;
             font-family: 'Montserrat', sans-serif;
         }
+
         .carousel-caption h2 span {
             color: #ff9800;
         }
+
         /*.carousel-caption p {
             text-align: center;
             font-size: 15px;
@@ -307,9 +356,11 @@
         color: white;
         font-family: 'Montserrat', sans-serif;
     }
+
     .carousel-caption h2 span {
         color: #ff9800;
     }
+
     /*.carousel-caption p {
         text-align: center;
         font-size: 20px;

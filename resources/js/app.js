@@ -4,6 +4,8 @@
  * building robust, powerful web applications using Vue and Laravel.
  */
 
+import UpcomingEvents from "./components/Website/UpcomingEvents";
+
 require('./bootstrap');
 
 
@@ -25,7 +27,68 @@ Vue.use(VueAwesomeSwiper);
 /**Vue Material***/
 import VueMaterial from 'vue-material';
 Vue.use(VueMaterial);
+/**Router-Link*/
+import VueRouter from 'vue-router';
+Vue.use(VueRouter);
 
+import Layout from './components/Website/websiteLayout'
+import Home from './components/Website/Home'
+import Teacher from './components/Website/teacher/teachers'
+/**About*/
+import AboutUs from './components/Website/about/aboutus'
+import History from './components/Website/about/history'
+import OurTeam from './components/Website/about/ourteam'
+/**Information*/
+import Notices from "./components/Website/information/notices";
+import upcomingevents from "./components/Website/information/upcomingevents";
+import Blogs from './components/Website/information/blogs'
+
+const router = new VueRouter({
+    mode: 'history',
+    routes: [
+        {
+            path: '/',
+            name: 'home',
+            component: Home
+        },
+        {
+            path: '/about',
+            name: 'aboutus',
+            component: AboutUs
+        },
+
+        {
+            path: '/history',
+            name: 'history',
+            component: History
+        },
+        {
+            path: '/team',
+            name: 'ourteam',
+            component: OurTeam
+        },
+        {
+            path: '/teachers',
+            name: 'teachers',
+            component: Teacher
+        },
+        {
+            path: '/notices',
+            name: 'notices',
+            component: Notices,
+        },
+        {
+            path: '/upcomingevents',
+            name: 'upcomingevents',
+            component: upcomingevents,
+        },
+        {
+            path: '/blogs',
+            name: 'blogs',
+            component: Blogs,
+        },
+    ],
+});
 
 // const files = require.context('./', true, /\.vue$/i)
 // files.keys().map(key => Vue.component(key.split('/').pop().split('.')[0], files(key).default))
@@ -46,7 +109,7 @@ Vue.component('upcoming-events', require('./components/Website/UpcomingEvents.vu
 Vue.component('news-events', require('./components/Website/RecentNewsEvents.vue').default);
 Vue.component('testemonial', require('./components/Website/TestemonialComponent').default);
 
-Vue.component('event-desk', require('./components/Website/index.vue').default);
+/*Vue.component('event-desk', require('./components/Website/index.vue').default);*/
 
 
 
@@ -83,4 +146,6 @@ Vue.component('information-event-details', require('./components/Website/informa
 
 const app = new Vue({
     el: '#app',
+    components: { Layout },
+    router,
 });

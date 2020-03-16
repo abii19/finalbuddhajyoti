@@ -76,12 +76,17 @@
             </div>
         </div>
         <!-- About Section End-->
+        <fotter-component></fotter-component>
     </div>
 </template>
 
 <script>
+    import fotterComponent from "../fotterComponent";
     export default {
-        name: "aboutus"
+        name: "aboutus",
+        component: {
+            fotterComponent
+        }
     }
 </script>
 

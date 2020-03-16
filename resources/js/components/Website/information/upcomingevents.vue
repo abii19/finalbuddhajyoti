@@ -8,33 +8,29 @@
                     <hr class="bg-base-color separator-line">
                 </div>
             </div>
-            <div class="row justify-content-center mb-3">
+            <div v-for="events in event" class="row justify-content-center mb-3">
                 <div class="col-xl-3 col-lg-3 col-md-4 col-sm-10 col-11 upcoming-events image-part">
-                    <img class="img-fluid" src="images/teacher_1.jpg" alt="Upcoming Event Image">
+                    <img class="img-fluid" :src="events.photo" alt="Upcoming Event Image">
                 </div>
                 <div class="col-xl-7 col-lg-7 col-md-8 col-sm-10 col-11 upcoming-events">
                     <div class="pt-3">
-                        <h3 class="text-left">Upcoming News Title</h3>
+                        <h3 class="text-left">{{events.title}}</h3>
                         <div class="row">
                             <p class="col-md-6 col-sm-12">
-                                <i class="fas fa-calendar-alt"></i><span> Event Date</span>
+                                <i class="fas fa-calendar-alt"></i><span> {{events.date}}</span>
                             </p>
                             <p class="col-md-6 col-sm-12">
-                                <i class="fas fas fa-map-marker-alt"></i><span> Event Location</span>
+                                <i class="fas fas fa-map-marker-alt"></i><span> own School</span>
                             </p>
                         </div>
-                        <p class="limited-text text-justify">Lorem ipsum dolor sit amet, consectetur
-                            adipisicing
-                            elit. Aliquid animi
-                            laudantium quaerat qui quisquam repudiandae. Ab accusamus adipisci
-                            animi, asperiores doloribus eaque et, explicabo facere libero
-                            numquam
-                            quaerat reiciendis totam.</p>
+                        <p class="limited-text text-justify">
+                            {{events.post}}
+                        </p>
                     </div>
                     <div class="text-left pb-3">
-                        <button class="btn btn-event border">
+                        <a href="#" class="btn btn-event border">
                             Read More
-                        </button>
+                        </a>
                     </div>
                 </div>
             </div>
@@ -99,12 +95,31 @@
                 </div>
             </div>
         </div>
+        <fotter-component></fotter-component>
     </div>
 </template>
 
 <script>
+    import fotterComponent from "../fotterComponent";
     export default {
-        name: "upcomingevents"
+        name: "upcomingevents",
+        component: {
+            fotterComponent
+        },
+        data: function(){
+            return {
+                event: []
+            }
+        },
+        mounted() {
+            axios.get('/api/fetchWebsiteEvents', {}).then(response => {
+                this.event = response.data.event;
+                console.log(this.event);
+
+            });
+        },
+
+
     }
 </script>
 

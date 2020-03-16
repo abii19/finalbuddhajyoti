@@ -29,7 +29,8 @@ class TeacherController extends Controller
         $request->validate([
             'teacher_name' => 'required',
             'education_degree' => 'required',
-            'saying' => 'required',
+            'address'=>'required',
+            'phone_number'=>'required',
         ]);
 
         if (!is_dir(public_path('/teacher_images'))) {
@@ -51,8 +52,9 @@ class TeacherController extends Controller
         Teacher::create([
             'teacher_name' => $request->teacher_name,
             'education_degree' => $request->education_degree,
-            'saying' => $request->saying,
+            'phone_number' => $request->phone_number,
             'user_id' => Auth::user()->id,
+            'address' => $request->address,
             'photo' => '/teacher_images/' . $originalName,
             'teacher_posts' => $request->teacher_posts,
             'years_active' => $request->years_active,

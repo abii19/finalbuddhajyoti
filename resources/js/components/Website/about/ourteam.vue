@@ -189,12 +189,17 @@
             </div>
         </div>
         <!-- Mission Section Ends-->
+        <fotter-component></fotter-component>
     </div>
 </template>
 
 <script>
+    import fotterComponent from "../fotterComponent";
     export default {
-        name: "ourteam"
+        name: "ourteam",
+        component: {
+            fotterComponent
+        }
     }
 </script>
 

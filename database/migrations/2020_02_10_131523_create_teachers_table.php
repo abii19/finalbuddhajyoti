@@ -19,7 +19,7 @@ class CreateTeachersTable extends Migration
             $table->string('phone_number');
             $table->string('address');
             $table->string('education_degree');
-            $table->unsignedBigInteger('posts');
+            $table->unsignedBigInteger('post_id')->nullable();
             $table->string('teacher_photo');
 
             $table->timestamps();

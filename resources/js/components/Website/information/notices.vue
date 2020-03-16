@@ -1,133 +1,157 @@
 <template>
-    <div class="notice-section">
-        <div class="container">
-            <div class="row mt-5">
-                <div class="mb-2">
-                    <h2 class="title-top">Recent News and Notices</h2>
-                    <hr class="bg-base-color separator-line">
+    <div>
+
+        <div class="notice-section">
+            <div class="container">
+                <div class="row mt-5">
+                    <div class="mb-2">
+                        <h2 class="title-top">Recent News and Notices</h2>
+                        <hr class="bg-base-color separator-line">
+                    </div>
                 </div>
-            </div>
-            <div class="row justify-content-center">
-                <!--<div class="col-md-5">
-                    <div class="row mb-5">
-                        <div class="form col-8">
-                            <div class="input-group">
-                                <input type="text" class="form-control"/>
-                                <div class="input-group-append">
-                                    <button type="button" class="btn btn-info">Go</button>
+                <div class="row justify-content-center">
+                    <!--<div class="col-md-5">
+                        <div class="row mb-5">
+                            <div class="form col-8">
+                                <div class="input-group">
+                                    <input type="text" class="form-control"/>
+                                    <div class="input-group-append">
+                                        <button type="button" class="btn btn-info">Go</button>
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="row mb-5">
-                        <nav class="navigation col-8">
-                            <ul class="mainmenu">
-                                <li style="border-bottom: 1px solid black;"><a href="">Type of News<span><i
-                                    class="fas fa-plus-circle float-right"></i></span></a>
-                                    <ul class="submenu">
-                                        <li><a href="">New Release</a></li>
-                                        <li><a href="">Reasearch</a></li>
-                                        <li><a href="">Holidays</a></li>
-                                        <li><a href="">Important Notices</a></li>
-                                    </ul>
-                                </li>
-                                <li style="border-bottom: 1px solid black;"><a href="">Publication Date <span><i
-                                    class="fas fa-plus-circle float-right"></i></span></a>
-                                    <ul class="submenu">
-                                        <li><a href="">Today</a></li>
-                                        <li><a href="">This Week</a></li>
-                                        <li><a href="">This Month</a></li>
-                                    </ul>
-                                </li>
-                            </ul>
-                        </nav>
-                    </div>
-                    <div class="row">
-                        Calander
-                    </div>
-                </div>-->
-                <div class="col-xl-10 col-lg-10 col-md-12 col-sm-12 col-12">
-                    <div class="upcoming-event">
+                        <div class="row mb-5">
+                            <nav class="navigation col-8">
+                                <ul class="mainmenu">
+                                    <li style="border-bottom: 1px solid black;"><a href="">Type of News<span><i
+                                        class="fas fa-plus-circle float-right"></i></span></a>
+                                        <ul class="submenu">
+                                            <li><a href="">New Release</a></li>
+                                            <li><a href="">Reasearch</a></li>
+                                            <li><a href="">Holidays</a></li>
+                                            <li><a href="">Important Notices</a></li>
+                                        </ul>
+                                    </li>
+                                    <li style="border-bottom: 1px solid black;"><a href="">Publication Date <span><i
+                                        class="fas fa-plus-circle float-right"></i></span></a>
+                                        <ul class="submenu">
+                                            <li><a href="">Today</a></li>
+                                            <li><a href="">This Week</a></li>
+                                            <li><a href="">This Month</a></li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </nav>
+                        </div>
                         <div class="row">
-                            <div class="col-md-5 upcoming-event-date" style="background-size: cover">
-                                <img src="images/course_1.jpg"/>
-                            </div>
-                            <div class="col-md-7 p-2">
-                                <h3 class="text-center">Notice Title</h3>
-                                <div class="row">
-                                    <p class="col-lg-6 col-md-6 col-sm-12 mx-2" style="font-size: 17px;">
-                                        <i class="fas fa-calendar-alt"></i><span> Notice Date</span>
-                                    </p>
+                            Calander
+                        </div>
+                    </div>-->
+                    <div class="col-xl-10 col-lg-10 col-md-12 col-sm-12 col-12">
+                        <div class="upcoming-event">
+                            <div class="row">
+                                <div class="col-md-5 upcoming-event-date" style="background-size: cover">
+                                    <img src="images/course_1.jpg"/>
                                 </div>
-                                <p class="limited-text">Lorem ipsum dolor sit amet, consectetur
-                                    adipisicing elit. Aliquid animi
-                                    laudantium quaerat qui quisquam repudiandae. Ab accusamus adipisci
-                                    animi, asperiores doloribus eaque et, explicabo facere libero
-                                    numquam
-                                    quaerat reiciendis totam.</p>
-                                <button class="btn btn-dark btn-event">
-                                    <a href="/news/eventdetail">View Details</a>
-                                </button>
+                                <div class="col-md-7 p-2">
+                                    <h3 class="text-center">Notice Title</h3>
+                                    <div class="row">
+                                        <p class="col-lg-6 col-md-6 col-sm-12 mx-2" style="font-size: 17px;">
+                                            <i class="fas fa-calendar-alt"></i><span> Notice Date</span>
+                                        </p>
+                                    </div>
+                                    <p class="limited-text">Lorem ipsum dolor sit amet, consectetur
+                                        adipisicing elit. Aliquid animi
+                                        laudantium quaerat qui quisquam repudiandae. Ab accusamus adipisci
+                                        animi, asperiores doloribus eaque et, explicabo facere libero
+                                        numquam
+                                        quaerat reiciendis totam.</p>
+                                    <button class="btn btn-dark btn-event">
+                                        <a href="/news/eventdetail">View Details</a>
+                                    </button>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="upcoming-event">
-                        <div class="row">
-                            <div class="col-md-5 upcoming-event-date" style="background-size: cover">
-                                <img src="images/course_1.jpg"/>
-                            </div>
-                            <div class="col-md-7 p-2">
-                                <h3 class="text-center">Notice Title</h3>
-                                <div class="row">
-                                    <p class="col-lg-6 col-md-6 col-sm-12 mx-2" style="font-size: 17px;">
-                                        <i class="fas fa-calendar-alt"></i><span> Notice Date</span>
-                                    </p>
+                        <div class="upcoming-event">
+                            <div class="row">
+                                <div class="col-md-5 upcoming-event-date" style="background-size: cover">
+                                    <img src="images/course_1.jpg"/>
                                 </div>
-                                <p class="limited-text">Lorem ipsum dolor sit amet, consectetur
-                                    adipisicing elit. Aliquid animi
-                                    laudantium quaerat qui quisquam repudiandae. Ab accusamus adipisci
-                                    animi, asperiores doloribus eaque et, explicabo facere libero
-                                    numquam
-                                    quaerat reiciendis totam.</p>
-                                <button class="btn btn-dark btn-event">
-                                    <a href="/news/eventdetail">View Details</a>
-                                </button>
+                                <div class="col-md-7 p-2">
+                                    <h3 class="text-center">Notice Title</h3>
+                                    <div class="row">
+                                        <p class="col-lg-6 col-md-6 col-sm-12 mx-2" style="font-size: 17px;">
+                                            <i class="fas fa-calendar-alt"></i><span> Notice Date</span>
+                                        </p>
+                                    </div>
+                                    <p class="limited-text">Lorem ipsum dolor sit amet, consectetur
+                                        adipisicing elit. Aliquid animi
+                                        laudantium quaerat qui quisquam repudiandae. Ab accusamus adipisci
+                                        animi, asperiores doloribus eaque et, explicabo facere libero
+                                        numquam
+                                        quaerat reiciendis totam.</p>
+                                    <button class="btn btn-dark btn-event">
+                                        <a href="/news/eventdetail">View Details</a>
+                                    </button>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="upcoming-event">
-                        <div class="row">
-                            <div class="col-md-5 upcoming-event-date" style="background-size: cover">
-                                <img src="images/course_1.jpg"/>
-                            </div>
-                            <div class="col-md-7 p-2">
-                                <h3 class="text-center">Notice Title</h3>
-                                <div class="row">
-                                    <p class="col-lg-6 col-md-6 col-sm-12 mx-2" style="font-size: 17px;">
-                                        <i class="fas fa-calendar-alt"></i><span> Notice Date</span>
-                                    </p>
+                        <div class="upcoming-event">
+                            <div class="row">
+                                <div class="col-md-5 upcoming-event-date" style="background-size: cover">
+                                    <img src="images/course_1.jpg"/>
                                 </div>
-                                <p class="limited-text">Lorem ipsum dolor sit amet, consectetur
-                                    adipisicing elit. Aliquid animi
-                                    laudantium quaerat qui quisquam repudiandae. Ab accusamus adipisci
-                                    animi, asperiores doloribus eaque et, explicabo facere libero
-                                    numquam
-                                    quaerat reiciendis totam.</p>
-                                <button class="btn btn-dark btn-event">
-                                    <a href="/news/eventdetail">View Details</a>
-                                </button>
+                                <div class="col-md-7 p-2">
+                                    <h3 class="text-center">Notice Title</h3>
+                                    <div class="row">
+                                        <p class="col-lg-6 col-md-6 col-sm-12 mx-2" style="font-size: 17px;">
+                                            <i class="fas fa-calendar-alt"></i><span> Notice Date</span>
+                                        </p>
+                                    </div>
+                                    <p class="limited-text">Lorem ipsum dolor sit amet, consectetur
+                                        adipisicing elit. Aliquid animi
+                                        laudantium quaerat qui quisquam repudiandae. Ab accusamus adipisci
+                                        animi, asperiores doloribus eaque et, explicabo facere libero
+                                        numquam
+                                        quaerat reiciendis totam.</p>
+                                    <button class="btn btn-dark btn-event">
+                                        <a href="/news/eventdetail">View Details</a>
+                                    </button>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
+        <fotter-component></fotter-component>
     </div>
+
 </template>
 
 <script>
+    import fotterComponent from "../fotterComponent";
+
     export default {
-        name: "notices"
+        name: "notices",
+        data: function () {
+            return {
+
+                notice:[]
+            }
+        },
+        mounted() {
+            axios.get('/api/fetchWebsiteNotices', {}).then(res => {
+                this.notice = res.data.notice;
+            });
+        },
+
+        component: {
+            fotterComponent
+        },
+
+
     }
 </script>
 
@@ -140,50 +164,6 @@
     html, body {
         font-family: Arial, Helvetica, sans-serif;
     }
-
-    /* Sidemenu */
-    /*    .navigation {
-        width: 100%;
-    }
-
-    .mainmenu {
-        list-style: none;
-        padding: 0;
-        margin: 0;
-    }
-
-    .submenu {
-        list-style: none;
-        padding: 0;
-        margin-left: 15px;
-    }
-
-    .mainmenu a {
-        display: block;
-        background-color: #f8f8f8;
-        text-decoration: none;
-        padding: 10px;
-        color: #000;
-    }
-
-    .mainmenu a:hover {
-        background-color: #C5C5C5;
-    }
-
-    .mainmenu li:hover .submenu {
-        display: block;
-        max-height: 200px;
-    }
-
-    .submenu a:hover {
-        background-color: #C5C5C5;
-    }
-
-    .submenu {
-        overflow: hidden;
-        max-height: 0;
-        -webkit-transition: all 0.5s ease-out;
-    }*/
 
     /*Notices*/
     .upcoming-event {
@@ -226,6 +206,7 @@
         color: white;
         text-decoration: none;
     }
+
     .limited-text {
         overflow: hidden;
         display: -webkit-box;

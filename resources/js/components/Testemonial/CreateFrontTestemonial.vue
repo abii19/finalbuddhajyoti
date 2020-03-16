@@ -40,7 +40,7 @@
                         <div class=" col-md-12 row">
                             <div class="col-md-6">
                                 <label>Saying</label>
-                                <input type="text" class="form-control form-control-sm" v-model="saying">
+                                <textarea type="text" class="form-control form-control-sm" v-model="saying"></textarea>
                                 <span v-if="sayingError" class="text-danger">{{sayingError}}</span>
                             </div>
 
@@ -167,6 +167,8 @@
                             this.imageSelected = ' ';
                             this.successMessage = true;
                             this.success = response.data.msg;
+                            alert(this.success);
+
                         }
 
                     }).catch(err => {
