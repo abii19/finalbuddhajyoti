@@ -116,6 +116,7 @@ Vue.component('upcoming-events', require('./components/Website/UpcomingEvents.vu
 /**New Website Components*/
 /**Defining Website components*/
 Vue.component('website-layout', require('./components/Website/websiteLayout.vue').default);
+Vue.component('layout-second', require('./components/Website/layoutSecond.vue').default);
 Vue.component('parallax-component', require('./components/Website/parallaxComponent.vue').default);
 Vue.component('message-desk', require('./components/Website/messageDesk.vue').default);
 Vue.component('services-desk', require('./components/Website/servicesDesk.vue').default);
