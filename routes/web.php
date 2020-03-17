@@ -11,14 +11,29 @@
 |
 */
 
-Route::get('/web', function () {
+/*Route::get('/', function () {
     return view('website.index');
-});
+});*/
+
+/**Website Routing*/
+Route::view('/', 'website.index');
+
+Route::view('/about', 'website.AboutUs.aboutus');
+Route::view('/history', 'website.AboutUs.history');
+Route::view('/ourteam', 'website.AboutUs.ourteam');
+Route::view('/teachers', 'website.Teachers.teachers');
+Route::view('/notices', 'website.Information.notices');
+Route::view('/upcomingevents', 'website.Information.upcomingevent');
+Route::view('/blogs', 'website.Information.blog');
+Route::view('/contact', 'website.Contact.contact');
 
 
+
+
+
+
+/**Admin Part Routing*/
 Auth::routes();
-
-
 Route::group(['middleware' => 'auth'], function () {
 
     /*    LOGOUT*/
@@ -53,6 +68,7 @@ Route::group(['middleware' => 'auth'], function () {
 
 });
 
+
 Route::get('/home', 'HomeController@index')->name('home');
 
 
@@ -61,66 +77,10 @@ Route::get('/news/blog', 'Blog\ViewBlogController@index')->name('blog');
 Route::get('/blog/{$id}', 'Blog\ViewBlogController@singleBlog')->name('singleBlog');
 Route::get('/event/{id}', 'Event\EventController@showSingleEvent')->name('editEvent');
 
-
-/*--Facilities--*/
-Route::get('/facilities', function () {
-    return view('website.facilities');
-});
-Route::get('/facilities/library', function () {
-    return view('website.facilities.library');
-});
-Route::get('/facilities/hostel', function () {
-    return view('website.facilities.hostels');
-});
-Route::get('/facilities/extraclass', function () {
-    return view('website.facilities.extraclasses');
-});
-Route::get('/facilities/extracurriculum', function () {
-    return view('website.facilities.extracurriculum');
-});
-
-/*----News and Events-----*/
-Route::get('/news/event', function () {
-    return view('website.news.event');
-});
-Route::get('/news/eventdetail', function () {
-    return view('website.news.eventdetails');
-});
-
-
-Route::get('/news/notice', function () {
-    return view('website.news.notices');
-});
-/*About Us*/
-Route::get('/aboutus', function () {
-    return view('website.AboutUs.aboutus');
-});
-Route::get('/aboutus/history', function () {
-    return view('website.AboutUS.history');
-});
-Route::get('/aboutus/ourteam', function () {
-    return view('website.AboutUS.ourteam');
-});
-
-
 /*               TEACHERS                    */
 
 Route::resource('teacher', 'Teacher\TeacherController');
 
-
-/*New Views*/
-Route::get('/', function () {
-    return view('website2.index');
-});
-Route::get('/about1', function () {
-    return view('Website2/about');
-});
-Route::get('/teachers1', function () {
-    return view('Website2/teacher');
-});
-Route::get('/info', function () {
-    return view('Website2/information');
-});
 
 
 Route::get('/test', function () {

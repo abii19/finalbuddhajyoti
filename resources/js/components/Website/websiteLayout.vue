@@ -16,8 +16,7 @@
                         <div class="collapse navbar-collapse" id="navbarSupportedContent">
                             <ul class="navbar-nav ml-auto">
                                 <li class="nav-item active">
-                                    <router-link class="nav-link" :to="{ name: 'home' }">Home</router-link>
-                                    <!--<a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>-->
+                                    <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
                                 </li>
                                 <li class="nav-item dropdown">
                                     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
@@ -25,13 +24,10 @@
                                         About
                                     </a>
                                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                        <router-link class="dropdown-item" :to="{ name: 'aboutus' }">About Us</router-link>
-                                        <!--<a  href="#">About Us</a>-->
-                                        <router-link class="dropdown-item" :to="{ name: 'history' }">History</router-link>
-                                        <!--<a class="dropdown-item" href="#">History</a>-->
+                                        <a class="dropdown-item" href="/about">About Us</a>
+                                        <a class="dropdown-item" href="/history">History</a>
                                         <div class="dropdown-divider"></div>
-                                        <router-link class="dropdown-item" :to="{ name: 'ourteam' }">Our Team</router-link>
-                                        <!--<a class="dropdown-item" href="#">Our Team</a>-->
+                                        <a class="dropdown-item" href="/ourteam">Our Team</a>
                                     </div>
                                 </li>
                                 <li class="nav-item dropdown">
@@ -45,12 +41,8 @@
                                         <a class="dropdown-item" href="#">Montessery Classes</a>
                                     </div>
                                 </li>
-                                <!--<li class="nav-item">
-                                    <a class="nav-link" href="#">Facilities</a>
-                                </li>-->
                                 <li class="nav-item">
-                                    <router-link class="nav-link" :to="{ name: 'teachers' }">Teachers</router-link>
-                                    <!--<a  href="#">Teachers</a>-->
+                                    <a class="nav-link" href="/teachers">Teachers</a>
                                 </li>
                                 <li class="nav-item dropdown">
                                     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown2" role="button"
@@ -58,17 +50,14 @@
                                         Information
                                     </a>
                                     <div class="dropdown-menu" aria-labelledby="navbarDropdown2">
-                                        <router-link class="dropdown-item" :to="{ name: 'notices' }">Recent News and Notices</router-link>
-                                        <!--<a class="dropdown-item" href="#">News and Notices</a>-->
-                                        <router-link class="dropdown-item" :to="{ name: 'upcomingevents' }">Upcoming Events</router-link>
-                                        <!--<a class="dropdown-item" href="#">Upcoming Events</a>-->
+                                        <a class="dropdown-item" href="/notices">News and Notices</a>
+                                        <a class="dropdown-item" href="/upcomingevents">Upcoming Events</a>
                                         <div class="dropdown-divider"></div>
-                                        <router-link class="dropdown-item" :to="{ name: 'blogs' }">Blogs</router-link>
-                                        <!--<a class="dropdown-item" href="#">Blog</a>-->
+                                        <a class="dropdown-item" href="/blogs">Blogs</a>
                                     </div>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link" href="#">Contact</a>
+                                    <a class="nav-link" href="">Contact</a>
                                 </li>
                             </ul>
                         </div>
@@ -83,23 +72,23 @@
                 </ol>-->
                 <div class="carousel-inner">
                     <!--For Box Shadow-->
-                    <div class="carousel-caption vignette-shadow-ex">
-                    </div>
+                    <!--<div class="carousel-caption vignette-shadow-ex">
+                    </div>-->
                     <!--Carousel Images-->
                     <div class="carousel-item active">
                         <img src="images/BuddhaJyotiImages/School1.jpg"
                              class="img-fluid-carousel d-block w-100" alt="Budha Jyoti School">
                         <div class="carousel-caption centered">
-                            <h2 class="ex-large-900">Buddha<span> Jyoti</span></h2>
-                            <p class="d-none d-sm-block">You Learn Something Everyday</p>
+                            <h2 class="ex-large-900 animated fadeIn delay-1s">Buddha<span> Jyoti</span></h2>
+                            <p class="d-none d-sm-block animated fadeIn delay-2s" style="animation-duration: 3s;">You Learn Something Everyday</p>
                         </div>
                     </div>
                     <div class="carousel-item">
                         <img src="images/BuddhaJyotiImages/School1.jpg"
                              class="img-fluid-carousel d-block w-100" alt="Budha Jyoti School">
                         <div class="carousel-caption centered">
-                            <h2 class="ex-large-900"><span>Innovative </span>Teachers</h2>
-                            <p class="d-none d-sm-block">Intelligence plus character that is the goal of true
+                            <h2 class="ex-large-900 animated flipInY delay-1s"><span>Innovative </span>Teachers</h2>
+                            <p class="d-none d-sm-block animated fadeIn delay-2s" style="animation-duration: 3s;">Intelligence plus character that is the goal of true
                                 education</p>
                         </div>
                     </div>
@@ -107,8 +96,8 @@
                         <img src="images/BuddhaJyotiImages/School1.jpg"
                              class="img-fluid-carousel d-block w-100" alt="Budha Jyoti School">
                         <div class="carousel-caption centered">
-                            <h2 class="ex-large-900">Hard <span>Working</span></h2>
-                            <p class="d-none d-sm-block">I’m not telling you it’s going to be easy <br/>
+                            <h2 class="ex-large-900 animated flipInX delay-1s">Hard <span>Working</span></h2>
+                            <p class="d-none d-sm-block animated fadeIn delay-2s" style="animation-duration: 3s;">I’m not telling you it’s going to be easy <br/>
                                 I’m telling you it’s going to be worth it</p>
                         </div>
                     </div>
@@ -123,10 +112,6 @@
                 </a>
             </div>
         </section>
-
-
-        <!--Router View Call for SPA-->
-        <router-view></router-view>
 
     </div>
 </template>
@@ -145,6 +130,7 @@
 </script>
 
 <style scoped>
+
     .carousel-control-prev, .carousel-control-next {
         background: #09143c none repeat scroll 0 0;
         color: #fff;
@@ -313,7 +299,7 @@
 
         .carousel-caption.centered {
             position: absolute;
-            top: 60%;
+            top: 45%;
             left: 50%;
             transform: translate(-50%, -50%);
         }
@@ -326,7 +312,7 @@
 
         .carousel-caption.centered {
             position: absolute;
-            top: 50%;
+            top: 60%;
             left: 50%;
             transform: translate(-50%, -50%);
         }
@@ -355,6 +341,15 @@
         text-align: center;
         color: white;
         font-family: 'Montserrat', sans-serif;
+    }
+
+    .carousel-caption p{
+        font-size: 20px;
+        line-height: 25px;
+        width: 400px !important;
+        margin: auto;
+        padding: 20px 0;
+        background-color: rgba(9, 20, 60, 0.5);
     }
 
     .carousel-caption h2 span {

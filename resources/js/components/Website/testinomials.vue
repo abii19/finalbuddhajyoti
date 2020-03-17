@@ -14,14 +14,14 @@
 
                     <md-card-media>
                         <!-- swiper -->
-                        <swiper :options="swiperOption">
-                            <swiper-slide v-for="testimonials in testemonial" v-bind:key="testimonials.id">
-                                <div class="testimonial-profile">
+                        <swiper :options="swiperOption" style="height: 450px;">
+                            <swiper-slide v-for="testimonials in testemonial" v-bind:key="testimonials.id" style="height: 500px;">
+                                <div class="testimonial-profile" >
                                     <img :src="testimonials.photo" class="testonomial-user">
                                     <blockquote>
                                         {{testimonials.saying}}
                                     </blockquote>
-                                    <div class="text-center">
+                                    <div class="text-center pt-2">
                                         <h3> {{testimonials.f_name}}</h3>
                                         <p> {{testimonials.type}}</p>
                                     </div>
@@ -30,7 +30,7 @@
                             <swiper-slide>
                                 <div class="testimonial-profile">
                                     <img src="images/teacher_4.jpg" class="testonomial-user">
-                                    <blockquote>
+                                    <blockquote style="height: auto; text-align: center; margin: auto;">
                                         Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet aut deserunt
                                         dolor
                                         enim expedita, fuga in molestias nihil nobis nulla numquam omnis quibusdam
@@ -42,7 +42,7 @@
                                     </div>
                                 </div>
                             </swiper-slide>
-                            <swiper-slide>
+                            <!--<swiper-slide>
                                 <div class="testimonial-profile">
                                     <img src="images/teacher_4.jpg" class="testonomial-user">
                                     <blockquote>
@@ -101,7 +101,7 @@
                                         <p> Post at ...</p>
                                     </div>
                                 </div>
-                            </swiper-slide>
+                            </swiper-slide>-->
                             <div class="swiper-pagination swiper-pagination-bullets" slot="pagination"></div>
                             <!--<div class="swiper-button-next swiper-button-primary" slot="button-next"></div>
                             <div class="swiper-button-prev swiper-button-primary" slot="button-prev"></div>-->
@@ -198,8 +198,11 @@
 
     /*Testonomials Start*/
     .testimonial-desk {
-        padding: 50px 0;
-        background-color: #fafafa;
+    }
+
+    .testimonial-profile{
+        box-shadow: 0 8px 20px -2px rgba(158, 152, 153, 0.3);
+        padding-bottom: 10px;
     }
 
 
@@ -233,10 +236,10 @@
 
     blockquote::before {
         content: '\201C';
-        font-size: 50px;
+        font-size: 60px;
         font-family: "Times New Roman";
         position: relative;
-        color: #ff9800;
+        color: #cd2541;
         line-height: 20px;
         bottom: -15px;
         right: 5px;
@@ -244,10 +247,10 @@
 
     blockquote::after {
         content: '\201D';
-        font-size: 50px;
+        font-size: 60px;
         font-family: "Times New Roman";
         position: relative;
-        color: #ff9800;
+        color: #cd2541;
         line-height: 10px;
         bottom: -15px;
         left: 5px;

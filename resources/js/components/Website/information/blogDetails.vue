@@ -8,22 +8,20 @@
                     <div class="row">
                         <!-- Post Bar -->
                         <div class="col-lg-9 col-md-12 col-sm-12 col-12 blog-post-hr post-section">
-                            <div class="blog-post mb-30">
-                                <div class="post-meta"><span>by Admin, </span><span> <i class="fas fa-comments"></i> 25,</span><span> <i
-                                    class="fas fa-heart"></i> 57</span>
+                            <div class="blog-post mb-30" v-for="blogs in blog">
+                                <div class="post-meta"><span>{{blogs.author}}, </span>
+                                    <!--<span> <i class="fas fa-comments"></i> 25,</span><span> <i
+                                    class="fas fa-heart"></i> 57</span>-->
                                 </div>
                                 <div class="post-header">
-                                    <h2>Maecenas nec odio ante varcy tincidunt.</h2>
-                                    <p><span class="event-calender blog-date"> 21 <span>June</span></span></p>
+                                    <h2>{{blogs.title}}</h2>
+                                    <p><span class="event-calender blog-date">{{blogs.created_at}}</span></p>
                                 </div>
-                                <div class="post-media"><img src="images/news_background.jpg"
-                                    class="img-fluid" alt=""></div>
+                                <div class="post-media"><img :src="blogs.single_blog_pic"
+                                    class="img-fluid" alt="Blog Title Image"></div>
                                 <div class="post-entry">
-                                    <p> Praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias
-                                        excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui
-                                        officia deserunt mollitia animi, id est laborum et dolorum fuga. Et harum quidem
-                                        rerum facilis est et expedita distinctio. </p>
-                                    <p> similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et
+                                    <p> {{blogs.post}} </p>
+                                    <!--<p> similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et
                                         dolorum fuga. Et harum quidem rerum facilis est et expedita distinctio. </p>
                                     <blockquote class="dark-bg"> We're not leaving here without Buster, man. Leave no
                                         crash-test dummy behind nihil impedit quo minus id quod maxime placeat facere!
@@ -40,7 +38,7 @@
                                         rerum facilis est et expedita distinctio. </p>
                                     <p style="font-size: 17px"> similique sunt in culpa qui officia deserunt mollitia
                                         animi, id est laborum et
-                                        dolorum fuga. Et harum quidem rerum facilis est et expedita distinctio. </p>
+                                        dolorum fuga. Et harum quidem rerum facilis est et expedita distinctio. </p>-->
                                 </div>
                             </div>
                             <hr/>
@@ -71,7 +69,17 @@
 
 <script>
     export default {
-        name: "blogDetails"
+        name: "blogDetails",
+        data: function(){
+            return{
+                blog: []
+            }
+        },
+        mounted(){
+            axios.get('/api/fetchBlog', {}).then(resp=>{
+                this.blog = resp.data.blog;
+            });
+        },
     }
 </script>
 

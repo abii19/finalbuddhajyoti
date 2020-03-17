@@ -3,12 +3,18 @@
         <section class="founding-members">
             <div class="container">
                 <div class="row">
-                    <div class="mb-4">
+                    <div class="mb-2">
                         <h2 class="title-top">Founding Members</h2>
                         <hr class="bg-base-color separator-line">
                     </div>
                 </div>
-                <div class="row d-flex justify-content-center">
+                <!--<div class="row ">
+                    <div class="mb-4">
+                        <h2 class="title-top">Founding Members</h2>
+                        <hr class="bg-base-color separator-line">
+                    </div>
+                </div>-->
+                <div class="row d-flex justify-content-center container-part">
                     <div class="card">
                         <div class="content">
                             <h2>
@@ -135,12 +141,12 @@
         /*max-width: 1000px;
         position: relative;*/
         display: flex;
-        justify-content: center;
+        /*justify-content: center;*/
         flex-wrap: wrap;
         transition: 0.5s;
     }
 
-    .container:hover .card {
+    .container-part:hover .card {
         filter: blur(5px);
         transform: scale(.7);
     }

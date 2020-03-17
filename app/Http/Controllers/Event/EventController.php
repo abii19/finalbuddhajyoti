@@ -31,7 +31,7 @@ class EventController extends Controller
 
     public function fetchWebsiteNotices()
     {
-        $notice = Event::where('is_notice', 1)->paginate(10);
+        $notice = Event::where('is_notice', 0)->get();
         return response()->json([
             'notice' => $notice
         ], 200);

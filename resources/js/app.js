@@ -31,14 +31,14 @@ Vue.use(VueMaterial);
 import VueRouter from 'vue-router';
 Vue.use(VueRouter);
 
-import Layout from './components/Website/websiteLayout'
+/*import Layout from './components/Website/websiteLayout'
 import Home from './components/Website/Home'
 import Teacher from './components/Website/teacher/teachers'
-/**About*/
+/!**About*!/
 import AboutUs from './components/Website/about/aboutus'
 import History from './components/Website/about/history'
 import OurTeam from './components/Website/about/ourteam'
-/**Information*/
+/!**Information*!/
 import Notices from "./components/Website/information/notices";
 import upcomingevents from "./components/Website/information/upcomingevents";
 import Blogs from './components/Website/information/blogs'
@@ -88,7 +88,7 @@ const router = new VueRouter({
             component: Blogs,
         },
     ],
-});
+});*/
 
 // const files = require.context('./', true, /\.vue$/i)
 // files.keys().map(key => Vue.component(key.split('/').pop().split('.')[0], files(key).default))
@@ -106,8 +106,8 @@ Vue.component('add-front-pic', require('./components/Front-Pic/ForntPicComponent
 
 //Website
 Vue.component('upcoming-events', require('./components/Website/UpcomingEvents.vue').default);
-Vue.component('news-events', require('./components/Website/RecentNewsEvents.vue').default);
-Vue.component('testemonial', require('./components/Website/TestemonialComponent').default);
+/*Vue.component('news-events', require('./components/Website/RecentNewsEvents.vue').default);*/
+/*Vue.component('testemonial', require('./components/Website/TestemonialComponent').default);*/
 
 /*Vue.component('event-desk', require('./components/Website/index.vue').default);*/
 
@@ -123,7 +123,6 @@ Vue.component('testinomials-desk', require('./components/Website/testinomials.vu
 Vue.component('gallery-desk', require('./components/Website/gallery.vue').default);
 Vue.component('event-desk', require('./components/Website/eventDesk.vue').default);
 Vue.component('upcoming-event-desk', require('./components/Website/upcomingeventDesk.vue').default);
-Vue.component('board-members', require('./components/Website/boardMembers.vue').default);
 Vue.component('founding-members', require('./components/Website/foundingMembers.vue').default);
 Vue.component('fotter-component', require('./components/Website/fotterComponent.vue').default);
 
@@ -133,7 +132,9 @@ Vue.component('about-history', require('./components/Website/about/history.vue')
 Vue.component('about-ourteam', require('./components/Website/about/ourteam.vue').default);
 
 /**Teacher Component*/
-Vue.component('teachers', require('./components/Website/teacher/teachers.vue').default);
+Vue.component('teachers-component', require('./components/Website/teacher/teachers.vue').default);
+/**Contact*/
+Vue.component('contact-component', require('./components/Website/contact/contact.vue').default);
 
 /**Information Component*/
 Vue.component('information-blogs', require('./components/Website/information/blogs.vue').default);
@@ -145,7 +146,5 @@ Vue.component('information-event-details', require('./components/Website/informa
 
 
 const app = new Vue({
-    el: '#app',
-    components: { Layout },
-    router,
+    el: '#app'
 });

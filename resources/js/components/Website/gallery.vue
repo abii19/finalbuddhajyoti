@@ -10,33 +10,33 @@
                     </div>
                 </div>
                 <md-card>
-                    <md-card-media  style="height: 500px">
+                    <md-card-media  style="height: 450px">
                         <!-- swiper1 -->
-                        <swiper :options="swiperOptionTop" class="gallery-top" ref="swiperTop">
+                        <swiper :options="swiperOptionTop" class="gallery-top" ref="swiperTop" style="height: 400px;">
                             <swiper-slide class="slide-1">
-                                <img src="images/teacher_1.jpg" class="testonomial-user">
+                                <img src="images/teacher_1.jpg" class="img-fluid testonomial-user">
                             </swiper-slide>
                             <swiper-slide class="slide-2">
-                                <img src="images/milestones_background.jpg" class="testonomial-user">
+                                <img src="images/milestones_background.jpg" class="img-fluid testonomial-user">
                             </swiper-slide>
                             <swiper-slide class="slide-3">
-                                <img src="images/teacher_3.jpg" class="testonomial-user">
+                                <img src="images/teacher_3.jpg" class="img-fluid testonomial-user">
                             </swiper-slide>
                             <swiper-slide class="slide-4">
-                                <img src="images/teacher_4.jpg" class="testonomial-user">
+                                <img src="images/teacher_4.jpg" class="img-fluid testonomial-user">
                             </swiper-slide>
                             <swiper-slide class="slide-5">
                                 <img src="images/teacher_5.jpg" class="testonomial-user">
                             </swiper-slide>
                             <swiper-slide class="slide-6">
-                                <img src="images/teacher_6.jpg" class="testonomial-user">
+                                <img src="images/teacher_6.jpg" class="img-fluid testonomial-user">
                             </swiper-slide>
                             <div class="swiper-pagination" slot="pagination"></div>
                             <!--<div class="swiper-button-next swiper-button-white" slot="button-next"></div>
                             <div class="swiper-button-prev swiper-button-white" slot="button-prev"></div>-->
                         </swiper>
                         <!-- swiper2 Thumbs -->
-                        <swiper :options="swiperOptionThumbs" class="gallery-thumbs" ref="swiperThumbs">
+                        <swiper :options="swiperOptionThumbs" class="gallery-thumbs" ref="swiperThumbs" style="height: 50px;">
                             <swiper-slide class="slide-1">
                                 <img src="images/teacher_1.jpg" class="testonomial-user">
                             </swiper-slide>
@@ -101,7 +101,6 @@
 
 <style scoped>
     .gallery-desk {
-        padding: 50px 0;
         background-color: #fafafa;
     }
 
@@ -128,8 +127,8 @@
          background-image:url('https://images.unsplash.com/photo-1499084732479-de2c02d45fcc?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&w=1000&q=80');
      }*/
     }
-    .gallery-top {
-        height: 80%!important;
+    .gallery-top  img{
+        height: 400px !important;
         width: 100%;
     }
     .gallery-thumbs {

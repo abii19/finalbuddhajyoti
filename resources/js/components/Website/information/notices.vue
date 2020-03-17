@@ -49,7 +49,26 @@
                         </div>
                     </div>-->
                     <div class="col-xl-10 col-lg-10 col-md-12 col-sm-12 col-12">
-                        <div class="upcoming-event">
+                        <div class="upcoming-event" v-for="notices in notice">
+                            <div class="row">
+                                <div class="col-md-5 upcoming-event-date" style="background-size: cover">
+                                    <img :src="notices.photo" alt="Notices Photos"/>
+                                </div>
+                                <div class="col-md-7 p-2">
+                                    <h3 class="text-center">{{notices.title}}</h3>
+                                    <div class="row">
+                                        <p class="col-lg-6 col-md-6 col-sm-12 mx-2" style="font-size: 17px;">
+                                            <i class="fas fa-calendar-alt"></i><span> {{notices.date}}</span>
+                                        </p>
+                                    </div>
+                                    <p class="limited-text">{{notices.post}}</p>
+                                    <button class="btn btn-dark btn-event" @click="fetchDetail(notices.id)">
+                                        <a href="/news/eventdetail">Read More</a>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                        <!--<div class="upcoming-event">
                             <div class="row">
                                 <div class="col-md-5 upcoming-event-date" style="background-size: cover">
                                     <img src="images/course_1.jpg"/>
@@ -96,31 +115,7 @@
                                     </button>
                                 </div>
                             </div>
-                        </div>
-                        <div class="upcoming-event">
-                            <div class="row">
-                                <div class="col-md-5 upcoming-event-date" style="background-size: cover">
-                                    <img src="images/course_1.jpg"/>
-                                </div>
-                                <div class="col-md-7 p-2">
-                                    <h3 class="text-center">Notice Title</h3>
-                                    <div class="row">
-                                        <p class="col-lg-6 col-md-6 col-sm-12 mx-2" style="font-size: 17px;">
-                                            <i class="fas fa-calendar-alt"></i><span> Notice Date</span>
-                                        </p>
-                                    </div>
-                                    <p class="limited-text">Lorem ipsum dolor sit amet, consectetur
-                                        adipisicing elit. Aliquid animi
-                                        laudantium quaerat qui quisquam repudiandae. Ab accusamus adipisci
-                                        animi, asperiores doloribus eaque et, explicabo facere libero
-                                        numquam
-                                        quaerat reiciendis totam.</p>
-                                    <button class="btn btn-dark btn-event">
-                                        <a href="/news/eventdetail">View Details</a>
-                                    </button>
-                                </div>
-                            </div>
-                        </div>
+                        </div>-->
                     </div>
                 </div>
             </div>

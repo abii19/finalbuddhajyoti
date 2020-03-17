@@ -96,7 +96,7 @@
                                 <i class="fas fa-calendar-alt"></i><span> {{blogs.created_at}}</span>
                             </p>
                         </div>
-                        <p class="limited-text text-justify">.</p>
+                        <p class="limited-text text-justify">{{blogs.post}}</p>
                     </div>
                     <div class="text-left">
                         <button  @click="fetchDetail(blogs.id)"  class="btn btn-event border">
@@ -104,7 +104,7 @@
                         </button>
                     </div>
                     <div class="text-left pt-3">
-                        <p> Tags....</p>
+                        <!--<p> Tags....</p>-->
                     </div>
                 </div>
             </div>
