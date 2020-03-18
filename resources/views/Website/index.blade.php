@@ -4,16 +4,7 @@
     <div id="app">
         <website-layout></website-layout>
         <services-desk></services-desk>
-    </div>
-    {{--<div id="app">
-
-        <div class="container-fluid">
-
-            <div class="">
-                <message-desk></message-desk>
-            </div>
-        </div>
-        <services-desk></services-desk>
+        <message-desk></message-desk>
         <div class="container">
             <div class="row">
                 <div class="col-lg-6 col-md-12">
@@ -27,7 +18,7 @@
         <event-desk></event-desk>
         <upcoming-event-desk></upcoming-event-desk>
         <board-members></board-members>
-    </div>--}}
+    </div>
 @stop
 
 @section('scripts')
