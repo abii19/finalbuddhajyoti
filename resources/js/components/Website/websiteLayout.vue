@@ -56,9 +56,9 @@
                                         <a class="dropdown-item" href="/blogs">Blogs</a>
                                     </div>
                                 </li>
-                                <li class="nav-item">
+                                <!--<li class="nav-item">
                                     <a class="nav-link" href="">Contact</a>
-                                </li>
+                                </li>-->
                             </ul>
                         </div>
                     </div>
@@ -85,9 +85,9 @@
                     </div>
                     <div class="carousel-item">
                         <img src="images/BuddhaJyotiImages/School1.jpg"
-                             class="img-fluid-carousel d-block w-100" alt="Budha Jyoti School">
+                             class="img-fluid-carousel d-block w-100 animated fadeIn faster" alt="Budha Jyoti School">
                         <div class="carousel-caption centered">
-                            <h2 class="ex-large-900 animated flipInY delay-1s"><span>Innovative </span>Teachers</h2>
+                            <h2 class="ex-large-900 animated flipInX delay-1s"><span>Innovative </span>Teachers</h2>
                             <p class="d-none d-sm-block animated fadeIn delay-2s" style="animation-duration: 3s;">Intelligence plus character that is the goal of true
                                 education</p>
                         </div>
@@ -325,10 +325,6 @@
             font-family: 'Montserrat', sans-serif;
         }
 
-        .carousel-caption h2 span {
-            color: #ff9800;
-        }
-
         /*.carousel-caption p {
             text-align: center;
             font-size: 15px;
@@ -349,11 +345,11 @@
         width: 400px !important;
         margin: auto;
         padding: 20px 0;
-        background-color: rgba(9, 20, 60, 0.5);
+        background-color: rgba(205, 37, 65, 0.6);
     }
 
     .carousel-caption h2 span {
-        color: #ff9800;
+        color: #cd2541;
     }
 
     /*.carousel-caption p {

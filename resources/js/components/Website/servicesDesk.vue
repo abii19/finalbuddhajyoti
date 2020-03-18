@@ -99,7 +99,7 @@
                             <div class="col-md-6">
                                 <div class="row">
                                     <div class="col-md-3 col-sm-3">
-                                        <i class="fab fa-creative-commons-remix fa-3x" style="color: #f47b38"></i>
+                                        <i class="fab fa-creative-commons-remix fa-3x" style="color: #ff9800"></i>
                                     </div>
                                     <div class="col-md-9 col-sm-9">
                                         <h5>Hi-Tech Techniques and Teachers</h5>
@@ -136,7 +136,7 @@
                             </div>
                             <div class="col-lg-6 col-md-6 col-sm-12 mt-3">
                                 <div class="about_point">
-                                    <i class="fas fa-trophy icon_conunt" style="color: #f47b38"></i>
+                                    <i class="fas fa-trophy icon_conunt" style="color: #ff9800"></i>
                                     <h3>Awards</h3>
                                     <span class="counter" data-count="3562">0</span>
 

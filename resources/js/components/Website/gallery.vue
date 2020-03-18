@@ -101,6 +101,7 @@
 
 <style scoped>
     .gallery-desk {
+        padding: 50px 0 100px 0;
         background-color: #fafafa;
     }
 
@@ -140,6 +141,9 @@
         width: 25%;
         height: 100%;
         opacity: 0.4;
+    }
+    .gallery-thumbs img{
+        height: 100px;
     }
     .gallery-thumbs .swiper-slide-active {
         opacity: 1;
