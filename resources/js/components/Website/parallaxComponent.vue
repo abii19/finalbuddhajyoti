@@ -1,6 +1,6 @@
 <template>
     <div class="">
-        <img class="parallax-img" src="images/svg/BookLover-Red.svg"/>
+        <img class="parallax-img" src="images/testimonials_background_2.jpg"/>
         <!--<ul id="scene">
             <li class="layer" data-depth="1"><img src="images/svg/undraw_exams_g4ow.svg" style="width: 500px; height: 500px; margin-left: 55vw; margin-top: -10vh"></li>
             <li class="layer" data-depth="-1"><img src="images/parallax/rocket.png"></li>

@@ -14,7 +14,7 @@
 
                     <md-card-media>
                         <!-- swiper -->
-                        <swiper :options="swiperOption" style="height: 450px;">
+                        <swiper :options="swiperOption" style="height: 500px;">
                             <swiper-slide v-for="testimonials in testemonial" v-bind:key="testimonials.id" style="height: 500px;">
                                 <div class="testimonial-profile" >
                                     <img :src="testimonials.photo" class="testonomial-user">
@@ -43,36 +43,6 @@
                                 </div>
                             </swiper-slide>
                             <!--<swiper-slide>
-                                <div class="testimonial-profile">
-                                    <img src="images/teacher_4.jpg" class="testonomial-user">
-                                    <blockquote>
-                                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet aut deserunt
-                                        dolor
-                                        enim expedita, fuga in molestias nihil nobis nulla numquam omnis quibusdam
-                                        reiciendis saepe suscipit veritatis vero vitae! Quis.
-                                    </blockquote>
-                                    <div class="text-center">
-                                        <h3> Testimonials Name</h3>
-                                        <p> Post at ...</p>
-                                    </div>
-                                </div>
-                            </swiper-slide>
-                            <swiper-slide>
-                                <div class="testimonial-profile">
-                                    <img src="images/teacher_4.jpg" class="testonomial-user">
-                                    <blockquote>
-                                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet aut deserunt
-                                        dolor
-                                        enim expedita, fuga in molestias nihil nobis nulla numquam omnis quibusdam
-                                        reiciendis saepe suscipit veritatis vero vitae! Quis.
-                                    </blockquote>
-                                    <div class="text-center">
-                                        <h3> Testimonials Name</h3>
-                                        <p> Post at ...</p>
-                                    </div>
-                                </div>
-                            </swiper-slide>
-                            <swiper-slide>
                                 <div class="testimonial-profile">
                                     <img src="images/teacher_4.jpg" class="testonomial-user">
                                     <blockquote>
@@ -198,6 +168,8 @@
 
     /*Testonomials Start*/
     .testimonial-desk {
+        padding: 50px 0;
+        background-color: #fafafa;
     }
 
     .testimonial-profile{
@@ -211,9 +183,6 @@
         height: 130px;
         border-radius: 50%;
         transform: translateX(80%);
-    }
-
-    .testonomial-user {
     }
 
     .profile h3 {

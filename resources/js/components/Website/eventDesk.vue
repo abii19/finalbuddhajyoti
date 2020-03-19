@@ -11,54 +11,30 @@
                     </div>
                 </div>
                 <div class="row">
-                    <div class="col-lg-8 col-md-12 col-sm-12">
-                        <div class="row">
-                            <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 col-12 mt-3"
-                                 v-for="newsEvents in newsEventsData">
-                                <div class="recent-events">
-                                    <div class="image-section">
-                                        <img class="img-fluid" :src="newsEvents.photo"
-                                             alt="Recent News and Event Image">
-                                    </div>
-                                    <div class="pr-3 pl-3 pt-3">
-                                        <h3 class="text-center">{{newsEvents.title}}</h3>
-                                        <div class="row">
-                                            <p class="col-md-6 col-sm-12">
-                                                <i class="fas fa-calendar-alt"></i><span> {{newsEvents.date}}</span>
-                                            </p>
-                                            <p class="col-md-6 col-sm-12">
-                                                <i class="fas fas fa-map-marker-alt"></i><span> Own School</span>
-                                            </p>
-                                        </div>
-                                        <p class="limited-text text-justify">{{newsEvents.post}}</p>
-                                    </div>
-                                    <div class="text-center pb-3">
-                                        <a class="btn btn-event border">
-                                            Read More
-                                        </a>
-                                    </div>
-                                </div>
+                    <div class="col-xl-4 col-lg-4 col-md-4 col-sm-12 col-12 mt-3"
+                         v-for="newsEvents in newsEventsData">
+                        <div class="recent-events">
+                            <div class="image-section">
+                                <img class="img-fluid" :src="newsEvents.photo"
+                                     alt="Recent News and Event Image">
                             </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 col-md-6 col-sm-12">
-                        <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 mt-3"
-                             v-for="newsEvents in newsEventsData">
-                            <div class="recent-events-2" style="">
-                                <div class="pr-3 pl-3 pt-3">
-                                    <h3 class="text-left">{{newsEvents.title}}</h3>
+                            <div class="pr-3 pl-3 pt-3">
+                                <h3 class="text-center">{{newsEvents.title}}</h3>
+                                <div class="row">
+                                    <p class="col-md-6 col-sm-12">
+                                        <i class="fas fa-calendar-alt"></i><span> {{newsEvents.date}}</span>
+                                    </p>
+                                    <p class="col-md-6 col-sm-12">
+                                        <i class="fas fas fa-map-marker-alt"></i><span> Own School</span>
+                                    </p>
                                 </div>
-                                <div class="text-center pb-3">
-                                    <a class="" href="">
-                                        Read More
-                                    </a>
-                                </div>
+                                <p class="limited-text text-justify">{{newsEvents.post}}</p>
                             </div>
-                        </div>
-                        <div class="text-center mt-2">
-                            <a class="btn btn-outline-dark border" href="">
-                                Visit Recent News
-                            </a>
+                            <div class="text-center pb-3">
+                                <a class="btn btn-event border" href="/noticedetails">
+                                    Read More
+                                </a>
+                            </div>
                         </div>
                     </div>
                     <!--<div class="col-xl-4 col-lg-4 col-md-12 col-sm-12 col-12 mt-3">
@@ -122,6 +98,40 @@
                         </div>
                     </div>-->
                 </div>
+                <div class="row">
+                    <div class="text-center p-3">
+                        <a class="btn btn-dark" href="/notices">
+                            Visit Notices
+                        </a>
+                    </div>
+                    <div class="text-center p-3">
+                        <a class="btn btn-dark" href="/notices">
+                            Visit Upcoming Events
+                        </a>
+                    </div>
+                </div>
+                <!--<div class="row">
+                    <div class="col-lg-4 col-md-6 col-sm-12">
+                        <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 mt-3"
+                             v-for="newsEvents in newsEventsData">
+                            <div class="recent-events-2" style="">
+                                <div class="pr-3 pl-3 pt-3">
+                                    <h3 class="text-left">{{newsEvents.title}}</h3>
+                                </div>
+                                <div class="text-center pb-3">
+                                    <a class="" href="">
+                                        Read More
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="text-center mt-2">
+                            <a class="btn btn-outline-dark border" href="">
+                                Visit Recent News
+                            </a>
+                        </div>
+                    </div>
+                </div>-->
 
             </div>
 
@@ -150,9 +160,17 @@
         padding: 50px 0 50px 0;
         background: #ffffff;
     }
-    .recent-events-2{
-        border-bottom: 1px solid rgba(0, 0, 0, .8) !important
+    /*.btn-event{
+        transition: 1s;
     }
+    .recent-events:hover .btn-event{
+        background: #cd2541;
+        color: #ffffff !important;
+    }*/
+
+    /*.recent-events-2{
+        border-bottom: 1px solid rgba(0, 0, 0, .8) !important
+    }*/
     .limited-text {
         overflow: hidden;
         display: -webkit-box;

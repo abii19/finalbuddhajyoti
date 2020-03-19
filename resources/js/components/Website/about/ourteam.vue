@@ -232,7 +232,7 @@
     }
 
     .v-line {
-        border-left: 3px solid #ffb606;
+        border-left: 3px solid #cd2541;
         padding-left: 20px;
     }
 

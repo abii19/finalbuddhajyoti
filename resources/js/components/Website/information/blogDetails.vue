@@ -18,33 +18,28 @@
                                     <p><span class="event-calender blog-date">{{blogs.created_at}}</span></p>
                                 </div>
                                 <div class="post-media"><img :src="blogs.single_blog_pic"
-                                    class="img-fluid" alt="Blog Title Image"></div>
+                                    class="img-fluid" alt="Blog Title Image" style="width: 100%"></div>
                                 <div class="post-entry">
                                     <p> {{blogs.post}} </p>
-                                    <!--<p> similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et
-                                        dolorum fuga. Et harum quidem rerum facilis est et expedita distinctio. </p>
-                                    <blockquote class="dark-bg"> We're not leaving here without Buster, man. Leave no
-                                        crash-test dummy behind nihil impedit quo minus id quod maxime placeat facere!
-                                    </blockquote>
-                                    <p class="lead"> Praesentium voluptatum deleniti atque corrupti quos dolores et quas
-                                        molestias excepturi sint occaecati cupiditate non provident, similique sunt in
-                                        culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga. Et
-                                        harum quidem rerum facilis est et expedita distinctio. </p>
-                                    <h3 class="mt-30">Sub Blog Title Here</h3>
-                                    <p style="font-size: 17px"> Praesentium voluptatum deleniti atque corrupti quos
-                                        dolores et quas molestias
-                                        excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui
-                                        officia deserunt mollitia animi, id est laborum et dolorum fuga. Et harum quidem
-                                        rerum facilis est et expedita distinctio. </p>
-                                    <p style="font-size: 17px"> similique sunt in culpa qui officia deserunt mollitia
-                                        animi, id est laborum et
-                                        dolorum fuga. Et harum quidem rerum facilis est et expedita distinctio. </p>-->
                                 </div>
                             </div>
                             <hr/>
                         </div>
                         <!-- End Post Bar -->
-                        <!-- Sidebar -->
+
+                        <!--Multiple Blog Images-->
+                        <div class="row">
+                            <div class="col-lg-4 col-xl-4 col-md-6 col-sm-12">
+                                <img class="img-fluid" src="images/milestones_background.jpg" alt="" style="width: 100%; height: 300px;">
+                            </div>
+                            <div class="col-lg-4 col-xl-4 col-md-6 col-sm-12">
+                                <img class="img-fluid" src="images/course_1.jpg" alt=""  style="width: 100%; height: 300px;">
+                            </div>
+                            <div class="col-lg-4 col-xl-4 col-md-6 col-sm-12">
+                                <img class="img-fluid" src="images/comment_1.jpg" alt=""  style="width: 100%; height: 300px;">
+                            </div>
+                        </div>
+                        <!-- Tags -->
                         <div class="sidebar-widget mb-0">
                             <h4>Popular Tags</h4>
                             <ul class="widget-tag pt-15">
@@ -59,7 +54,8 @@
                             </ul>
                         </div>
                     </div>
-                    <!-- End Sidebar -->
+
+
                 </div>
             </section>
         </div>
@@ -114,6 +110,7 @@
 
     .post-media img {
         height: 400px;
+        width: 100%;
     }
 
     .post-entry {

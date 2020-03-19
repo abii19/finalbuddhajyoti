@@ -9,14 +9,11 @@ use Illuminate\Http\Request;
 class AjaxNewsEventsController extends Controller
 {
     public  function getNewsEvents(){
-        $newsEvents = Event::latest()->limit(2)->get();
+        $newsEvents = Event::latest()->limit(3)->get();
 
         return response()->json([
            'newsEvents'=>$newsEvents,
         ]);
 
     }
-
-
-    //
 }

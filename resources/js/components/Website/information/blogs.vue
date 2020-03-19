@@ -100,7 +100,7 @@
                     </div>
                     <div class="text-left">
                         <button  @click="fetchDetail(blogs.id)"  class="btn btn-event border">
-                            View Details
+                            <a href="/blogdetails">View Details</a>
                         </button>
                     </div>
                     <div class="text-left pt-3">

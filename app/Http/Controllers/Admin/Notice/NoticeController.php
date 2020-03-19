@@ -56,6 +56,9 @@ class NoticeController extends Controller
                 $baseName = Str::random(20);
                 $originalName = $baseName . '.' . $request->image[0]->getClientOriginalExtension();
                 $request->image[0]->move(public_path('/events-notices/singlePic'), $originalName);*/
+        if (!is_dir(public_path('/eventsImages'))) {
+            mkdir(public_path('/eventsImages'), 0777);
+        }
 
         if ($validate) {
             $event = Event::create([
@@ -67,11 +70,6 @@ class NoticeController extends Controller
                 'photo' => '/events-notices/singlePic/',
             ]);
         }
-
-        if (!is_dir(public_path('/eventsImages'))) {
-            mkdir(public_path('/eventsImages'), 0777);
-        }
-
         foreach ($request->image as $image) {
             $imageName = Str::random(20);
             $originalImageName = $imageName . '.' . $image->getClientOriginalExtension();
@@ -81,6 +79,7 @@ class NoticeController extends Controller
                 'event_notice_photo' => '/eventsImages/' . $originalImageName,
             ]);
         }
+
 
         if ($blogImage) {
             $event->photo = $blogImage->event_notice_photo;

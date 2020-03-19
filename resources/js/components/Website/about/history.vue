@@ -137,7 +137,7 @@
         background: #f8f8f8;
     }
     .v-line {
-        border-left: 3px solid #ffb606;
+        border-left: 3px solid #cd2541;
         padding-left: 20px;
     }
     .mb-35 {
@@ -251,8 +251,8 @@
         margin: 0 0 35px 36px
     }
     .ui-timeline .tl-item .tl-body .tl-entry .btn-primary {
-        background-color: #ffb606;
-        border-color: #ffb606;
+        background-color: #CD2541;
+        border-color: #cd2541;
         padding: 10px 12px;
     }
     .ui-timeline .tl-item .tl-body .tl-time {
