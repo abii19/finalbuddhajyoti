@@ -62,5 +62,17 @@ Route::get('/fetchWebsiteTeachers', 'Teacher\TeacherAjaxController@fetchTeacherA
 
 Route::post('/blogDetail', 'Blog\ViewBlogController@fetchSpecificBlog');
 
+Route::post('/saveCauraselImage', 'Admin\Caurasel\CauraselController@saveCaurasel');
+Route::get('/fetchCauraselImage', 'Admin\Caurasel\CauraselController@fetchCaurasel');
+Route::post('/toogleBtn', 'Admin\Caurasel\CauraselController@setUnsetImage');
+Route::post('/deleteImage', 'Admin\Caurasel\CauraselController@deleteImage');
+
+
+//Front Pic
+Route::get('/fetchFront', 'FrontPic\FrontPicController@fetchCauraselImage');
+
+
+
+
 
 

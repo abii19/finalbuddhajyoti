@@ -8,12 +8,13 @@ class Teacher extends Model
 {
     protected $fillable = [
         'teacher_name',
-        'saying',
-        'user_id',
+        'phone_number',
+        'address',
         'years_active',
-        'teacher_posts',
         'education_degree',
-        'photo',
+        'post_id',
+        'teacher_photo',
+        'user_id',
     ];
 
     //
