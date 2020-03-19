@@ -4,7 +4,7 @@
         <div id="about-section" class="padding pt-xs-40">
             <div class="container">
                 <div class="row">
-                    <div class="col-md-6 col-lg-8">
+                    <div class="col-md-6 col-lg-8 our-mission">
                         <div class="block-title v-line">
                             <h2><span>Our</span> MISSION</h2>
                             <p class="italic">
@@ -22,11 +22,11 @@
                         <div class="post-content">
                             <div class="post-img">
                                 <img class="img-responsive"
-                                     src="{{asset("images/teachers_background.jpg")}}" alt="Photo">
+                                     src="images/teachers_background.jpg" alt="Photo">
                             </div>
                         </div>
                     </div>
-                    <div class="col-md-6 col-lg-4">
+                    <div class="col-md-6 col-lg-4 our-vision">
                         <div class="dark-bg our-vision light-color padding-40">
                             <div class="block-title1">
                                 <h2><span>Our</span> VISION</h2>
@@ -44,7 +44,7 @@
                     </div>
                 </div>
                 <div class="row">
-                    <div class="col-md-12 col-lg-12">
+                    <div class="col-md-12 col-lg-12 our-approaches">
                         <div class="block-title v-line">
                             <h2><span>Our</span> Approaches</h2>
                             <p class="italic">
@@ -91,6 +91,11 @@
 </script>
 
 <style scoped>
+    @media screen and (max-width: 767px){
+        .our-vision{
+            margin: 20px 0;
+        }
+    }
     #about-section {
         padding: 50px 0 50px 0;
     }
@@ -105,7 +110,7 @@
         color: #ffffff;
     }
     .v-line {
-        border-left: 3px solid #ffb606;
+        border-left: 3px solid #cd2541;
         padding-left: 20px;
     }
     .italic {
@@ -122,7 +127,7 @@
         padding: 40px;
     }
     .dark-bg {
-        background: #ffb606;
+        background: #cd2541;
     }
     .light-color {
         color: #fff;

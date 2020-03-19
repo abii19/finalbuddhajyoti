@@ -1,6 +1,7 @@
 <template>
     <div>
         <section class="message-desk" id="message-desk">
+            <parallax-component></parallax-component>
             <div class="container-fluid">
                 <!--<div class="lg-message-box">
                     <div class="row">
@@ -171,8 +172,12 @@
 </template>
 
 <script>
+    import parallaxComponent from "./parallaxComponent";
     export default {
         name: "messageSection",
+        component: {
+          parallaxComponent
+        },
         mounted() {
 
         }
@@ -182,25 +187,8 @@
 <style scoped>
     .message-desk {
         padding: 0 0;
+        /*background: #262626;*/
     }
-
-    /*.sm-message-box ul li {
-        display: inline;
-    }
-
-    ul li:hover {
-        cursor: pointer;
-        color: #141212;
-    }
-
-    .lg-message-box ul {
-        margin-top: 70px;
-    }
-
-    ul li {
-        font-size: 30px;
-        line-height: 40px;
-    }*/
 
     @media screen and (max-width: 767px) {
         .sm-message-box {
@@ -267,9 +255,10 @@
         height: 530px;
         background: #fff;
         overflow: hidden;
-        transition: 0.01s;
+        transition: 0.5s;
         z-index: 2;
         box-sizing: border-box;
+        justify-content: center;
         margin: 0 20px;
         padding: 30px;
         box-shadow: -5px 10px 25px rgba(0, 0, 0, .9);
@@ -278,13 +267,6 @@
     .quote:hover .box {
         filter: blur(3px);
         transform: scale(.8);
-    }
-
-    .quote .box {
-        position: relative;
-        background: #fff;
-        justify-content: center;
-        transition: 0.5s;
     }
 
     .quote .box:hover {
@@ -374,7 +356,7 @@
     .quote .box::after {
         content: '\201D';
         font-size: 180px;
-        font-family: "Times New Roman";
+        font-family: "Gotham-Light, sans-serif";
         color: #262626;
         line-height: 0px;
         position: absolute;

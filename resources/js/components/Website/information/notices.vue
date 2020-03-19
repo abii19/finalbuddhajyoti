@@ -63,7 +63,7 @@
                                     </div>
                                     <p class="limited-text">{{notices.post}}</p>
                                     <button class="btn btn-dark btn-event" @click="fetchDetail(notices.id)">
-                                        <a href="/news/eventdetail">Read More</a>
+                                        <a href="/noticedetails">Read More</a>
                                     </button>
                                 </div>
                             </div>

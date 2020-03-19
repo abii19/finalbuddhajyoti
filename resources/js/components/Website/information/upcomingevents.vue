@@ -29,7 +29,7 @@
                             </p>
                         </div>
                         <div class="text-left pb-3">
-                            <a href="#" class="btn btn-event border">
+                            <a href="/noticedetails" class="btn btn-event border">
                                 Read More
                             </a>
                         </div>

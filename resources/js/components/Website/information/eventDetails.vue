@@ -31,6 +31,18 @@
                         pellentesque urna varius vitae. Sed dui lorem, adipiscing in adipiscing et, interdum nec metus.
                         Mauris ultricies, justo eu convallis placerat, felis enim.</p>
                 </div>
+                <!--Multiple Images-->
+                <div class="row">
+                    <div class="col-lg-4 col-xl-4 col-md-6 col-sm-12">
+                        <img class="img-fluid" src="images/milestones_background.jpg" alt="" style="width: 100%; height: 300px;">
+                    </div>
+                    <div class="col-lg-4 col-xl-4 col-md-6 col-sm-12">
+                        <img class="img-fluid" src="images/course_1.jpg" alt=""  style="width: 100%; height: 300px;">
+                    </div>
+                    <div class="col-lg-4 col-xl-4 col-md-6 col-sm-12">
+                        <img class="img-fluid" src="images/comment_1.jpg" alt=""  style="width: 100%; height: 300px;">
+                    </div>
+                </div>
 
             </div>
             <!-- /.row -->

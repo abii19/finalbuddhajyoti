@@ -169,6 +169,7 @@
     /*Testonomials Start*/
     .testimonial-desk {
         padding: 50px 0;
+        background-color: #fafafa;
     }
 
     .testimonial-profile{

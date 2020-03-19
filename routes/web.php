@@ -25,7 +25,15 @@ Route::view('/teachers', 'website.Teachers.teachers');
 Route::view('/notices', 'website.Information.notices');
 Route::view('/upcomingevents', 'website.Information.upcomingevent');
 Route::view('/blogs', 'website.Information.blog');
-Route::view('/contact', 'website.Contact.contact');
+Route::view('/facilities', 'website.Facilities.facilities');
+
+Route::get('/noticedetails', function (){
+   return view('website.Information.eventdetails');
+});
+Route::get('/blogdetails', function (){
+    return view('website.Information.blogdetails');
+});
+
 
 
 

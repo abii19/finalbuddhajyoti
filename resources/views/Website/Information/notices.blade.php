@@ -6,7 +6,7 @@
 @section('content')
     <div id="app">
         <website-layout></website-layout>
-        <information-blogs></information-blogs>
+        <information-notices></information-notices>
     </div>
 @endsection
 

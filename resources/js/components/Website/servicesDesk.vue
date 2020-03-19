@@ -50,7 +50,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="row about-count-part">
+                <div class="row about-count-part mt-2">
                     <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 col-12 why-choose-us">
                         <div class="row">
                             <div class="mb-2">

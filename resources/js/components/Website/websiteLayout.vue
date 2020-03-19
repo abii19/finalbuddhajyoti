@@ -30,8 +30,11 @@
                                         <a class="dropdown-item" href="/ourteam">Our Team</a>
                                     </div>
                                 </li>
-                                <li class="nav-item dropdown">
-                                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown3" role="button"
+                                <li class="nav-item">
+                                    <a class="nav-link" href="/facilities">Facilities</a>
+                                </li>
+                                <!--<li class="nav-item dropdown">
+                                    <a class="nav-link dropdown-toggle" href="/facilities" id="navbarDropdown3" role="button"
                                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                         Facilities
                                     </a>
@@ -40,12 +43,12 @@
                                         <a class="dropdown-item" href="#">Libraries</a>
                                         <a class="dropdown-item" href="#">Montessery Classes</a>
                                     </div>
-                                </li>
+                                </li>-->
                                 <li class="nav-item">
                                     <a class="nav-link" href="/teachers">Teachers</a>
                                 </li>
                                 <li class="nav-item dropdown">
-                                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown2" role="button"
+                                    <a class="nav-link dropdown-toggle" href="" id="navbarDropdown2" role="button"
                                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                         Information
                                     </a>
@@ -186,12 +189,14 @@
         background-color: rgba(255, 255, 255, 1);
         border-radius: 5px;
         color: #000;
+        cursor: pointer !important;
     }
 
     .navbar-dark .navbar-nav .nav-link {
         color: rgba(255, 255, 255, .9);
         padding-right: 10px;
         padding-left: 10px;
+        cursor: pointer !important;
     }
 
     .navbar-dark .navbar-nav .nav-link:hover,
@@ -215,7 +220,7 @@
         position: relative;
         top: 0;
         width: 100%;
-        background: rgba(0, 0, 0, .7);
+        /*background: rgba(0, 0, 0, .7);*/
         overflow: hidden;
     }
 
@@ -233,7 +238,7 @@
             top: 0;
             width: 100%;
             height: 100vh;
-            background: rgba(0, 0, 0, .7);
+            /*background: rgba(0, 0, 0, .7);*/
             overflow: hidden;
         }
     }

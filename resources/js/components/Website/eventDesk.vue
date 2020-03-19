@@ -31,7 +31,7 @@
                                 <p class="limited-text text-justify">{{newsEvents.post}}</p>
                             </div>
                             <div class="text-center pb-3">
-                                <a class="btn btn-event border">
+                                <a class="btn btn-event border" href="/noticedetails">
                                     Read More
                                 </a>
                             </div>
@@ -160,13 +160,17 @@
         padding: 50px 0 50px 0;
         background: #ffffff;
     }
-    .btn-event:hover{
+    /*.btn-event{
+        transition: 1s;
+    }
+    .recent-events:hover .btn-event{
         background: #cd2541;
         color: #ffffff !important;
-    }
-    .recent-events-2{
+    }*/
+
+    /*.recent-events-2{
         border-bottom: 1px solid rgba(0, 0, 0, .8) !important
-    }
+    }*/
     .limited-text {
         overflow: hidden;
         display: -webkit-box;

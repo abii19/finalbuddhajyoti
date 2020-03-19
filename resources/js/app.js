@@ -135,7 +135,7 @@ Vue.component('about-ourteam', require('./components/Website/about/ourteam.vue')
 /**Teacher Component*/
 Vue.component('teachers-component', require('./components/Website/teacher/teachers.vue').default);
 /**Contact*/
-Vue.component('contact-component', require('./components/Website/contact/contact.vue').default);
+Vue.component('facilities-component', require('./components/Website/facilities/facilities.vue').default);
 
 /**Information Component*/
 Vue.component('information-blogs', require('./components/Website/information/blogs.vue').default);
