@@ -55,14 +55,15 @@ class TeacherController extends Controller
             'phone_number' => $request->phone_number,
             'user_id' => Auth::user()->id,
             'address' => $request->address,
-            'teacher_photo' => '/teacher_images/' . $originalName,
-            'post_id' => $request->post_name,
+            'photo' => '/teacher_images/' . $originalName,
+            'teacher_posts' => $request->teacher_posts,
             'years_active' => $request->years_active,
         ]);
 
         return response()->json([
             'success' => 'Succesfully Added teacher',
         ]);
+
     }
 
 

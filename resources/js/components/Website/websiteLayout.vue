@@ -80,8 +80,7 @@
                              class="img-fluid-carousel d-block w-100" alt="Budha Jyoti School">
                         <div class="carousel-caption centered">
                             <h2 class="ex-large-900 animated fadeIn delay-1s">Buddha<span> Jyoti</span></h2>
-                            <p class="d-none d-sm-block animated fadeIn delay-2s" style="animation-duration: 3s;">You
-                                Learn Something Everyday</p>
+                            <p class="d-none d-sm-block animated fadeIn delay-2s" style="animation-duration: 3s;">You Learn Something Everyday</p>
                         </div>
                     </div>
                     <div class="carousel-item">
@@ -89,8 +88,7 @@
                              class="img-fluid-carousel d-block w-100" alt="Budha Jyoti School">
                         <div class="carousel-caption centered">
                             <h2 class="ex-large-900 animated flipInY delay-1s"><span>Innovative </span>Teachers</h2>
-                            <p class="d-none d-sm-block animated fadeIn delay-2s" style="animation-duration: 3s;">
-                                Intelligence plus character that is the goal of true
+                            <p class="d-none d-sm-block animated fadeIn delay-2s" style="animation-duration: 3s;">Intelligence plus character that is the goal of true
                                 education</p>
                         </div>
                     </div>
@@ -99,8 +97,7 @@
                              class="img-fluid-carousel d-block w-100" alt="Budha Jyoti School">
                         <div class="carousel-caption centered">
                             <h2 class="ex-large-900 animated flipInX delay-1s">Hard <span>Working</span></h2>
-                            <p class="d-none d-sm-block animated fadeIn delay-2s" style="animation-duration: 3s;">I’m
-                                not telling you it’s going to be easy <br/>
+                            <p class="d-none d-sm-block animated fadeIn delay-2s" style="animation-duration: 3s;">I’m not telling you it’s going to be easy <br/>
                                 I’m telling you it’s going to be worth it</p>
                         </div>
                     </div>
@@ -124,21 +121,10 @@
 
     export default {
         name: "websiteLayout",
-        data: function () {
-            return {
-                image: [],
-            }
-        },
         mounted() {
             $(document).scroll(function () {
                 $('.navbar').toggleClass('scrolled', $(this).scrollTop() > 100);
             });
-
-            axios.get('/api/fetchFront', {}).then(resp => {
-                this.image = resp.data.corausel;
-            });
-
-
         }
     }
 </script>
@@ -357,7 +343,7 @@
         font-family: 'Montserrat', sans-serif;
     }
 
-    .carousel-caption p {
+    .carousel-caption p{
         font-size: 20px;
         line-height: 25px;
         width: 400px !important;

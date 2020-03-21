@@ -17,9 +17,9 @@
                 <td>{{++key}}</td>
                 <td>{{teacher.teacher_name}}</td>
                 <td>{{teacher.education_degree}}</td>
-                <td>{{teacher.address}}.....</td>
+                <td>{{teacher.saying.substring(0,15)}}.....</td>
                 <td>
-                    <img :src="teacher.teacher_photo" class="img-thumbnail w-50 h-15" alt="">
+                    <img :src="teacher.photo" class="img-thumbnail w-50 h-15" alt="">
                 </td>
                 <td>
                     <div class="dropdown">
@@ -120,11 +120,13 @@
                                         <input type="text" v-model="obj.education_degree"
                                                class=" ml-3 form-control form-control-sm">
                                         <span v-if="degreeError" class="text-danger">{{degreeError}}</span>
+
                                         <button :disabled="!disableBtn"
                                                 class="btn btn-success btn-sm ml-3 mt-3"
                                                 @click="updateTeacherForm">Success
                                         </button>
                                     </div>
+
 
                                     <div class="col-md-6">
                                         <label>Upload</label>
@@ -143,6 +145,7 @@
                     </div>
                 </div>
             </div>
+
 
         </table>
 
@@ -173,7 +176,7 @@
                 post_nameError: '',
             }
         },
-        props: ['posts'],
+        props: {},
         mounted() {
             axios.get('api/viewTeacher', {}).then(response => {
                 if (response.data.msg) {
@@ -181,6 +184,9 @@
                 }
             });
 
+            axios.get('/api/fetchPosts', {}).then(response => {
+                this.posts = response.data.post;
+            });
         },
         methods: {
             openEdit(key, id) {
