@@ -5,7 +5,7 @@
                 <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top" id="navbar">
                     <div class="container">
                         <a class="navbar-brand" href="#" title="Buddha Jyoti">
-                            <img src="images/logo.png" alt="Budha Jyoti School Logo"> Buddha Jyoti
+                            <img src="images/logo.png" class="img-" alt="Budha Jyoti School Logo"> Buddha Jyoti
                         </a>
                         <button class="navbar-toggler" type="button" data-toggle="collapse"
                                 data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
