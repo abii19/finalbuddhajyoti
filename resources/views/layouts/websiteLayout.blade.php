@@ -119,7 +119,7 @@
         window.requestAnimationFrame(updateLax)
 
         lax.setup({
-            breakpoints: { small: 0, large: 768 }
+            breakpoints: { small: 0, large: 992 }
         })
     }
 

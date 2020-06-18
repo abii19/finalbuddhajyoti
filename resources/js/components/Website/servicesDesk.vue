@@ -57,7 +57,7 @@
                                 <hr class="bg-base-color separator-line text-left" style="">
                             </div>
                         </div>
-                        <div class="lax" data-lax-preset="lazy-80">
+                        <div class="lax" data-lax-preset_large="fadeIn lazy-80">
                             <div class="row text-justify mb-2">
                                 <p class="mr-3 ml-3">
                                     Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab consectetur doloremque
@@ -126,7 +126,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 col-12 count-section lax" data-lax-preset="fadeIn-100">
+                    <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 col-12 count-section lax" data-lax-preset="fadeIn-60">
                         <div class="row">
                             <div class="col-lg-6 col-md-6 col-sm-12 mt-sm-3">
                                 <div class="about_point">

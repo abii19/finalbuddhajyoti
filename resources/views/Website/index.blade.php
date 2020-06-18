@@ -11,6 +11,7 @@
         <website-layout-2></website-layout-2>
         <services-desk></services-desk>
         {{--<established-details></established-details>--}}
+        <message-desk-3></message-desk-3>
         <message-desk-2></message-desk-2>
         <event-desk></event-desk>
         {{--Checking testimonials--}}

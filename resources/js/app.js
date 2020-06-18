@@ -116,6 +116,7 @@ Vue.component('parallax-component', require('./components/Website/parallaxCompon
 Vue.component('established-details', require('./components/Website/establishedDetails.vue').default);
 Vue.component('message-desk', require('./components/Website/messageDesk.vue').default);
 Vue.component('message-desk-2', require('./components/Website/messageDesk-2.vue').default);
+Vue.component('message-desk-3', require('./components/Website/messageDesk-3.vue').default);
 Vue.component('services-desk', require('./components/Website/servicesDesk.vue').default);
 Vue.component('testinomials-desk', require('./components/Website/testinomials.vue').default);
 Vue.component('testinomials-desk-2', require('./components/Website/testimonialDesk.vue').default);
