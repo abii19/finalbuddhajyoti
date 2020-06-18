@@ -11,7 +11,6 @@
                 </div>
 
                 <md-card>
-
                     <md-card-media>
                         <!-- swiper -->
                         <swiper :options="swiperOption" style="height: 500px;">
@@ -85,6 +84,7 @@
 </template>
 
 <script>
+
     export default {
         data() {
             return {

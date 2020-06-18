@@ -17,10 +17,12 @@
                                 </button>
                             </div>
                         </div>
+                    </div>
 
-                        <div class="col-md-7 row">
-                            <label class="ml-3">Full Name:</label>
-                            <input type="text" v-model="name" class="form-control form-control-sm ml-3">
+                    <div class="row">
+                        <div class="col-md-7">
+                            <label class="">Full Name:</label>
+                            <input type="text" v-model="name" class="form-control form-control-sm">
                             <span v-if="nameError" class="text-danger">{{nameError}}</span>
                         </div>
 
@@ -37,45 +39,41 @@
 
                         </div>
 
-                        <div class=" col-md-12 row">
-                            <div class="col-md-6">
+                        <div class=" col-md-12">
+                            <div class="">
                                 <label>Saying</label>
-                                <textarea type="text" class="form-control form-control-sm" v-model="saying"></textarea>
+                                <textarea type="text" class="form-control form-control-sm" v-model="saying" cols="10"
+                                          rows="8"></textarea>
                                 <span v-if="sayingError" class="text-danger">{{sayingError}}</span>
                             </div>
 
                         </div>
 
 
-                        <div class="row">
-                            <div class="col-md-6 mt-2">
-                                <label class="ml-3">Education Degres</label>
-                                <input type="text" v-model="degree" class=" ml-3 form-control form-control-sm">
-                                <span v-if="degreeError" class="text-danger">{{degreeError}}</span>
-                                <button class="btn btn-success btn-sm ml-3 mt-3" @click="saveTeacher">Success</button>
-                            </div>
+                        <div class="col-md-12 mt-2">
+                            <label class="">Education Degres</label>
+                            <input type="text" v-model="degree" class="form-control form-control-sm">
+                            <span v-if="degreeError" class="text-danger">{{degreeError}}</span>
+                        </div>
 
-
-                            <div class="col-md-6">
-                                <label>Upload</label>
-                                <input type="file" ref="file" @change="selectPhoto" accept="image/*"
-                                       class="ml-3 form-control form-control-sm">
-                                <span v-if="degree" class="text-danger">{{imageError}}</span>
-                                <span v-if="imageSelected">
+                        <div class="col-md-12">
+                            <label>Upload</label>
+                            <input type="file" ref="file" @change="selectPhoto" accept="image/*"
+                                   class="form-control form-control-sm">
+                            <span v-if="degree" class="text-danger">{{imageError}}</span>
+                            <span v-if="imageSelected">
                                         <img :src="imageSelected"
                                              alt=""
-                                             class="img-thumbnail "
-                                        ></span>
-                            </div>
-
-
+                                             class="img-thumbnail">
+                                </span>
                         </div>
 
                     </div>
+                    <button class="btn btn-success btn-sm ml-3 mt-3" @click="saveTeacher">Success</button>
+
+
                 </div>
             </div>
-
-
         </div>
 
         <view-testemonial></view-testemonial>

@@ -1,14 +1,6 @@
-/**
- * First we will load all of this project's JavaScript dependencies which
- * includes Vue and other libraries. It is a great starting point when
- * building robust, powerful web applications using Vue and Laravel.
- */
-
 import UpcomingEvents from "./components/Website/UpcomingEvents";
 
 require('./bootstrap');
-
-
 
 window.Vue = require('vue');
 
@@ -18,15 +10,18 @@ import 'element-ui/lib/theme-chalk/index.css';
 Vue.use(ElementUI);
 
 /**Vue Awesome Swiper*/
-
 import Vue from 'vue';
 import VueAwesomeSwiper from 'vue-awesome-swiper';
-
 Vue.use(VueAwesomeSwiper);
+
+/***Lax.js***/
+import lax from 'lax.js';
 
 /**Vue Material***/
 import VueMaterial from 'vue-material';
 Vue.use(VueMaterial);
+
+
 /**Router-Link*/
 import VueRouter from 'vue-router';
 Vue.use(VueRouter);
@@ -56,7 +51,6 @@ const router = new VueRouter({
             name: 'aboutus',
             component: AboutUs
         },
-
         {
             path: '/history',
             name: 'history',
@@ -116,11 +110,15 @@ Vue.component('upcoming-events', require('./components/Website/UpcomingEvents.vu
 /**New Website Components*/
 /**Defining Website components*/
 Vue.component('website-layout', require('./components/Website/websiteLayout.vue').default);
+Vue.component('website-layout-2', require('./components/Website/WebsiteLayout-2.vue').default);
 Vue.component('layout-second', require('./components/Website/layoutSecond.vue').default);
 Vue.component('parallax-component', require('./components/Website/parallaxComponent.vue').default);
+Vue.component('established-details', require('./components/Website/establishedDetails.vue').default);
 Vue.component('message-desk', require('./components/Website/messageDesk.vue').default);
+Vue.component('message-desk-2', require('./components/Website/messageDesk-2.vue').default);
 Vue.component('services-desk', require('./components/Website/servicesDesk.vue').default);
 Vue.component('testinomials-desk', require('./components/Website/testinomials.vue').default);
+Vue.component('testinomials-desk-2', require('./components/Website/testimonialDesk.vue').default);
 Vue.component('gallery-desk', require('./components/Website/gallery.vue').default);
 Vue.component('event-desk', require('./components/Website/eventDesk.vue').default);
 Vue.component('upcoming-event-desk', require('./components/Website/upcomingeventDesk.vue').default);
@@ -143,8 +141,6 @@ Vue.component('information-blog-details', require('./components/Website/informat
 Vue.component('information-notices', require('./components/Website/information/notices.vue').default);
 Vue.component('information-upcoming-events', require('./components/Website/information/upcomingevents.vue').default);
 Vue.component('information-event-details', require('./components/Website/information/eventDetails.vue').default);
-
-
 
 const app = new Vue({
     el: '#app'

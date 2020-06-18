@@ -1,7 +1,7 @@
 <template>
     <div>
         <section class="message-desk" id="message-desk">
-            <parallax-component></parallax-component>
+            <!--<parallax-component></parallax-component>-->
             <div class="container-fluid">
                 <!--<div class="lg-message-box">
                     <div class="row">
@@ -176,7 +176,7 @@
     export default {
         name: "messageSection",
         component: {
-          parallaxComponent
+            parallaxComponent
         },
         mounted() {
 
@@ -187,7 +187,7 @@
 <style scoped>
     .message-desk {
         padding: 0 0;
-        /*background: #262626;*/
+        background: #ffffff;
     }
 
     @media screen and (max-width: 767px) {

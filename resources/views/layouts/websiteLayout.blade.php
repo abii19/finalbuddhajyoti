@@ -105,8 +105,23 @@
 @yield('scripts')
 <!-- Scripts -->
 <script src="{{ asset('js/app.js') }}" defer></script>
+{{--<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>--}}
+<script src="https://cdn.jsdelivr.net/npm/lax.js" ></script>
+<script>
+    window.onload = function() {
+        lax.setup() // init
 
+        const updateLax = () => {
+            lax.update(window.scrollY)
+            window.requestAnimationFrame(updateLax)
+        }
 
+        window.requestAnimationFrame(updateLax)
 
+        lax.setup({
+            breakpoints: { small: 0, large: 768 }
+        })
+    }
+
+</script>
 </html>
-
