@@ -121,6 +121,7 @@ Vue.component('services-desk', require('./components/Website/servicesDesk.vue').
 Vue.component('testinomials-desk', require('./components/Website/testinomials.vue').default);
 Vue.component('testinomials-desk-2', require('./components/Website/testimonialDesk.vue').default);
 Vue.component('gallery-desk', require('./components/Website/gallery.vue').default);
+Vue.component('gallery-article-desk', require('./components/Website/galleryArticle.vue').default);
 Vue.component('event-desk', require('./components/Website/eventDesk.vue').default);
 Vue.component('upcoming-event-desk', require('./components/Website/upcomingeventDesk.vue').default);
 Vue.component('founding-members', require('./components/Website/foundingMembers.vue').default);

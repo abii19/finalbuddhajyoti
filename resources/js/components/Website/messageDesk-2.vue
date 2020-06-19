@@ -123,6 +123,7 @@
 
     .message-desk{
         overflow-x: hidden;
+        background: #fff;
     }
 
     #chairman-div {

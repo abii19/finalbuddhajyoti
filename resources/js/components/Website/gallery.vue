@@ -101,8 +101,8 @@
 
 <style scoped>
     .gallery-desk {
-        padding: 50px 0 100px 0;
-        background-color: #fafafa;
+        padding: 0 0 0 0;
+        background-color: #fff;
     }
 
     /*Gallery----*/

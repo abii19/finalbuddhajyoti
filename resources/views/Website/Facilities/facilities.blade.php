@@ -2,7 +2,7 @@
 
 @section('content')
     <div id="app">
-        <website-layout></website-layout>
+        <website-layout-2></website-layout-2>
         <facilities-component></facilities-component>
         <fotter-component></fotter-component>
     </div>

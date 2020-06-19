@@ -5,7 +5,7 @@
 @endsection
 @section('content')
     <div id="app">
-        <website-layout></website-layout>
+        <website-layout-2></website-layout-2>
         <about-aboutus></about-aboutus>
     </div>
 @endsection

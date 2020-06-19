@@ -277,6 +277,9 @@
     /*.card{
         transition: 1s ease all;
     }*/
+    .swiper-container{
+        height: 350px !important;
+    }
     .swiper-button-next {
         right: 0 !important;
         left: auto;

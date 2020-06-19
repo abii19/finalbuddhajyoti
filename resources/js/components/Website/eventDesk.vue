@@ -5,7 +5,7 @@
             <div class="container">
                 <!---Recent News and Events--->
                 <div class="row d-flex justify-content-center">
-                    <div class="mb-2 lax" data-lax-preset_large="rightToLeft-.05 fadeOut">
+                    <div class="mb-2 lax" data-lax-preset_large="leftToRight-.02 fadeInOut">
                         <h2 class="title-top">Recent News and Events</h2>
                         <hr class="bg-base-color separator-line">
                     </div>

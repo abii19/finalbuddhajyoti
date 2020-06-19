@@ -6,7 +6,7 @@
 @section('content')
     <div id="app">
         {{--<layout-second></layout-second>--}}
-        <website-layout></website-layout>
+        <website-layout-2></website-layout-2>
         <teachers-component></teachers-component>
     </div>
 @endsection

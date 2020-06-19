@@ -53,7 +53,7 @@
                             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                                 <a class="dropdown-item" href="/about">About Us</a>
                                 <a class="dropdown-item" href="/history">History</a>
-                                <div class="dropdown-divider"></div>
+                                <!--<div class="dropdown-divider"></div>-->
                                 <a class="dropdown-item" href="/ourteam">Our Team</a>
                             </div>
                         </li>
@@ -79,7 +79,7 @@
                             <div class="dropdown-menu" aria-labelledby="navbarDropdown2">
                                 <a class="dropdown-item" href="/notices">News and Notices</a>
                                 <a class="dropdown-item" href="/upcomingevents">Upcoming Events</a>
-                                <div class="dropdown-divider"></div>
+                                <!--<div class="dropdown-divider"></div>-->
                                 <a class="dropdown-item" href="/blogs">Blogs</a>
                             </div>
                         </li>
@@ -158,7 +158,7 @@
                     } else if ($(this).scrollTop() <= 400) {
                         $('#nav2').removeClass('fixed-top');
                         $('#nav2').addClass('bg-transparent');
-                        $('#nav2').css('padding-top', '30px');
+                        $('#nav2').css('padding-top', '40px');
                     }
                 });
 
@@ -199,11 +199,26 @@
         color: #222222;
     }
 
-    /********/
+    .navbar-dark .navbar-nav a.nav-link{
+        text-decoration: none;
+    }
+    .nav-item.dropdown .dropdown-menu a{
+        text-decoration: none;
+    }
+    .fixed-top.navbar .navbar-toggler .menu-icon-bar {
+        position: absolute;
+        left: 15px;
+        right: 15px;
+        height: 2px;
+        background-color: #000;
+        opacity: 0;
+        -webkit-transform: translateY(-1px);
+        -ms-transform: translateY(-1px);
+        transform: translateY(-1px);
+        transition: all 0.3s ease-in;
+    }
 
-    @import url('https://fonts.googleapis.com/css?family=Open+Sans:400,700,800');
-    @import url('https://fonts.googleapis.com/css?family=Lobster');
-    @import url('https://fonts.googleapis.com/css2?family=Lato:ital@1&display=swap');
+    /********/
 
     h1 {
         margin-bottom: 0.2em;
@@ -237,6 +252,7 @@
     #nav1{
         padding: 5px 100px;
         background: #ffffff;
+        border-top: 1px solid rgba(60,64,67,.15);
         /*border-bottom: 0.7px solid rgba(0, 0, 0, 0.8);*/
         -webkit-box-shadow: 0 1px 2px 0 rgba(60,64,67,.3), 0 2px 6px 2px rgba(60,64,67,.15);
         box-shadow: 0 1px 2px 0 rgba(60,64,67,.3), 0 2px 6px 2px rgba(60,64,67,.15);
@@ -248,7 +264,7 @@
 
     /*Nav 2*/
     #nav2{
-        padding-top: 30px;
+        padding-top: 40px;
     }
 
     .navbar {
@@ -327,9 +343,10 @@
     }
     .navbar .dropdown-menu .dropdown-item {
         position: relative;
-        padding: 10px 20px;
+        padding: 8px 20px;
         color: #fff;
-        font-size: 1rem;
+        font-size: 15px;
+        font-family: 'Lato', sans-serif;
         border-bottom: 1px solid rgba(255, 255, 255, .1);
         transition: color 0.2s ease-in;
     }
@@ -401,31 +418,55 @@
             font-size: 16px;
         }
     }
+
     @media screen and (min-width: 768px) {
+        .navbar-dark .navbar-nav .nav-link:last-child {
+            padding-right: 0px !important;
+        }
+        .navbar-dark.fixed-top .navbar-nav .nav-link:last-child {
+            padding-right: 0px !important;
+        }
         .navbar-dark .navbar-nav .nav-link {
             padding: 25px 15px;
         }
         .navbar-dark.fixed-top .navbar-nav .nav-link {
             padding: 20px 15px;
         }
-        .navbar-dark .navbar-nav .nav-link::after {
-            content: '';
-            position: absolute;
-            bottom: 15px;
-            left: 30%;
-            right: 30%;
-            height: 1px;
-            background-color: #fff;
+        .navbar-dark .navbar-nav .nav-link::after{
+            content: "";
+            display: block;
+            left: 50%;
+            right: 50%;
+            border-bottom: 3px solid;
+            margin: 8px auto -20px;
+            transition: transform 0.3s ease-in;
             -webkit-transform: scaleX(0);
             -ms-transform: scaleX(0);
             transform: scaleX(0);
-            transition: transform 0.1s ease-in;
         }
         .navbar-dark .navbar-nav .nav-link:hover::after {
             -webkit-transform: scaleX(1);
             -ms-transform: scaleX(1);
             transform: scaleX(1);
         }
+        /*.navbar-dark .navbar-nav .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: 10px;
+            left: 30%;
+            right: 30%;
+            height: 0.5px;
+            background-color: #fff;
+            -webkit-transform: scaleX(0);
+            -ms-transform: scaleX(0);
+            transform: scaleX(0);
+            transition: transform 0.1s ease-in;
+        }*/
+        /*.navbar-dark .navbar-nav .nav-link:hover::after {
+            -webkit-transform: scaleX(2);
+            -ms-transform: scaleX(2);
+            transform: scaleX(2);
+        }*/
         .dropdown-menu {
             min-width: 200px;
             -webkit-animation: dropdown-animation 0.3s;
