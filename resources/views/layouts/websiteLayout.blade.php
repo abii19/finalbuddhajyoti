@@ -24,15 +24,17 @@
             padding: 0;
             box-sizing: border-box;
         }
+        html, body {
+            max-width: 100vw;
+            overflow-x: hidden;
+        }
         body {
             font-family: Roboto, sans-serif;
-            font-size: 15px;
+            font-size: 16px;
             -webkit-font-smoothing: antialiased;
             color: #222629;
             letter-spacing: .02em;
             line-height: 20px;
-            width: 100vw;
-            overflow-x: hidden !important;
         }
 
         .ex-large-900 {

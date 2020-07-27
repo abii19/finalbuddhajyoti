@@ -1,7 +1,5 @@
 <template>
     <div class="">
-
-
         <section class="founding-members">
 
             <div class="container">
@@ -239,6 +237,8 @@
                     speed: 1000,
                     pagination: {
                         el: '.swiper-pagination',
+                        type: 'custom',
+                        /*bulletSize: 40,*/
                         clickable: true
                     },
                     navigation: {
