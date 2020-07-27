@@ -80,7 +80,6 @@ class NoticeController extends Controller
             ]);
         }
 
-
         if ($blogImage) {
             $event->photo = $blogImage->event_notice_photo;
             $event->save();

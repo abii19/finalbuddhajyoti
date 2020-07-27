@@ -29,14 +29,14 @@ class TeacherController extends Controller
         $request->validate([
             'teacher_name' => 'required',
             'education_degree' => 'required',
-            'address'=>'required',
-            'phone_number'=>'required',
+            'address' => 'required',
+            'phone_number' => 'required',
+
         ]);
 
         if (!is_dir(public_path('/teacher_images'))) {
             mkdir(public_path('/teacher_images'), 0777);
         }
-
         /*      CHECK FOR ANY ERRORS AND RETURN USING JSON*/
         try {
             $baseName = Str::random(20);
@@ -47,7 +47,6 @@ class TeacherController extends Controller
                 'err' => $e->getMessage(),
             ]);
         }
-
         /*      DB SAVE*/
         Teacher::create([
             'teacher_name' => $request->teacher_name,
@@ -55,27 +54,23 @@ class TeacherController extends Controller
             'phone_number' => $request->phone_number,
             'user_id' => Auth::user()->id,
             'address' => $request->address,
-            'photo' => '/teacher_images/' . $originalName,
-            'teacher_posts' => $request->teacher_posts,
+            'teacher_photo' => '/teacher_images/' . $originalName,
+            'post_id' => $request->post_name,
             'years_active' => $request->years_active,
         ]);
 
         return response()->json([
             'success' => 'Succesfully Added teacher',
         ]);
-
     }
 
 
     public function fetchSingleTeacher($id)
     {
-
-
         $teacher = DB::table('teachers')
             ->select('id', 'teacher_name', 'saying', 'education_degree', 'years_active', 'teacher_posts', 'photo')
             ->where('id', $id)
             ->first();
-
 
         return response()->json([
             'msg' => 'success',

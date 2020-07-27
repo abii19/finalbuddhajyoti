@@ -12,8 +12,6 @@ class Post extends Model
 
     public $timestamps = false;
 
-    //
-
     public function  teacher(){
         return $this->hasMany(Teacher::class);
     }

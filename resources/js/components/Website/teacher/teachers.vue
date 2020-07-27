@@ -2,172 +2,97 @@
     <div>
         <section class="teachers-desk">
             <div class="container">
-                <div class="row">
-                    <div class="mb-2">
-                        <h2 class="title-top">Secondary</h2>
-                        <hr class="bg-base-color separator-line">
-                    </div>
-                </div>
-                <div class="row text-center justify-content-center">
-                    <div class="col-xl-3 col-lg-3 col-md-3 col-sm-6 col-12 text-center member-container">
-                        <div class="member-front">
-                            <div class="member-front-top">
+                <!--             Main Loop          -->
+                <div v-for="teacher in teachers ">
 
-                            </div>
-                            <div class="member-front-mid text-center text-black">
-                                <img src="images/teacher_1.jpg" class="member-img" alt="board member">
-                                <h3>Teacher Name</h3>
-                                <h5> Teacher Post </h5>
-                            </div>
-                            <div class="member-front-bottom">
-                                <h3 class="">Get Details</h3>
-                            </div>
-                        </div>
-                        <div class="member-back">
-                            <div class="member-back-top">
-                                <h3 class="pt-3">Teacher Name</h3>
-                                <h5>Education Degree</h5>
-                            </div>
-                            <div class="member-back-mid">
-                                <h3>Teacher Contact Number</h3>
-                                <h5 class="text-center">
-                                    Teacher Address
-                                </h5>
-                            </div>
-                            <div class="member-back-bottom">
-                                <b class="">
-                                    Joined at<br/>
-                                    2015
-                                </b>
-                            </div>
+                    <!--        End Of Main Loop        -->
+                    <div class="row">
+                        <div class="mb-2">
+                            <h2 class="title-top">{{teacher.post_name}}</h2>
+                            <hr class="bg-base-color separator-line">
                         </div>
                     </div>
-                </div>
+                    <div class="row text-center justify-content-center">
+                        <div v-for="teachers in teacher.teacher"
+                             class="col-xl-3 col-lg-3 col-md-3 col-sm-6 col-12 text-center member-container">
+                            <div class="member-front">
+                                <div class="member-front-top">
 
-                <hr/>
-                <div class="row">
-                    <div class="mb-2">
-                        <h2 class="title-top">Pre Secondary</h2>
-                        <hr class="bg-base-color separator-line">
-                    </div>
-                </div>
-                <div class="row text-center justify-content-center">
-                    <div class="col-xl-3 col-lg-3 col-md-3 col-sm-6 col-12 text-center">
-                        <div class="card">
-                            <input type="checkbox">
-                            <div class="toggle"><i class="fas fa-plus" style="color: #1d77a3"></i></div>
-                            <div class="imgbx">
-                                <img src="images/teacher_1.jpg" class="img-fluid" alt="Photo of Teachers">
+                                </div>
+                                <div class="member-front-mid text-center text-black">
+                                    <img src="images/teacher_1.jpg" class="member-img" alt="board member">
+                                    <h3>{{teachers.teacher_name}}</h3>
+                                    <h5>{{teachers.phone_number}} </h5>
+                                </div>
+                                <div class="member-front-bottom">
+                                    <h3 class="">Get Details</h3>
+                                </div>
                             </div>
-                            <div class="detail" >
-                                <div class="">
-                                    <div class="">
-                                        <h3 class="pt-3">Teacher Name</h3>
-                                        <h5>Education Degree</h5>
-                                    </div>
-                                    <hr style="background-color: #ffffff"/>
-                                    <div class="">
-                                        <h3>Contact Number</h3>
-                                        <h5 class="text-center">
-                                            Teacher Address
-                                        </h5>
-                                    </div>
-                                    <hr style="background-color: #ffffff"/>
-                                    <div class="">
-                                        <h5 class="">
-                                            <b>Joined at<br/>
-                                                2015</b>
-                                        </h5>
-                                    </div>
+                            <div class="member-back">
+                                <div class="member-back-top">
+                                    <h3 class="pt-3">{{teachers.teacher_name}}</h3>
+                                    <h5>{{teachers.education_degree}}</h5>
+                                </div>
+                                <div class="member-back-mid">
+                                    <h3>{{teachers.phone_number}}</h3>
+                                    <h5 class="text-center">
+                                        {{teachers.address}}
+                                    </h5>
+                                </div>
+                                <div class="member-back-bottom">
+                                    <b class="">
+                                        Joined at<br/>
+                                        2015
+                                    </b>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
 
-                <hr/>
-                <div class="row">
-                    <div class="mb-2">
-                        <h2 class="title-top">Primary</h2>
-                        <hr class="bg-base-color separator-line">
-                    </div>
-                </div>
-                <div class="row text-center justify-content-center">
-                    <div class="col-xl-3 col-lg-3 col-md-3 col-sm-6 col-12 text-center member-container">
-                        <div class="member-front">
-                            <div class="member-front-top">
+                <!--Hide above after main loop to view below
+                -->
 
-                            </div>
-                            <div class="member-front-mid text-center text-black">
-                                <img src="images/teacher_1.jpg" class="member-img" alt="board member">
-                                <h3>Teacher Name</h3>
-                                <h5> Teacher Post </h5>
-                            </div>
-                            <div class="member-front-bottom">
-                                <h3 class="">Get Details</h3>
-                            </div>
-                        </div>
-                        <div class="member-back">
-                            <div class="member-back-top">
-                                <h3 class="pt-3">Teacher Name</h3>
-                                <h5>Education Degree</h5>
-                            </div>
-                            <div class="member-back-mid">
-                                <h3>Teacher Contact Number</h3>
-                                <h5 class="text-center">
-                                    Teacher Address
-                                </h5>
-                            </div>
-                            <div class="member-back-bottom">
-                                <b class="">
-                                    Joined at<br/>
-                                    2015
-                                </b>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <hr/>
-                <div class="row">
-                    <div class="mb-2">
-                        <h2 class="title-top">Pre Primary</h2>
-                        <hr class="bg-base-color separator-line">
-                    </div>
-                </div>
-                <div class="row text-center justify-content-center">
-                    <div class="col-xl-3 col-lg-3 col-md-3 col-sm-6 col-12 text-center">
-                        <div class="card">
-                            <input type="checkbox">
-                            <div class="toggle"><i class="fas fa-plus" style="color: #1d77a3"></i></div>
-                            <div class="imgbx">
-                                <img src="images/teacher_1.jpg" class="img-fluid" alt="Photo of Teachers">
-                            </div>
-                            <div class="detail" >
-                                <div class="">
-                                    <div class="">
-                                        <h3 class="pt-3">Teacher Name</h3>
-                                        <h5>Education Degree</h5>
-                                    </div>
-                                    <hr style="background-color: #ffffff"/>
-                                    <div class="">
-                                        <h3>Contact Number</h3>
-                                        <h5 class="text-center">
-                                            Teacher Address
-                                        </h5>
-                                    </div>
-                                    <hr style="background-color: #ffffff"/>
-                                    <div class="">
-                                        <h5 class="">
-                                            <b>Joined at<br/>
-                                                2015</b>
-                                        </h5>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                <!--   <div class="row">
+                       <div class="mb-2">
+                           <h2 class="title-top">{{teacher.post_name}}</h2>
+                           <hr class="bg-base-color separator-line">
+                       </div>
+                   </div>
+                   <div class="row text-center justify-content-center">
+                       <div v-for="teachers in teacher.teacher"
+                            class="col-xl-3 col-lg-3 col-md-3 col-sm-6 col-12 text-center">
+                           <div class="card">
+                               <input type="checkbox">
+                               <div class="toggle"><i class="fas fa-plus" style="color: #1d77a3"></i></div>
+                               <div class="imgbx">
+                                   <img src="images/teacher_1.jpg" class="img-fluid" alt="Photo of Teachers">
+                               </div>
+                               <div class="detail">
+                                   <div class="">
+                                       <div class="">
+                                           <h3 class="pt-3">{{teachers.teacher_name}}</h3>
+                                           <h5>{{teachers.education_degree}}</h5>
+                                       </div>
+                                       <hr style="background-color: #ffffff"/>
+                                       <div class="">
+                                           <h5>{{teachers.phone_number}} </h5>
+                                           <h5 class="text-center">
+                                               {{teachers.address}}
+                                           </h5>
+                                       </div>
+                                       <hr style="background-color: #ffffff"/>
+                                       <div class="">
+                                           <h5 class="">
+                                               <b>Joined at<br/>
+                                                   2015</b>
+                                           </h5>
+                                       </div>
+                                   </div>
+                               </div>
+                           </div>
+                       </div>
+                   </div>-->
             </div>
         </section>
 
